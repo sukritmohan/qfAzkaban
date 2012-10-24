@@ -1,0 +1,569 @@
+2012/10/10 11:18:30.815 -0700 INFO [AzkabanApp] [] Job log directory set to /var/folders/5n/f984qm_d1jz9jtxz4p3cszg40000gn/T
+2012/10/10 11:18:30.816 -0700 INFO [AzkabanApp] [] Job directories set to [azkaban-jobs]
+2012/10/10 11:18:30.824 -0700 INFO [AzkabanApplication] [] HADOOP_HOME not set, using default hadoop config.
+2012/10/10 11:18:31.163 -0700 INFO [AzkabanApplication] [] Schedule file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/10 11:18:31.164 -0700 INFO [AzkabanApplication] [] Schedule backup file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule.backup
+2012/10/10 11:18:31.166 -0700 INFO [AzkabanApplication] [] Using path[/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/executions] for storing executions.
+2012/10/10 11:18:31.167 -0700 INFO [AzkabanApplication] [] Last known execution id was [78]
+2012/10/10 11:18:31.279 -0700 INFO [AzkabanApp] [] Server running on port 8081.
+2012/10/10 11:18:51.208 -0700 INFO [ScheduleManager] [] Scheduling job 'test' for 10-10-2012 23:19:00:000 with a period of 1 day
+2012/10/10 11:18:51.211 -0700 INFO [ScheduleManager] [] Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-10T23:19:00.000-07:00, period=P1D, jobName='test'} to schedule.
+2012/10/10 11:19:36.389 -0700 INFO [ScheduleManager] [] Removing ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-10T23:19:00.000-07:00, period=P1D, jobName='test'} from the schedule.
+2012/10/10 11:19:47.982 -0700 INFO [ScheduleManager] [] Scheduling job 'test' for 10-10-2012 11:20:00:000 with a period of 1 day
+2012/10/10 11:19:47.983 -0700 INFO [ScheduleManager] [] Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-10T11:20:00.000-07:00, period=P1D, jobName='test'} to schedule.
+2012/10/10 11:20:00.000 -0700 INFO [ScheduleManager] [] Scheduler attempting to run test
+2012/10/10 11:20:00.003 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/10 11:20:00.004 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING ID : test
+2012/10/10 11:20:00.004 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING TOPIC : null
+2012/10/10 11:20:00.006 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/10 11:20:00.044 -0700 INFO [Props] [] Return props for job[test]
+2012/10/10 11:20:00.128 -0700 WARN [Mailman] [] Error while sending email: Could not connect to SMTP host: localhost, port: 25
+2012/10/10 11:20:00.128 -0700 INFO [JobExecutorManager] [] Publishing to Kafka : {"test_status":"Success"}
+2012/10/10 11:20:00.170 -0700 WARN [JobExecutorManager] [] Exception caught while saving flow/sending emails
+java.lang.NullPointerException
+	at kafka.api.ProducerRequest.sizeInBytes(ProducerRequest.scala:51)
+	at kafka.network.BoundedByteBufferSend.<init>(BoundedByteBufferSend.scala:37)
+	at kafka.producer.SyncProducer.send(SyncProducer.scala:117)
+	at kafka.producer.ProducerPool$$anonfun$send$1.apply$mcVI$sp(ProducerPool.scala:116)
+	at kafka.producer.ProducerPool$$anonfun$send$1.apply(ProducerPool.scala:102)
+	at kafka.producer.ProducerPool$$anonfun$send$1.apply(ProducerPool.scala:102)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:57)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:43)
+	at kafka.producer.ProducerPool.send(ProducerPool.scala:102)
+	at kafka.producer.Producer.zkSend(Producer.scala:143)
+	at kafka.producer.Producer.send(Producer.scala:105)
+	at kafka.javaapi.producer.Producer.send(Producer.scala:104)
+	at azkaban.scheduler.EventManagerUtils.publish(EventManagerUtils.java:64)
+	at azkaban.jobs.JobExecutorManager.sendSuccessEmail(JobExecutorManager.java:357)
+	at azkaban.jobs.JobExecutorManager.access$800(JobExecutorManager.java:43)
+	at azkaban.jobs.JobExecutorManager$ExecutingFlowRunnable$1.completed(JobExecutorManager.java:461)
+	at azkaban.flow.IndividualJobExecutableFlow$2.run(IndividualJobExecutableFlow.java:359)
+	at java.lang.Thread.run(Thread.java:680)
+2012/10/10 11:20:00.173 -0700 ERROR [IndividualJobExecutableFlow] [] Exception thrown while calling callback. job[test]
+java.lang.NullPointerException
+	at kafka.api.ProducerRequest.sizeInBytes(ProducerRequest.scala:51)
+	at kafka.network.BoundedByteBufferSend.<init>(BoundedByteBufferSend.scala:37)
+	at kafka.producer.SyncProducer.send(SyncProducer.scala:117)
+	at kafka.producer.ProducerPool$$anonfun$send$1.apply$mcVI$sp(ProducerPool.scala:116)
+	at kafka.producer.ProducerPool$$anonfun$send$1.apply(ProducerPool.scala:102)
+	at kafka.producer.ProducerPool$$anonfun$send$1.apply(ProducerPool.scala:102)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:57)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:43)
+	at kafka.producer.ProducerPool.send(ProducerPool.scala:102)
+	at kafka.producer.Producer.zkSend(Producer.scala:143)
+	at kafka.producer.Producer.send(Producer.scala:105)
+	at kafka.javaapi.producer.Producer.send(Producer.scala:104)
+	at azkaban.scheduler.EventManagerUtils.publish(EventManagerUtils.java:64)
+	at azkaban.jobs.JobExecutorManager.sendSuccessEmail(JobExecutorManager.java:357)
+	at azkaban.jobs.JobExecutorManager.access$800(JobExecutorManager.java:43)
+	at azkaban.jobs.JobExecutorManager$ExecutingFlowRunnable$1.completed(JobExecutorManager.java:461)
+	at azkaban.flow.IndividualJobExecutableFlow$2.run(IndividualJobExecutableFlow.java:359)
+	at java.lang.Thread.run(Thread.java:680)
+2012/10/10 11:29:24.861 -0700 INFO [AzkabanApp] [] Shutting down http server...
+2012/10/10 11:29:24.920 -0700 INFO [AzkabanApp] [] Shutting down producer...
+2012/10/10 11:29:24.926 -0700 INFO [AzkabanApp] [] kk thx bye.
+2012/10/10 11:29:27.447 -0700 INFO [AzkabanApp] [] Job log directory set to /var/folders/5n/f984qm_d1jz9jtxz4p3cszg40000gn/T
+2012/10/10 11:29:27.448 -0700 INFO [AzkabanApp] [] Job directories set to [azkaban-jobs]
+2012/10/10 11:29:27.454 -0700 INFO [AzkabanApplication] [] HADOOP_HOME not set, using default hadoop config.
+2012/10/10 11:29:27.757 -0700 INFO [AzkabanApplication] [] Schedule file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/10 11:29:27.757 -0700 INFO [AzkabanApplication] [] Schedule backup file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule.backup
+2012/10/10 11:29:27.759 -0700 INFO [AzkabanApplication] [] Using path[/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/executions] for storing executions.
+2012/10/10 11:29:27.760 -0700 INFO [AzkabanApplication] [] Last known execution id was [79]
+2012/10/10 11:29:27.859 -0700 INFO [ScheduleManager] [] Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-11T11:20:00.000-07:00, period=P1D, jobName='test'} to schedule.
+2012/10/10 11:29:27.933 -0700 INFO [AzkabanApp] [] Server running on port 8081.
+2012/10/10 11:33:35.202 -0700 INFO [ScheduleManager] [] Removing ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-11T11:20:00.000-07:00, period=P1D, jobName='test'} from the schedule.
+2012/10/10 11:33:52.904 -0700 INFO [ScheduleManager] [] Scheduling job 'test' for 10-10-2012 11:34:00:000 with a period of 1 day
+2012/10/10 11:33:52.904 -0700 INFO [ScheduleManager] [] Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-10T11:34:00.000-07:00, period=P1D, jobName='test'} to schedule.
+2012/10/10 11:34:00.000 -0700 INFO [ScheduleManager] [] Scheduler attempting to run test
+2012/10/10 11:34:00.003 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/10 11:34:00.004 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING ID : test
+2012/10/10 11:34:00.004 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING TOPIC : null
+2012/10/10 11:34:00.006 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/10 11:34:00.041 -0700 INFO [Props] [] Return props for job[test]
+2012/10/10 11:34:00.118 -0700 WARN [Mailman] [] Error while sending email: Could not connect to SMTP host: localhost, port: 25
+2012/10/10 11:34:08.413 -0700 INFO [ScheduleManager] [] Removing ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-11T11:34:00.000-07:00, period=P1D, jobName='test'} from the schedule.
+2012/10/10 11:34:55.573 -0700 INFO [ScheduleManager] [] Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-10T11:35:05.368-07:00, period=PT10S, jobName='test'} to schedule.
+2012/10/10 11:35:05.369 -0700 INFO [ScheduleManager] [] FILE EXISTS (/Users/sukrit/Documents/Code/azkaban-0.10/testFile.txt) : false
+2012/10/10 11:35:15.368 -0700 INFO [ScheduleManager] [] FILE EXISTS (/Users/sukrit/Documents/Code/azkaban-0.10/testFile.txt) : false
+2012/10/10 11:35:17.655 -0700 INFO [ScheduleManager] [] PRINTING FROM THREAD : check
+2012/10/10 11:35:25.369 -0700 INFO [ScheduleManager] [] CONSUMING : check
+2012/10/10 11:35:25.374 -0700 INFO [ScheduleManager] [] FILE EXISTS (/Users/sukrit/Documents/Code/azkaban-0.10/testFile.txt) : false
+2012/10/10 11:35:35.368 -0700 INFO [ScheduleManager] [] FILE EXISTS (/Users/sukrit/Documents/Code/azkaban-0.10/testFile.txt) : false
+2012/10/10 11:35:45.369 -0700 INFO [ScheduleManager] [] FILE EXISTS (/Users/sukrit/Documents/Code/azkaban-0.10/testFile.txt) : false
+2012/10/10 11:35:55.369 -0700 INFO [ScheduleManager] [] FILE EXISTS (/Users/sukrit/Documents/Code/azkaban-0.10/testFile.txt) : true
+2012/10/10 11:35:55.369 -0700 INFO [ScheduleManager] [] Scheduler attempting to run test
+2012/10/10 11:35:55.370 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/10 11:35:55.370 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING ID : test
+2012/10/10 11:35:55.370 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING TOPIC : test
+2012/10/10 11:35:55.370 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/10 11:35:55.399 -0700 INFO [Props] [] Return props for job[test]
+2012/10/10 11:35:55.402 -0700 WARN [Mailman] [] Error while sending email: Could not connect to SMTP host: localhost, port: 25
+2012/10/10 11:35:55.402 -0700 INFO [JobExecutorManager] [] Publishing to Kafka : {"test_status":"Success"}
+2012/10/10 11:35:55.711 -0700 INFO [ScheduleManager] [] PRINTING FROM THREAD : {"test_status":"Success"}
+2012/10/10 11:36:05.024 -0700 INFO [AzkabanApp] [] Shutting down http server...
+2012/10/10 11:36:05.084 -0700 INFO [AzkabanApp] [] Shutting down producer...
+2012/10/10 11:36:05.095 -0700 INFO [AzkabanApp] [] kk thx bye.
+2012/10/10 11:36:09.211 -0700 INFO [AzkabanApp] [] Job log directory set to /var/folders/5n/f984qm_d1jz9jtxz4p3cszg40000gn/T
+2012/10/10 11:36:09.212 -0700 INFO [AzkabanApp] [] Job directories set to [azkaban-jobs]
+2012/10/10 11:36:09.218 -0700 INFO [AzkabanApplication] [] HADOOP_HOME not set, using default hadoop config.
+2012/10/10 11:36:09.530 -0700 INFO [AzkabanApplication] [] Schedule file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/10 11:36:09.531 -0700 INFO [AzkabanApplication] [] Schedule backup file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule.backup
+2012/10/10 11:36:09.533 -0700 INFO [AzkabanApplication] [] Using path[/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/executions] for storing executions.
+2012/10/10 11:36:09.533 -0700 INFO [AzkabanApplication] [] Last known execution id was [81]
+2012/10/10 11:36:09.649 -0700 INFO [ScheduleManager] [] Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-10T11:36:15.368-07:00, period=PT10S, jobName='test'} to schedule.
+2012/10/10 11:36:09.730 -0700 INFO [AzkabanApp] [] Server running on port 8081.
+2012/10/10 11:36:12.209 -0700 INFO [ScheduleManager] [] Removing ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-10T11:36:15.368-07:00, period=PT10S, jobName='test'} from the schedule.
+2012/10/10 11:36:15.439 -0700 INFO [AzkabanApp] [] Shutting down http server...
+2012/10/10 11:36:15.482 -0700 INFO [AzkabanApp] [] Shutting down producer...
+2012/10/10 11:36:15.485 -0700 INFO [AzkabanApp] [] kk thx bye.
+2012/10/10 11:57:19.714 -0700 INFO [AzkabanApp] [] Job log directory set to /var/folders/5n/f984qm_d1jz9jtxz4p3cszg40000gn/T
+2012/10/10 11:57:19.715 -0700 INFO [AzkabanApp] [] Job directories set to [azkaban-jobs]
+2012/10/10 11:57:19.721 -0700 INFO [AzkabanApplication] [] HADOOP_HOME not set, using default hadoop config.
+2012/10/10 11:57:20.024 -0700 INFO [AzkabanApplication] [] Schedule file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/10 11:57:20.025 -0700 INFO [AzkabanApplication] [] Schedule backup file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule.backup
+2012/10/10 11:57:20.027 -0700 INFO [AzkabanApplication] [] Using path[/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/executions] for storing executions.
+2012/10/10 11:57:20.027 -0700 INFO [AzkabanApplication] [] Last known execution id was [81]
+2012/10/10 11:57:20.137 -0700 INFO [AzkabanApp] [] Server running on port 8081.
+2012/10/10 11:57:48.819 -0700 INFO [ScheduleManager] [] Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-10T11:57:58.623-07:00, period=PT10S, jobName='test'} to schedule.
+2012/10/10 11:57:48.845 -0700 INFO [ScheduleManager] [] PRINTING FROM THREAD : {"test_status":"Success"}
+2012/10/10 11:57:58.624 -0700 INFO [ScheduleManager] [] CONSUMING : {"test_status":"Success"}
+2012/10/10 11:57:58.630 -0700 INFO [ScheduleManager] [] FROM ECM CONSUME :  false
+2012/10/10 11:57:58.630 -0700 INFO [ScheduleManager] [] FILE EXISTS (/Users/sukrit/Documents/Code/azkaban-0.10/testFile.txt) : true
+2012/10/10 11:57:58.630 -0700 INFO [ScheduleManager] [] Scheduler attempting to run test
+2012/10/10 11:57:58.633 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/10 11:57:58.633 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING ID : test
+2012/10/10 11:57:58.633 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING TOPIC : test
+2012/10/10 11:57:58.635 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/10 11:57:58.672 -0700 INFO [Props] [] Return props for job[test]
+2012/10/10 11:57:58.748 -0700 WARN [Mailman] [] Error while sending email: Could not connect to SMTP host: localhost, port: 25
+2012/10/10 11:57:58.748 -0700 INFO [JobExecutorManager] [] Publishing to Kafka : {"test_status":"Success"}
+2012/10/10 11:57:59.860 -0700 INFO [ScheduleManager] [] PRINTING FROM THREAD : {"test_status":"Success"}
+2012/10/10 11:58:08.624 -0700 INFO [ScheduleManager] [] CONSUMING : {"test_status":"Success"}
+2012/10/10 11:58:08.624 -0700 INFO [ScheduleManager] [] FROM ECM CONSUME :  false
+2012/10/10 11:58:08.624 -0700 INFO [ScheduleManager] [] FILE EXISTS (/Users/sukrit/Documents/Code/azkaban-0.10/testFile.txt) : true
+2012/10/10 11:58:08.624 -0700 INFO [ScheduleManager] [] Scheduler attempting to run test
+2012/10/10 11:58:08.625 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/10 11:58:08.625 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING ID : test
+2012/10/10 11:58:08.625 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING TOPIC : test
+2012/10/10 11:58:08.625 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/10 11:58:08.655 -0700 INFO [Props] [] Return props for job[test]
+2012/10/10 11:58:08.658 -0700 WARN [Mailman] [] Error while sending email: Could not connect to SMTP host: localhost, port: 25
+2012/10/10 11:58:08.658 -0700 INFO [JobExecutorManager] [] Publishing to Kafka : {"test_status":"Success"}
+2012/10/10 11:58:09.875 -0700 INFO [ScheduleManager] [] PRINTING FROM THREAD : {"test_status":"Success"}
+2012/10/10 11:58:11.982 -0700 INFO [AzkabanApp] [] Shutting down http server...
+2012/10/10 11:58:12.044 -0700 INFO [AzkabanApp] [] Shutting down producer...
+2012/10/10 11:58:12.048 -0700 INFO [AzkabanApp] [] kk thx bye.
+2012/10/10 11:59:23.935 -0700 INFO [AzkabanApp] [] Job log directory set to /var/folders/5n/f984qm_d1jz9jtxz4p3cszg40000gn/T
+2012/10/10 11:59:23.936 -0700 INFO [AzkabanApp] [] Job directories set to [azkaban-jobs]
+2012/10/10 11:59:23.942 -0700 INFO [AzkabanApplication] [] HADOOP_HOME not set, using default hadoop config.
+2012/10/10 11:59:24.243 -0700 INFO [AzkabanApplication] [] Schedule file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/10 11:59:24.244 -0700 INFO [AzkabanApplication] [] Schedule backup file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule.backup
+2012/10/10 11:59:24.246 -0700 INFO [AzkabanApplication] [] Using path[/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/executions] for storing executions.
+2012/10/10 11:59:24.246 -0700 INFO [AzkabanApplication] [] Last known execution id was [83]
+2012/10/10 11:59:24.352 -0700 INFO [ScheduleManager] [] Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-10T11:59:28.623-07:00, period=PT10S, jobName='test'} to schedule.
+2012/10/10 11:59:24.423 -0700 INFO [AzkabanApp] [] Server running on port 8081.
+2012/10/10 11:59:28.306 -0700 INFO [ScheduleManager] [] Removing ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-10T11:59:28.623-07:00, period=PT10S, jobName='test'} from the schedule.
+2012/10/10 11:59:48.619 -0700 INFO [ScheduleManager] [] Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-10T11:59:58.436-07:00, period=PT10S, jobName='test'} to schedule.
+2012/10/10 11:59:48.655 -0700 INFO [ScheduleManager] [] PRINTING FROM THREAD : {"test_status":"Success"}
+2012/10/10 11:59:58.437 -0700 INFO [ScheduleManager] [] CONSUMING : {"test_status":"Success"}
+2012/10/10 11:59:58.442 -0700 INFO [ScheduleManager] [] FROM ECM CONSUME :  false
+2012/10/10 12:00:08.436 -0700 INFO [ScheduleManager] [] FROM ECM CONSUME :  false
+2012/10/10 12:00:18.436 -0700 INFO [ScheduleManager] [] FROM ECM CONSUME :  false
+2012/10/10 12:00:28.436 -0700 INFO [ScheduleManager] [] FROM ECM CONSUME :  false
+2012/10/10 12:00:29.727 -0700 INFO [ScheduleManager] [] PRINTING FROM THREAD : {"key":"value"}
+2012/10/10 12:00:38.436 -0700 INFO [ScheduleManager] [] CONSUMING : {"key":"value"}
+2012/10/10 12:00:38.437 -0700 INFO [ScheduleManager] [] FROM ECM CONSUME :  true
+2012/10/10 12:00:38.437 -0700 INFO [ScheduleManager] [] Scheduler attempting to run test
+2012/10/10 12:00:38.440 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/10 12:00:38.440 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING ID : test
+2012/10/10 12:00:38.440 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING TOPIC : test
+2012/10/10 12:00:38.442 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/10 12:00:38.478 -0700 INFO [Props] [] Return props for job[test]
+2012/10/10 12:00:38.555 -0700 WARN [Mailman] [] Error while sending email: Could not connect to SMTP host: localhost, port: 25
+2012/10/10 12:00:38.556 -0700 INFO [JobExecutorManager] [] Publishing to Kafka : {"test_status":"Success"}
+2012/10/10 12:00:39.741 -0700 INFO [ScheduleManager] [] PRINTING FROM THREAD : {"test_status":"Success"}
+2012/10/10 12:00:48.437 -0700 INFO [ScheduleManager] [] CONSUMING : {"test_status":"Success"}
+2012/10/10 12:00:48.437 -0700 INFO [ScheduleManager] [] FROM ECM CONSUME :  false
+2012/10/10 12:00:58.436 -0700 INFO [ScheduleManager] [] FROM ECM CONSUME :  false
+2012/10/10 12:01:08.437 -0700 INFO [ScheduleManager] [] FROM ECM CONSUME :  false
+2012/10/10 12:01:18.437 -0700 INFO [ScheduleManager] [] FROM ECM CONSUME :  false
+2012/10/10 12:01:20.803 -0700 INFO [ScheduleManager] [] PRINTING FROM THREAD : {"key":"value"}
+2012/10/10 12:01:28.437 -0700 INFO [ScheduleManager] [] CONSUMING : {"key":"value"}
+2012/10/10 12:01:28.437 -0700 INFO [ScheduleManager] [] FROM ECM CONSUME :  true
+2012/10/10 12:01:28.437 -0700 INFO [ScheduleManager] [] Scheduler attempting to run test
+2012/10/10 12:01:28.438 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/10 12:01:28.438 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING ID : test
+2012/10/10 12:01:28.438 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING TOPIC : test
+2012/10/10 12:01:28.438 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/10 12:01:28.467 -0700 INFO [Props] [] Return props for job[test]
+2012/10/10 12:01:28.474 -0700 WARN [Mailman] [] Error while sending email: Could not connect to SMTP host: localhost, port: 25
+2012/10/10 12:01:28.475 -0700 INFO [JobExecutorManager] [] Publishing to Kafka : {"test_status":"Success"}
+2012/10/10 12:01:29.816 -0700 INFO [ScheduleManager] [] PRINTING FROM THREAD : {"test_status":"Success"}
+2012/10/10 12:01:34.111 -0700 INFO [ScheduleManager] [] Removing ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-10T12:01:38.436-07:00, period=PT10S, jobName='test'} from the schedule.
+2012/10/10 12:01:36.224 -0700 INFO [AzkabanApp] [] Shutting down http server...
+2012/10/10 12:01:36.283 -0700 INFO [AzkabanApp] [] Shutting down producer...
+2012/10/10 12:01:36.286 -0700 INFO [AzkabanApp] [] kk thx bye.
+2012/10/10 12:03:12.200 -0700 INFO [AzkabanApp] [] Job log directory set to /var/folders/5n/f984qm_d1jz9jtxz4p3cszg40000gn/T
+2012/10/10 12:03:12.202 -0700 INFO [AzkabanApp] [] Job directories set to [azkaban-jobs]
+2012/10/10 12:03:12.208 -0700 INFO [AzkabanApplication] [] HADOOP_HOME not set, using default hadoop config.
+2012/10/10 12:03:12.514 -0700 INFO [AzkabanApplication] [] Schedule file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/10 12:03:12.514 -0700 INFO [AzkabanApplication] [] Schedule backup file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule.backup
+2012/10/10 12:03:12.516 -0700 INFO [AzkabanApplication] [] Using path[/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/executions] for storing executions.
+2012/10/10 12:03:12.516 -0700 INFO [AzkabanApplication] [] Last known execution id was [85]
+2012/10/10 12:03:12.628 -0700 INFO [AzkabanApp] [] Server running on port 8081.
+2012/10/10 12:03:38.742 -0700 INFO [ScheduleManager] [] Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-10T16:00:38.738-07:00, period=PT10S, jobName='test'} to schedule.
+2012/10/10 12:04:09.170 -0700 INFO [ScheduleManager] [] Removing ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-10T16:00:38.738-07:00, period=PT10S, jobName='test'} from the schedule.
+2012/10/10 12:04:55.127 -0700 INFO [ScheduleManager] [] Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-10T07:00:55.126-07:00, period=PT10S, jobName='test'} to schedule.
+2012/10/10 12:05:40.130 -0700 INFO [AzkabanApp] [] Shutting down http server...
+2012/10/10 12:05:40.178 -0700 INFO [AzkabanApp] [] Shutting down producer...
+2012/10/10 12:05:40.180 -0700 INFO [AzkabanApp] [] kk thx bye.
+2012/10/10 12:10:17.417 -0700 INFO [AzkabanApp] [] Job log directory set to /var/folders/5n/f984qm_d1jz9jtxz4p3cszg40000gn/T
+2012/10/10 12:10:17.418 -0700 INFO [AzkabanApp] [] Job directories set to [azkaban-jobs]
+2012/10/10 12:10:17.424 -0700 INFO [AzkabanApplication] [] HADOOP_HOME not set, using default hadoop config.
+2012/10/10 12:10:17.724 -0700 INFO [AzkabanApplication] [] Schedule file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/10 12:10:17.724 -0700 INFO [AzkabanApplication] [] Schedule backup file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule.backup
+2012/10/10 12:10:17.726 -0700 INFO [AzkabanApplication] [] Using path[/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/executions] for storing executions.
+2012/10/10 12:10:17.727 -0700 INFO [AzkabanApplication] [] Last known execution id was [85]
+2012/10/10 12:10:17.826 -0700 INFO [ScheduleManager] [] NOW : 2012-10-10T12:10:17.823-07:00
+2012/10/10 12:10:17.838 -0700 INFO [ScheduleManager] [] Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-10T12:10:25.139-07:00, period=PT10S, jobName='test'} to schedule.
+2012/10/10 12:10:17.910 -0700 INFO [AzkabanApp] [] Server running on port 8081.
+2012/10/10 12:10:25.140 -0700 INFO [ScheduleManager] [] Scheduler attempting to run test
+2012/10/10 12:10:25.143 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/10 12:10:25.143 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING ID : test
+2012/10/10 12:10:25.143 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING TOPIC : null
+2012/10/10 12:10:25.144 -0700 INFO [ScheduleManager] [] NOW : 2012-10-10T12:10:25.144-07:00
+2012/10/10 12:10:25.144 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/10 12:10:25.177 -0700 INFO [Props] [] Return props for job[test]
+2012/10/10 12:10:25.256 -0700 WARN [Mailman] [] Error while sending email: Could not connect to SMTP host: localhost, port: 25
+2012/10/10 12:10:32.222 -0700 INFO [ScheduleManager] [] Removing ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-10T12:10:35.139-07:00, period=PT10S, jobName='test'} from the schedule.
+2012/10/10 12:10:54.202 -0700 INFO [ScheduleManager] [] NOW : 2012-10-10T12:10:54.202-07:00
+2012/10/10 12:10:54.203 -0700 INFO [ScheduleManager] [] NOT WITHIN TIME CONSTRAINTS
+2012/10/10 12:10:54.203 -0700 INFO [ScheduleManager] [] DEFAULT START DATE 2012-10-10T04:00:54.203-07:00
+2012/10/10 12:10:54.203 -0700 INFO [ScheduleManager] [] MODIFIED START DATE : 2012-10-10T04:00:54.203-07:00
+2012/10/10 12:10:54.203 -0700 INFO [ScheduleManager] [] Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-10T04:00:54.203-07:00, period=PT10S, jobName='test'} to schedule.
+2012/10/10 12:10:54.203 -0700 INFO [ScheduleManager] [] NOW : 2012-10-10T12:10:54.203-07:00
+2012/10/10 12:10:54.203 -0700 INFO [ScheduleManager] [] NOT WITHIN TIME CONSTRAINTS
+2012/10/10 12:10:54.204 -0700 INFO [ScheduleManager] [] DEFAULT START DATE 2012-10-10T04:00:54.203-07:00
+2012/10/10 12:10:54.204 -0700 INFO [ScheduleManager] [] MODIFIED START DATE : 2012-10-10T04:00:54.203-07:00
+2012/10/10 12:10:54.204 -0700 INFO [ScheduleManager] [] NOW : 2012-10-10T12:10:54.204-07:00
+2012/10/10 12:10:54.205 -0700 INFO [ScheduleManager] [] NOT WITHIN TIME CONSTRAINTS
+2012/10/10 12:10:54.205 -0700 INFO [ScheduleManager] [] DEFAULT START DATE 2012-10-10T04:00:54.205-07:00
+2012/10/10 12:10:54.205 -0700 INFO [ScheduleManager] [] MODIFIED START DATE : 2012-10-10T04:00:54.205-07:00
+2012/10/10 12:10:54.206 -0700 INFO [ScheduleManager] [] NOW : 2012-10-10T12:10:54.206-07:00
+2012/10/10 12:10:54.206 -0700 INFO [ScheduleManager] [] NOT WITHIN TIME CONSTRAINTS
+2012/10/10 12:10:54.206 -0700 INFO [ScheduleManager] [] DEFAULT START DATE 2012-10-10T04:00:54.206-07:00
+2012/10/10 12:10:54.206 -0700 INFO [ScheduleManager] [] MODIFIED START DATE : 2012-10-10T04:00:54.206-07:00
+2012/10/10 12:10:54.207 -0700 INFO [ScheduleManager] [] NOW : 2012-10-10T12:10:54.207-07:00
+2012/10/10 12:10:54.207 -0700 INFO [ScheduleManager] [] NOT WITHIN TIME CONSTRAINTS
+2012/10/10 12:10:54.207 -0700 INFO [ScheduleManager] [] DEFAULT START DATE 2012-10-10T04:00:54.207-07:00
+2012/10/10 12:10:54.207 -0700 INFO [ScheduleManager] [] MODIFIED START DATE : 2012-10-10T04:00:54.207-07:00
+2012/10/10 12:10:54.208 -0700 INFO [ScheduleManager] [] NOW : 2012-10-10T12:10:54.208-07:00
+2012/10/10 12:10:54.208 -0700 INFO [ScheduleManager] [] NOT WITHIN TIME CONSTRAINTS
+2012/10/10 12:10:54.208 -0700 INFO [ScheduleManager] [] DEFAULT START DATE 2012-10-10T04:00:54.208-07:00
+2012/10/10 12:10:54.209 -0700 INFO [ScheduleManager] [] MODIFIED START DATE : 2012-10-10T04:00:54.208-07:00
+2012/10/10 12:10:54.209 -0700 INFO [ScheduleManager] [] NOW : 2012-10-10T12:10:54.209-07:00
+2012/10/10 12:10:54.210 -0700 INFO [ScheduleManager] [] NOT WITHIN TIME CONSTRAINTS
+2012/10/10 12:10:54.210 -0700 INFO [ScheduleManager] [] DEFAULT START DATE 2012-10-10T04:00:54.210-07:00
+2012/10/10 12:10:54.210 -0700 INFO [ScheduleManager] [] MODIFIED START DATE : 2012-10-10T04:00:54.210-07:00
+2012/10/10 12:10:54.211 -0700 INFO [ScheduleManager] [] NOW : 2012-10-10T12:10:54.211-07:00
+2012/10/10 12:10:54.211 -0700 INFO [ScheduleManager] [] NOT WITHIN TIME CONSTRAINTS
+2012/10/10 12:10:54.211 -0700 INFO [ScheduleManager] [] DEFAULT START DATE 2012-10-10T04:00:54.211-07:00
+2012/10/10 12:10:54.211 -0700 INFO [ScheduleManager] [] MODIFIED START DATE : 2012-10-10T04:00:54.211-07:00
+2012/10/10 12:11:06.177 -0700 INFO [AzkabanApp] [] Shutting down http server...
+2012/10/10 12:11:06.226 -0700 INFO [AzkabanApp] [] Shutting down producer...
+2012/10/10 12:11:06.229 -0700 INFO [AzkabanApp] [] kk thx bye.
+2012/10/10 12:14:12.262 -0700 INFO [AzkabanApp] [] Job log directory set to /var/folders/5n/f984qm_d1jz9jtxz4p3cszg40000gn/T
+2012/10/10 12:14:12.263 -0700 INFO [AzkabanApp] [] Job directories set to [azkaban-jobs]
+2012/10/10 12:14:12.269 -0700 INFO [AzkabanApplication] [] HADOOP_HOME not set, using default hadoop config.
+2012/10/10 12:14:12.569 -0700 INFO [AzkabanApplication] [] Schedule file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/10 12:14:12.569 -0700 INFO [AzkabanApplication] [] Schedule backup file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule.backup
+2012/10/10 12:14:12.571 -0700 INFO [AzkabanApplication] [] Using path[/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/executions] for storing executions.
+2012/10/10 12:14:12.572 -0700 INFO [AzkabanApplication] [] Last known execution id was [86]
+2012/10/10 12:14:12.670 -0700 INFO [ScheduleManager] [] NOW : 2012-10-10T12:14:12.668-07:00
+2012/10/10 12:14:12.687 -0700 INFO [ScheduleManager] [] Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-10T12:14:14.210-07:00, period=PT10S, jobName='test'} to schedule.
+2012/10/10 12:14:12.757 -0700 INFO [AzkabanApp] [] Server running on port 8081.
+2012/10/10 12:14:14.211 -0700 INFO [ScheduleManager] [] Scheduler attempting to run test
+2012/10/10 12:14:14.215 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/10 12:14:14.215 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING ID : test
+2012/10/10 12:14:14.216 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING TOPIC : null
+2012/10/10 12:14:14.217 -0700 INFO [ScheduleManager] [] NOW : 2012-10-10T12:14:14.217-07:00
+2012/10/10 12:14:14.217 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/10 12:14:14.254 -0700 INFO [Props] [] Return props for job[test]
+2012/10/10 12:14:14.341 -0700 WARN [Mailman] [] Error while sending email: Could not connect to SMTP host: localhost, port: 25
+2012/10/10 12:14:24.210 -0700 INFO [ScheduleManager] [] Scheduler attempting to run test
+2012/10/10 12:14:24.210 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/10 12:14:24.210 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING ID : test
+2012/10/10 12:14:24.210 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING TOPIC : null
+2012/10/10 12:14:24.211 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/10 12:14:24.211 -0700 INFO [ScheduleManager] [] NOW : 2012-10-10T12:14:24.211-07:00
+2012/10/10 12:14:24.231 -0700 INFO [Props] [] Return props for job[test]
+2012/10/10 12:14:24.234 -0700 WARN [Mailman] [] Error while sending email: Could not connect to SMTP host: localhost, port: 25
+2012/10/10 12:14:24.704 -0700 INFO [ScheduleManager] [] Removing ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-10T12:14:34.210-07:00, period=PT10S, jobName='test'} from the schedule.
+2012/10/10 12:15:01.163 -0700 INFO [ScheduleManager] [] NOW : 2012-10-10T12:15:01.163-07:00
+2012/10/10 12:15:01.163 -0700 INFO [ScheduleManager] [] NOT WITHIN TIME CONSTRAINTS
+2012/10/10 12:15:01.163 -0700 INFO [ScheduleManager] [] DEFAULT START DATE 2012-10-10T04:00:01.163-07:00
+2012/10/10 12:15:01.163 -0700 INFO [ScheduleManager] [] DATE IS BEFORE NOW 
+2012/10/10 12:15:01.164 -0700 INFO [ScheduleManager] [] MODIFIED START DATE : 2012-10-10T04:00:01.163-07:00
+2012/10/10 12:15:01.164 -0700 INFO [ScheduleManager] [] Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-10T04:00:01.163-07:00, period=PT10S, jobName='test'} to schedule.
+2012/10/10 12:15:01.164 -0700 INFO [ScheduleManager] [] NOW : 2012-10-10T12:15:01.164-07:00
+2012/10/10 12:15:01.164 -0700 INFO [ScheduleManager] [] NOT WITHIN TIME CONSTRAINTS
+2012/10/10 12:15:01.164 -0700 INFO [ScheduleManager] [] DEFAULT START DATE 2012-10-10T04:00:01.164-07:00
+2012/10/10 12:15:01.164 -0700 INFO [ScheduleManager] [] DATE IS BEFORE NOW 
+2012/10/10 12:15:01.164 -0700 INFO [ScheduleManager] [] MODIFIED START DATE : 2012-10-10T04:00:01.164-07:00
+2012/10/10 12:15:01.165 -0700 INFO [ScheduleManager] [] NOW : 2012-10-10T12:15:01.165-07:00
+2012/10/10 12:15:01.165 -0700 INFO [ScheduleManager] [] NOT WITHIN TIME CONSTRAINTS
+2012/10/10 12:15:01.165 -0700 INFO [ScheduleManager] [] DEFAULT START DATE 2012-10-10T04:00:01.165-07:00
+2012/10/10 12:15:01.165 -0700 INFO [ScheduleManager] [] DATE IS BEFORE NOW 
+2012/10/10 12:15:01.166 -0700 INFO [ScheduleManager] [] MODIFIED START DATE : 2012-10-10T04:00:01.165-07:00
+2012/10/10 12:15:01.166 -0700 INFO [ScheduleManager] [] NOW : 2012-10-10T12:15:01.166-07:00
+2012/10/10 12:15:01.166 -0700 INFO [ScheduleManager] [] NOT WITHIN TIME CONSTRAINTS
+2012/10/10 12:15:01.166 -0700 INFO [ScheduleManager] [] DEFAULT START DATE 2012-10-10T04:00:01.166-07:00
+2012/10/10 12:15:01.166 -0700 INFO [ScheduleManager] [] DATE IS BEFORE NOW 
+2012/10/10 12:15:01.166 -0700 INFO [ScheduleManager] [] MODIFIED START DATE : 2012-10-10T04:00:01.166-07:00
+2012/10/10 12:15:01.167 -0700 INFO [ScheduleManager] [] NOW : 2012-10-10T12:15:01.167-07:00
+2012/10/10 12:15:01.167 -0700 INFO [ScheduleManager] [] NOT WITHIN TIME CONSTRAINTS
+2012/10/10 12:15:01.167 -0700 INFO [ScheduleManager] [] DEFAULT START DATE 2012-10-10T04:00:01.167-07:00
+2012/10/10 12:15:01.167 -0700 INFO [ScheduleManager] [] DATE IS BEFORE NOW 
+2012/10/10 12:15:01.167 -0700 INFO [ScheduleManager] [] MODIFIED START DATE : 2012-10-10T04:00:01.167-07:00
+2012/10/10 12:15:01.168 -0700 INFO [ScheduleManager] [] NOW : 2012-10-10T12:15:01.168-07:00
+2012/10/10 12:15:01.168 -0700 INFO [ScheduleManager] [] NOT WITHIN TIME CONSTRAINTS
+2012/10/10 12:15:01.168 -0700 INFO [ScheduleManager] [] DEFAULT START DATE 2012-10-10T04:00:01.168-07:00
+2012/10/10 12:15:01.168 -0700 INFO [ScheduleManager] [] DATE IS BEFORE NOW 
+2012/10/10 12:15:01.168 -0700 INFO [ScheduleManager] [] MODIFIED START DATE : 2012-10-10T04:00:01.168-07:00
+2012/10/10 12:15:01.169 -0700 INFO [ScheduleManager] [] NOW : 2012-10-10T12:15:01.169-07:00
+2012/10/10 12:15:01.169 -0700 INFO [ScheduleManager] [] NOT WITHIN TIME CONSTRAINTS
+2012/10/10 12:15:01.169 -0700 INFO [ScheduleManager] [] DEFAULT START DATE 2012-10-10T04:00:01.169-07:00
+2012/10/10 12:15:01.169 -0700 INFO [ScheduleManager] [] DATE IS BEFORE NOW 
+2012/10/10 12:15:01.170 -0700 INFO [ScheduleManager] [] MODIFIED START DATE : 2012-10-10T04:00:01.169-07:00
+2012/10/10 12:15:01.170 -0700 INFO [ScheduleManager] [] NOW : 2012-10-10T12:15:01.170-07:00
+2012/10/10 12:15:01.170 -0700 INFO [ScheduleManager] [] NOT WITHIN TIME CONSTRAINTS
+2012/10/10 12:15:01.171 -0700 INFO [ScheduleManager] [] DEFAULT START DATE 2012-10-10T04:00:01.171-07:00
+2012/10/10 12:15:01.171 -0700 INFO [ScheduleManager] [] DATE IS BEFORE NOW 
+2012/10/10 12:15:01.171 -0700 INFO [ScheduleManager] [] MODIFIED START DATE : 2012-10-10T04:00:01.171-07:00
+2012/10/10 12:15:01.172 -0700 INFO [ScheduleManager] [] NOW : 2012-10-10T12:15:01.172-07:00
+2012/10/10 12:15:01.172 -0700 INFO [ScheduleManager] [] NOT WITHIN TIME CONSTRAINTS
+2012/10/10 12:15:01.172 -0700 INFO [ScheduleManager] [] DEFAULT START DATE 2012-10-10T04:00:01.172-07:00
+2012/10/10 12:15:01.172 -0700 INFO [ScheduleManager] [] DATE IS BEFORE NOW 
+2012/10/10 12:15:01.174 -0700 INFO [ScheduleManager] [] MODIFIED START DATE : 2012-10-10T04:00:01.172-07:00
+2012/10/10 12:15:07.508 -0700 INFO [AzkabanApp] [] Shutting down http server...
+2012/10/10 12:15:07.561 -0700 INFO [AzkabanApp] [] Shutting down producer...
+2012/10/10 12:15:07.570 -0700 INFO [AzkabanApp] [] kk thx bye.
+2012/10/10 12:15:56.494 -0700 INFO [AzkabanApp] [] Job log directory set to /var/folders/5n/f984qm_d1jz9jtxz4p3cszg40000gn/T
+2012/10/10 12:15:56.495 -0700 INFO [AzkabanApp] [] Job directories set to [azkaban-jobs]
+2012/10/10 12:15:56.501 -0700 INFO [AzkabanApplication] [] HADOOP_HOME not set, using default hadoop config.
+2012/10/10 12:15:56.805 -0700 INFO [AzkabanApplication] [] Schedule file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/10 12:15:56.805 -0700 INFO [AzkabanApplication] [] Schedule backup file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule.backup
+2012/10/10 12:15:56.807 -0700 INFO [AzkabanApplication] [] Using path[/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/executions] for storing executions.
+2012/10/10 12:15:56.807 -0700 INFO [AzkabanApplication] [] Last known execution id was [88]
+2012/10/10 12:15:56.907 -0700 INFO [ScheduleManager] [] NOW : 2012-10-10T12:15:56.904-07:00
+2012/10/10 12:15:56.923 -0700 INFO [ScheduleManager] [] Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-10T12:16:01.171-07:00, period=PT10S, jobName='test'} to schedule.
+2012/10/10 12:15:56.996 -0700 INFO [AzkabanApp] [] Server running on port 8081.
+2012/10/10 12:16:01.171 -0700 INFO [ScheduleManager] [] Scheduler attempting to run test
+2012/10/10 12:16:01.175 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/10 12:16:01.175 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING ID : test
+2012/10/10 12:16:01.176 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING TOPIC : null
+2012/10/10 12:16:01.177 -0700 INFO [ScheduleManager] [] NOW : 2012-10-10T12:16:01.177-07:00
+2012/10/10 12:16:01.177 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/10 12:16:01.204 -0700 INFO [ScheduleManager] [] Removing ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-10T12:16:11.171-07:00, period=PT10S, jobName='test'} from the schedule.
+2012/10/10 12:16:01.221 -0700 INFO [Props] [] Return props for job[test]
+2012/10/10 12:16:01.299 -0700 WARN [Mailman] [] Error while sending email: Could not connect to SMTP host: localhost, port: 25
+2012/10/10 12:16:15.649 -0700 INFO [ScheduleManager] [] NOW : 2012-10-10T12:16:15.649-07:00
+2012/10/10 12:16:15.649 -0700 INFO [ScheduleManager] [] NOT WITHIN TIME CONSTRAINTS
+2012/10/10 12:16:15.649 -0700 INFO [ScheduleManager] [] DEFAULT START DATE 2012-10-10T04:00:15.649-07:00
+2012/10/10 12:16:15.649 -0700 INFO [ScheduleManager] [] DATE IS BEFORE NOW 
+2012/10/10 12:16:15.650 -0700 INFO [ScheduleManager] [] MODIFIED START DATE : 2012-10-11T04:00:15.649-07:00
+2012/10/10 12:16:15.650 -0700 INFO [ScheduleManager] [] Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-11T04:00:15.649-07:00, period=PT10S, jobName='test'} to schedule.
+2012/10/10 12:16:28.836 -0700 INFO [ScheduleManager] [] Removing ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-11T04:00:15.649-07:00, period=PT10S, jobName='test'} from the schedule.
+2012/10/10 12:16:31.865 -0700 INFO [AzkabanApp] [] Shutting down http server...
+2012/10/10 12:16:31.914 -0700 INFO [AzkabanApp] [] Shutting down producer...
+2012/10/10 12:16:31.919 -0700 INFO [AzkabanApp] [] kk thx bye.
+2012/10/10 13:02:39.880 -0700 INFO [AzkabanApp] [] Job log directory set to /var/folders/5n/f984qm_d1jz9jtxz4p3cszg40000gn/T
+2012/10/10 13:02:39.881 -0700 INFO [AzkabanApp] [] Job directories set to [azkaban-jobs]
+2012/10/10 13:02:39.887 -0700 INFO [AzkabanApplication] [] HADOOP_HOME not set, using default hadoop config.
+2012/10/10 13:02:40.188 -0700 INFO [AzkabanApplication] [] Schedule file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/10 13:02:40.188 -0700 INFO [AzkabanApplication] [] Schedule backup file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule.backup
+2012/10/10 13:02:40.190 -0700 INFO [AzkabanApplication] [] Using path[/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/executions] for storing executions.
+2012/10/10 13:02:40.190 -0700 INFO [AzkabanApplication] [] Last known execution id was [89]
+2012/10/10 13:02:40.302 -0700 INFO [AzkabanApp] [] Server running on port 8081.
+2012/10/10 13:03:29.976 -0700 INFO [JobManager] [] Deployed job multipleCommands to path 
+2012/10/10 13:03:52.994 -0700 INFO [JobManager] [] Deployed job multipleCommands to path 
+2012/10/10 13:03:55.613 -0700 INFO [JobExecutorManager] [] Executing job 'multipleCommands' now
+2012/10/10 13:03:55.614 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING ID : multipleCommands
+2012/10/10 13:03:55.614 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING TOPIC : null
+2012/10/10 13:03:55.615 -0700 INFO [JobExecutorManager] [] Starting run of multipleCommands
+2012/10/10 13:03:55.654 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING ID : multipleCommands
+2012/10/10 13:03:55.655 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING TOPIC : null
+2012/10/10 13:03:55.722 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses
+2012/10/10 13:04:22.934 -0700 INFO [JobExecutorManager] [] Executing job 'multipleCommands' now
+2012/10/10 13:04:22.934 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING ID : multipleCommands
+2012/10/10 13:04:22.934 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING TOPIC : null
+2012/10/10 13:04:22.934 -0700 INFO [JobExecutorManager] [] Starting run of multipleCommands
+2012/10/10 13:04:22.959 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING ID : multipleCommands
+2012/10/10 13:04:22.959 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING TOPIC : null
+2012/10/10 13:04:22.959 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING ID : multipleCommands
+2012/10/10 13:04:22.960 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING TOPIC : null
+2012/10/10 13:04:22.962 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses
+2012/10/10 13:04:53.823 -0700 INFO [AzkabanApp] [] Shutting down http server...
+2012/10/10 13:04:53.891 -0700 INFO [AzkabanApp] [] Shutting down producer...
+2012/10/10 13:04:53.894 -0700 INFO [AzkabanApp] [] kk thx bye.
+2012/10/10 13:05:43.008 -0700 INFO [AzkabanApp] [] Job log directory set to /var/folders/5n/f984qm_d1jz9jtxz4p3cszg40000gn/T
+2012/10/10 13:05:43.009 -0700 INFO [AzkabanApp] [] Job directories set to [azkaban-jobs]
+2012/10/10 13:05:43.015 -0700 INFO [AzkabanApplication] [] HADOOP_HOME not set, using default hadoop config.
+2012/10/10 13:05:43.313 -0700 INFO [AzkabanApplication] [] Schedule file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/10 13:05:43.314 -0700 INFO [AzkabanApplication] [] Schedule backup file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule.backup
+2012/10/10 13:05:43.316 -0700 INFO [AzkabanApplication] [] Using path[/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/executions] for storing executions.
+2012/10/10 13:05:43.316 -0700 INFO [AzkabanApplication] [] Last known execution id was [91]
+2012/10/10 13:05:43.427 -0700 INFO [AzkabanApp] [] Server running on port 8081.
+2012/10/10 13:05:49.488 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING EVENTTRIGGER : false
+2012/10/10 13:05:49.488 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING ID : multipleCommands
+2012/10/10 13:05:49.488 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING TOPIC : null
+2012/10/10 13:05:49.489 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING EVENTTRIGGER : false
+2012/10/10 13:05:49.489 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING ID : multipleCommands
+2012/10/10 13:05:49.489 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING TOPIC : null
+2012/10/10 13:06:01.621 -0700 INFO [AzkabanApp] [] Shutting down http server...
+2012/10/10 13:06:01.663 -0700 INFO [AzkabanApp] [] Shutting down producer...
+2012/10/10 13:06:01.667 -0700 INFO [AzkabanApp] [] kk thx bye.
+2012/10/10 13:06:18.085 -0700 INFO [AzkabanApp] [] Job log directory set to /var/folders/5n/f984qm_d1jz9jtxz4p3cszg40000gn/T
+2012/10/10 13:06:18.086 -0700 INFO [AzkabanApp] [] Job directories set to [azkaban-jobs]
+2012/10/10 13:06:18.092 -0700 INFO [AzkabanApplication] [] HADOOP_HOME not set, using default hadoop config.
+2012/10/10 13:06:18.393 -0700 INFO [AzkabanApplication] [] Schedule file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/10 13:06:18.393 -0700 INFO [AzkabanApplication] [] Schedule backup file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule.backup
+2012/10/10 13:06:18.395 -0700 INFO [AzkabanApplication] [] Using path[/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/executions] for storing executions.
+2012/10/10 13:06:18.395 -0700 INFO [AzkabanApplication] [] Last known execution id was [91]
+2012/10/10 13:06:18.511 -0700 INFO [AzkabanApp] [] Server running on port 8081.
+2012/10/10 13:06:39.836 -0700 INFO [AzkabanApp] [] Shutting down http server...
+2012/10/10 13:06:39.879 -0700 INFO [AzkabanApp] [] Shutting down producer...
+2012/10/10 13:06:39.881 -0700 INFO [AzkabanApp] [] kk thx bye.
+2012/10/10 13:16:35.954 -0700 INFO [AzkabanApp] [] Job log directory set to /var/folders/5n/f984qm_d1jz9jtxz4p3cszg40000gn/T
+2012/10/10 13:16:35.955 -0700 INFO [AzkabanApp] [] Job directories set to [azkaban-jobs]
+2012/10/10 13:16:35.961 -0700 INFO [AzkabanApplication] [] HADOOP_HOME not set, using default hadoop config.
+2012/10/10 13:16:36.259 -0700 INFO [AzkabanApplication] [] Schedule file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/10 13:16:36.260 -0700 INFO [AzkabanApplication] [] Schedule backup file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule.backup
+2012/10/10 13:16:36.262 -0700 INFO [AzkabanApplication] [] Using path[/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/executions] for storing executions.
+2012/10/10 13:16:36.262 -0700 INFO [AzkabanApplication] [] Last known execution id was [91]
+2012/10/10 13:16:36.372 -0700 INFO [AzkabanApp] [] Server running on port 8081.
+2012/10/10 13:16:46.454 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING EVENTTRIGGER : false
+2012/10/10 13:16:46.454 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING ID : multipleCommands
+2012/10/10 13:16:46.454 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING TOPIC : null
+2012/10/10 13:16:46.454 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING EVENTTRIGGER : false
+2012/10/10 13:16:46.454 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING ID : multipleCommands
+2012/10/10 13:16:46.455 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING TOPIC : null
+2012/10/10 13:17:15.433 -0700 INFO [JobManager] [] Deployed job multipleCommands to path 
+2012/10/10 13:17:15.446 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING EVENTTRIGGER : false
+2012/10/10 13:17:15.446 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING ID : multipleCommands
+2012/10/10 13:17:15.446 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING TOPIC : null
+2012/10/10 13:17:15.447 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING EVENTTRIGGER : false
+2012/10/10 13:17:15.447 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING ID : multipleCommands
+2012/10/10 13:17:15.447 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING TOPIC : null
+2012/10/10 13:17:18.157 -0700 INFO [JobExecutorManager] [] Executing job 'multipleCommands' now
+2012/10/10 13:17:18.157 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING EVENTTRIGGER : false
+2012/10/10 13:17:18.157 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING ID : multipleCommands
+2012/10/10 13:17:18.158 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING TOPIC : null
+2012/10/10 13:17:18.159 -0700 INFO [JobExecutorManager] [] Starting run of multipleCommands
+2012/10/10 13:17:18.569 -0700 INFO [Props] [] Return props for job[multipleCommands]
+2012/10/10 13:17:18.634 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses
+2012/10/10 13:17:43.774 -0700 INFO [JobManager] [] Deployed job runGameTrigger to path 
+2012/10/10 13:17:49.609 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING EVENTTRIGGER : false
+2012/10/10 13:17:49.609 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING ID : multipleCommands
+2012/10/10 13:17:49.609 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING TOPIC : null
+2012/10/10 13:17:49.610 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING EVENTTRIGGER : false
+2012/10/10 13:17:49.610 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING ID : multipleCommands
+2012/10/10 13:17:49.610 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING TOPIC : null
+2012/10/10 13:17:49.610 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING EVENTTRIGGER : false
+2012/10/10 13:17:49.610 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING ID : multipleCommands
+2012/10/10 13:17:49.611 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING TOPIC : null
+2012/10/10 13:18:13.682 -0700 INFO [AzkabanApp] [] Shutting down http server...
+2012/10/10 13:18:13.742 -0700 INFO [AzkabanApp] [] Shutting down producer...
+2012/10/10 13:18:13.749 -0700 INFO [AzkabanApp] [] kk thx bye.
+2012/10/10 13:18:32.434 -0700 INFO [AzkabanApp] [] Job log directory set to /var/folders/5n/f984qm_d1jz9jtxz4p3cszg40000gn/T
+2012/10/10 13:18:32.435 -0700 INFO [AzkabanApp] [] Job directories set to [azkaban-jobs]
+2012/10/10 13:18:32.441 -0700 INFO [AzkabanApplication] [] HADOOP_HOME not set, using default hadoop config.
+2012/10/10 13:18:32.739 -0700 INFO [AzkabanApplication] [] Schedule file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/10 13:18:32.739 -0700 INFO [AzkabanApplication] [] Schedule backup file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule.backup
+2012/10/10 13:18:32.741 -0700 INFO [AzkabanApplication] [] Using path[/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/executions] for storing executions.
+2012/10/10 13:18:32.741 -0700 INFO [AzkabanApplication] [] Last known execution id was [92]
+2012/10/10 13:18:32.853 -0700 INFO [AzkabanApp] [] Server running on port 8081.
+2012/10/10 13:19:34.392 -0700 INFO [ScheduleManager] [] Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-10T13:19:44.141-07:00, period=PT10S, jobName='runGameTrigger'} to schedule.
+2012/10/10 13:20:04.142 -0700 INFO [ScheduleManager] [] CONSUMING : {"key":"value"}
+2012/10/10 13:20:14.142 -0700 INFO [ScheduleManager] [] CONSUMING : {"key2":"value2"}
+2012/10/10 13:20:34.142 -0700 INFO [ScheduleManager] [] CONSUMING : {"status":"game_done"}
+2012/10/10 13:20:34.142 -0700 INFO [ScheduleManager] [] Scheduler attempting to run runGameTrigger
+2012/10/10 13:20:34.145 -0700 INFO [JobExecutorManager] [] Executing job 'runGameTrigger' now
+2012/10/10 13:20:34.146 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING EVENTTRIGGER : true
+2012/10/10 13:20:34.146 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING ID : runGameTrigger
+2012/10/10 13:20:34.146 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING TOPIC : test
+2012/10/10 13:20:34.147 -0700 INFO [JobExecutorManager] [] Starting run of runGameTrigger
+2012/10/10 13:20:34.549 -0700 INFO [Props] [] Return props for job[runGameTrigger]
+2012/10/10 13:20:34.615 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses
+2012/10/10 13:20:34.616 -0700 INFO [JobExecutorManager] [] Publishing to Kafka : {"runGameTrigger_status":"Success"}
+2012/10/10 13:20:44.141 -0700 INFO [ScheduleManager] [] CONSUMING : {"runGameTrigger_status":"Success"}
+2012/10/10 13:21:04.142 -0700 INFO [ScheduleManager] [] CONSUMING : {"key3":"value3"}
+2012/10/10 13:21:14.142 -0700 INFO [ScheduleManager] [] CONSUMING : {"status":"game_done"}
+2012/10/10 13:21:14.142 -0700 INFO [ScheduleManager] [] Scheduler attempting to run runGameTrigger
+2012/10/10 13:21:14.143 -0700 INFO [JobExecutorManager] [] Executing job 'runGameTrigger' now
+2012/10/10 13:21:14.143 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING EVENTTRIGGER : true
+2012/10/10 13:21:14.143 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING ID : runGameTrigger
+2012/10/10 13:21:14.143 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING TOPIC : test
+2012/10/10 13:21:14.143 -0700 INFO [JobExecutorManager] [] Starting run of runGameTrigger
+2012/10/10 13:21:14.536 -0700 INFO [Props] [] Return props for job[runGameTrigger]
+2012/10/10 13:21:14.538 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses
+2012/10/10 13:21:14.539 -0700 INFO [JobExecutorManager] [] Publishing to Kafka : {"runGameTrigger_status":"Success"}
+2012/10/10 13:21:21.045 -0700 INFO [AzkabanApp] [] Shutting down http server...
+2012/10/10 13:21:21.109 -0700 INFO [AzkabanApp] [] Shutting down producer...
+2012/10/10 13:21:21.113 -0700 INFO [AzkabanApp] [] kk thx bye.
+2012/10/10 13:27:27.304 -0700 INFO [AzkabanApp] [] Job log directory set to /var/folders/5n/f984qm_d1jz9jtxz4p3cszg40000gn/T
+2012/10/10 13:27:27.305 -0700 INFO [AzkabanApp] [] Job directories set to [azkaban-jobs]
+2012/10/10 13:27:27.311 -0700 INFO [AzkabanApplication] [] HADOOP_HOME not set, using default hadoop config.
+2012/10/10 13:27:27.610 -0700 INFO [AzkabanApplication] [] Schedule file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/10 13:27:27.610 -0700 INFO [AzkabanApplication] [] Schedule backup file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule.backup
+2012/10/10 13:27:27.612 -0700 INFO [AzkabanApplication] [] Using path[/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/executions] for storing executions.
+2012/10/10 13:27:27.613 -0700 INFO [AzkabanApplication] [] Last known execution id was [94]
+2012/10/10 13:27:27.719 -0700 INFO [ScheduleManager] [] Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-10T13:27:34.141-07:00, period=PT10S, jobName='runGameTrigger'} to schedule.
+2012/10/10 13:27:27.792 -0700 INFO [AzkabanApp] [] Server running on port 8081.
+2012/10/10 13:27:34.142 -0700 INFO [ScheduleManager] [] Scheduler attempting to run runGameTrigger
+2012/10/10 13:27:34.143 -0700 INFO [JobExecutorManager] [] Executing job 'runGameTrigger' now
+2012/10/10 13:27:34.144 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING EVENTTRIGGER : false
+2012/10/10 13:27:34.144 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING ID : runGameTrigger
+2012/10/10 13:27:34.144 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING TOPIC : null
+2012/10/10 13:27:34.145 -0700 INFO [JobExecutorManager] [] Starting run of runGameTrigger
+2012/10/10 13:27:34.548 -0700 INFO [Props] [] Return props for job[runGameTrigger]
+2012/10/10 13:27:34.614 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses
+2012/10/10 13:27:44.142 -0700 INFO [ScheduleManager] [] Scheduler attempting to run runGameTrigger
+2012/10/10 13:27:44.142 -0700 INFO [JobExecutorManager] [] Executing job 'runGameTrigger' now
+2012/10/10 13:27:44.142 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING EVENTTRIGGER : false
+2012/10/10 13:27:44.142 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING ID : runGameTrigger
+2012/10/10 13:27:44.143 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING TOPIC : null
+2012/10/10 13:27:44.143 -0700 INFO [JobExecutorManager] [] Starting run of runGameTrigger
+2012/10/10 13:27:44.540 -0700 INFO [Props] [] Return props for job[runGameTrigger]
+2012/10/10 13:27:44.543 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses
+2012/10/10 13:27:54.143 -0700 INFO [ScheduleManager] [] Scheduler attempting to run runGameTrigger
+2012/10/10 13:27:54.143 -0700 INFO [JobExecutorManager] [] Executing job 'runGameTrigger' now
+2012/10/10 13:27:54.143 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING EVENTTRIGGER : false
+2012/10/10 13:27:54.143 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING ID : runGameTrigger
+2012/10/10 13:27:54.144 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING TOPIC : null
+2012/10/10 13:27:54.144 -0700 INFO [JobExecutorManager] [] Starting run of runGameTrigger
+2012/10/10 13:27:54.545 -0700 INFO [Props] [] Return props for job[runGameTrigger]
+2012/10/10 13:27:54.547 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses
+2012/10/10 13:28:04.142 -0700 INFO [ScheduleManager] [] Scheduler attempting to run runGameTrigger
+2012/10/10 13:28:04.142 -0700 INFO [JobExecutorManager] [] Executing job 'runGameTrigger' now
+2012/10/10 13:28:04.142 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING EVENTTRIGGER : false
+2012/10/10 13:28:04.142 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING ID : runGameTrigger
+2012/10/10 13:28:04.142 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING TOPIC : null
+2012/10/10 13:28:04.143 -0700 INFO [JobExecutorManager] [] Starting run of runGameTrigger
+2012/10/10 13:28:04.543 -0700 INFO [Props] [] Return props for job[runGameTrigger]
+2012/10/10 13:28:04.545 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses
+2012/10/10 13:28:09.077 -0700 INFO [ScheduleManager] [] Removing ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-10T13:28:14.141-07:00, period=PT10S, jobName='runGameTrigger'} from the schedule.
+2012/10/10 13:39:18.778 -0700 INFO [AzkabanApp] [] Shutting down http server...
+2012/10/10 13:39:18.832 -0700 INFO [AzkabanApp] [] Shutting down producer...
+2012/10/10 13:39:18.838 -0700 INFO [AzkabanApp] [] kk thx bye.
+2012/10/10 13:39:21.891 -0700 INFO [AzkabanApp] [] Job log directory set to /var/folders/5n/f984qm_d1jz9jtxz4p3cszg40000gn/T
+2012/10/10 13:39:21.892 -0700 INFO [AzkabanApp] [] Job directories set to [azkaban-jobs]
+2012/10/10 13:39:21.898 -0700 INFO [AzkabanApplication] [] HADOOP_HOME not set, using default hadoop config.
+2012/10/10 13:39:22.197 -0700 INFO [AzkabanApplication] [] Schedule file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/10 13:39:22.198 -0700 INFO [AzkabanApplication] [] Schedule backup file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule.backup
+2012/10/10 13:39:22.200 -0700 INFO [AzkabanApplication] [] Using path[/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/executions] for storing executions.
+2012/10/10 13:39:22.200 -0700 INFO [AzkabanApplication] [] Last known execution id was [99]
+2012/10/10 13:39:22.311 -0700 INFO [AzkabanApp] [] Server running on port 8081.
+2012/10/10 13:39:24.226 -0700 INFO [AzkabanApp] [] Shutting down http server...
+2012/10/10 13:39:24.262 -0700 INFO [AzkabanApp] [] Shutting down producer...
+2012/10/10 13:39:24.264 -0700 INFO [AzkabanApp] [] kk thx bye.

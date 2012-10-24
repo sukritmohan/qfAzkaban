@@ -1,0 +1,376 @@
+Buildfile: build.xml
+
+clean:
+     [echo] Deleting generated files in azkaban-common
+
+clean_unit:
+     [echo] TODO: add unit tests for this package!
+
+clean:
+   [delete] Deleting directory /Users/rpark/github/azkaban/dist/azkaban-common
+     [echo] Deleting generated files in azkaban
+Trying to override old definition of datatype resources
+
+clean_unit:
+   [delete] Deleting directory /Users/rpark/github/azkaban/dist/azkaban/unit_classes
+   [delete] Deleting directory /Users/rpark/github/azkaban/dist/azkaban/unit_report
+   [delete] Deleting directory /Users/rpark/github/azkaban/dist/azkaban/unit_html
+   [delete] Deleting: /Users/rpark/github/azkaban/dist/azkaban/jars/azkaban-0.06-unit.jar
+
+clean:
+   [delete] Deleting directory /Users/rpark/github/azkaban/dist/azkaban
+
+jars:
+     [echo] building azkaban-common.jar
+
+build:
+    [mkdir] Created dir: /Users/rpark/github/azkaban/dist/azkaban-common/classes
+     [copy] Copied 5 empty directories to 3 empty directories under /Users/rpark/github/azkaban/dist/azkaban-common/classes
+    [javac] Compiling 19 source files to /Users/rpark/github/azkaban/dist/azkaban-common/classes
+
+jars:
+    [mkdir] Created dir: /Users/rpark/github/azkaban/dist/azkaban-common/jars
+      [jar] Building jar: /Users/rpark/github/azkaban/dist/azkaban-common/jars/azkaban-common-0.06.jar
+     [echo] building azkaban.jar
+Trying to override old definition of datatype resources
+
+build:
+    [mkdir] Created dir: /Users/rpark/github/azkaban/dist/azkaban/classes
+     [copy] Copying 8 files to /Users/rpark/github/azkaban/dist/azkaban/classes
+     [copy] Copied 21 empty directories to 14 empty directories under /Users/rpark/github/azkaban/dist/azkaban/classes
+    [mkdir] Created dir: /Users/rpark/github/azkaban/dist/azkaban/web/static
+     [copy] Copying 113 files to /Users/rpark/github/azkaban/dist/azkaban/web/static
+    [javac] Compiling 105 source files to /Users/rpark/github/azkaban/dist/azkaban/classes
+    [javac] Note: Some input files use unchecked or unsafe operations.
+    [javac] Note: Recompile with -Xlint:unchecked for details.
+
+jars:
+    [mkdir] Created dir: /Users/rpark/github/azkaban/dist/azkaban/jars
+      [jar] Building jar: /Users/rpark/github/azkaban/dist/azkaban/jars/azkaban-0.06.jar
+
+unit:
+     [echo] building and running unit tests
+
+unit:
+     [echo] TODO: add unit tests for this package!
+Trying to override old definition of datatype resources
+
+build:
+   [delete] Deleting directory /Users/rpark/github/azkaban/dist/azkaban/classes
+    [mkdir] Created dir: /Users/rpark/github/azkaban/dist/azkaban/classes
+     [copy] Copying 8 files to /Users/rpark/github/azkaban/dist/azkaban/classes
+     [copy] Copied 21 empty directories to 14 empty directories under /Users/rpark/github/azkaban/dist/azkaban/classes
+   [delete] Deleting directory /Users/rpark/github/azkaban/dist/azkaban/web/static
+    [mkdir] Created dir: /Users/rpark/github/azkaban/dist/azkaban/web/static
+     [copy] Copying 113 files to /Users/rpark/github/azkaban/dist/azkaban/web/static
+    [javac] Compiling 105 source files to /Users/rpark/github/azkaban/dist/azkaban/classes
+    [javac] Note: Some input files use unchecked or unsafe operations.
+    [javac] Note: Recompile with -Xlint:unchecked for details.
+
+jars:
+      [jar] Building jar: /Users/rpark/github/azkaban/dist/azkaban/jars/azkaban-0.06.jar
+
+clean_unit:
+
+build_unit:
+    [mkdir] Created dir: /Users/rpark/github/azkaban/dist/azkaban/unit_classes
+    [javac] Compiling 17 source files to /Users/rpark/github/azkaban/dist/azkaban/unit_classes
+      [jar] Building jar: /Users/rpark/github/azkaban/dist/azkaban/jars/azkaban-0.06-unit.jar
+
+unit:
+    [mkdir] Created dir: /Users/rpark/github/azkaban/dist/azkaban/unit_report
+    [mkdir] Created dir: /Users/rpark/github/azkaban/dist/azkaban/unit_html
+    [junit] Running azkaban.flow.ComposedExecutableFlowTest
+    [junit] Tests run: 15, Failures: 0, Errors: 0, Time elapsed: 0.441 sec
+    [junit] Running azkaban.flow.GroupedExecutableFlowTest
+    [junit] 11/01/07 20:37:15 INFO utils.Props: Output properties for 1 + 2
+    [junit] 11/01/07 20:37:15 INFO utils.Props:   key=3 value=2
+    [junit] 11/01/07 20:37:15 INFO utils.Props:   key=2 value=2
+    [junit] 11/01/07 20:37:15 INFO utils.Props:   key=1 value=1
+    [junit] 11/01/07 20:37:16 INFO utils.Props: Output properties for 1 + 2
+    [junit] 11/01/07 20:37:16 INFO utils.Props: Output properties for blah + blah
+    [junit] 11/01/07 20:37:16 INFO utils.Props: Output properties for blah + blah
+    [junit] 11/01/07 20:37:16 INFO utils.Props: Output properties for 1 + 2
+    [junit] 11/01/07 20:37:16 INFO utils.Props: Output properties for 1 + 2
+    [junit] 11/01/07 20:37:16 INFO utils.Props: Output properties for 1 + 2
+    [junit] 11/01/07 20:37:16 INFO utils.Props: Output properties for 1 + 2
+    [junit] 11/01/07 20:37:16 INFO utils.Props: Output properties for 1 + 2
+    [junit] Tests run: 20, Failures: 0, Errors: 0, Time elapsed: 0.499 sec
+    [junit] Running azkaban.flow.IndividualJobExecutableFlowTest
+    [junit] 11/01/07 20:37:17 INFO utils.Props: Return props for job[blah]
+    [junit] Exception in thread "blah thread-1" java.lang.RuntimeException: java.lang.RuntimeException
+    [junit] 	at azkaban.flow.IndividualJobExecutableFlow$1.run(IndividualJobExecutableFlow.java:182)
+    [junit] 	at java.lang.Thread.run(Thread.java:680)
+    [junit] Caused by: java.lang.RuntimeException
+    [junit] 	at azkaban.flow.IndividualJobExecutableFlowTest.init(IndividualJobExecutableFlowTest.java:40)
+    [junit] 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    [junit] 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+    [junit] 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+    [junit] 	at java.lang.reflect.Method.invoke(Method.java:597)
+    [junit] 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
+    [junit] 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+    [junit] 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
+    [junit] 	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:27)
+    [junit] 	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+    [junit] 	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:39)
+    [junit] 	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:421)
+    [junit] 	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:912)
+    [junit] 	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:766)
+    [junit] 11/01/07 20:37:17 INFO utils.Props: Return props for job[blah]
+    [junit] Exception in thread "blah thread-3" java.lang.RuntimeException: java.lang.RuntimeException
+    [junit] 	at azkaban.flow.IndividualJobExecutableFlow$1.run(IndividualJobExecutableFlow.java:182)
+    [junit] 	at java.lang.Thread.run(Thread.java:680)
+    [junit] Caused by: java.lang.RuntimeException
+    [junit] 	at org.easymock.internal.MockInvocationHandler.invoke(MockInvocationHandler.java:45)
+    [junit] 	at org.easymock.internal.ObjectMethodsFilter.invoke(ObjectMethodsFilter.java:72)
+    [junit] 	at $Proxy7.run(Unknown Source)
+    [junit] 	at azkaban.flow.IndividualJobExecutableFlow$1.run(IndividualJobExecutableFlow.java:171)
+    [junit] 	... 1 more
+    [junit] 11/01/07 20:37:17 INFO utils.Props: Return props for job[blah]
+    [junit] 11/01/07 20:37:17 INFO utils.Props: Return props for job[blah]
+    [junit] 11/01/07 20:37:17 INFO utils.Props: Return props for job[blah]
+    [junit] 11/01/07 20:37:17 INFO utils.Props: Return props for job[blah]
+    [junit] Tests run: 8, Failures: 0, Errors: 0, Time elapsed: 0.414 sec
+    [junit] Running azkaban.flow.MultipleDependencyExecutableFlowTest
+    [junit] 11/01/07 20:37:18 INFO utils.Props: Output properties for 1
+    [junit] 11/01/07 20:37:18 INFO utils.Props: Output properties for 1
+    [junit] 11/01/07 20:37:18 INFO utils.Props: Output properties for 1
+    [junit] Tests run: 5, Failures: 0, Errors: 0, Time elapsed: 0.441 sec
+    [junit] Running azkaban.jobs.builtin.JavaJobTest
+    [junit] 11/01/07 20:37:18 INFO java: Using hadoop config found in /Users/rpark/Documents/azkaban/batch/common/hadoop-conf/dev
+    [junit] 11/01/07 20:37:18 INFO java: 1 commands to execute.
+    [junit] cwd=.
+    [junit] 11/01/07 20:37:18 INFO java: Executing command: java  -Xms64M -Xmx256M -cp /Users/rpark/github/azkaban/lib/avro-1.3.3.jar:/Users/rpark/github/azkaban/lib/catalina-ant.jar:/Users/rpark/github/azkaban/lib/cglib-nodep-2.2.jar:/Users/rpark/github/azkaban/lib/commons-cli-2.0-SNAPSHOT.jar:/Users/rpark/github/azkaban/lib/commons-codec-1.4.jar:/Users/rpark/github/azkaban/lib/commons-collections-3.1.jar:/Users/rpark/github/azkaban/lib/commons-fileupload-1.2.1.jar:/Users/rpark/github/azkaban/lib/commons-httpclient-3.1.jar:/Users/rpark/github/azkaban/lib/commons-io-1.4.jar:/Users/rpark/github/azkaban/lib/commons-lang-2.4.jar:/Users/rpark/github/azkaban/lib/commons-logging-1.1.1.jar:/Users/rpark/github/azkaban/lib/commons-pool-1.4.jar:/Users/rpark/github/azkaban/lib/easymock-2.5.2.jar:/Users/rpark/github/azkaban/lib/easymockclassextension-2.5.2.jar:/Users/rpark/github/azkaban/lib/google-collect-1.0-rc2.jar:/Users/rpark/github/azkaban/lib/hadoop-0.20.2-core.jar:/Users/rpark/github/azkaban/lib/jackson-core-asl-1.5.5.jar:/Users/rpark/github/azkaban/lib/jackson-mapper-asl-1.5.5.jar:/Users/rpark/github/azkaban/lib/jdom-1.1.jar:/Users/rpark/github/azkaban/lib/jetty-5.1.4.jar:/Users/rpark/github/azkaban/lib/joda-time-1.6.jar:/Users/rpark/github/azkaban/lib/jopt-simple-3.2.jar:/Users/rpark/github/azkaban/lib/json_simple-1.1.jar:/Users/rpark/github/azkaban/lib/junit-4.8.1.jar:/Users/rpark/github/azkaban/lib/log4j-1.2.15.jar:/Users/rpark/github/azkaban/lib/mail-1.4.1.jar:/Users/rpark/github/azkaban/lib/objenesis-1.2.jar:/Users/rpark/github/azkaban/lib/org-json-2010-02-26.jar:/Users/rpark/github/azkaban/lib/servlet-api-2.5.jar:/Users/rpark/github/azkaban/lib/slf4j-api-1.5.6.jar:/Users/rpark/github/azkaban/lib/slf4j-log4j12-1.5.6.jar:/Users/rpark/github/azkaban/lib/velocity-1.6.3.jar:/Users/rpark/github/azkaban/lib/voldemort-0.70.1.jar:/Users/rpark/github/azkaban/lib/voldemort-contrib-0.70.1.jar:/Users/rpark/github/azkaban/dist/azkaban-common/jars/azkaban-common-0.06.jar:/Users/rpark/github/azkaban/dist/azkaban/classes:/Users/rpark/github/azkaban/dist/azkaban/jars/azkaban-0.06-unit.jar:/Users/rpark/instantclient10/jdbc/lib/classes12.jar:/local/apache-ant-1.7.0/lib/ant-launcher.jar:/local/ant/lib/ant.jar:/local/ant/lib/ant-junit.jar:/Users/rpark/github/azkaban/dist/azkaban/classes/:/Users/rpark/github/azkaban/lib/log4j-1.2.15.jar:/Users/rpark/Documents/azkaban/batch/common/hadoop-conf/dev/conf azkaban.jobs.builtin.JavaJobRunnerMain 
+    [junit] 11/01/07 20:37:18 INFO java: Spawned thread with processId 34194
+    [junit] 11/01/07 20:37:19 INFO java:  Running job java
+    [junit] 11/01/07 20:37:19 INFO java:  Class name azkaban.test.WordCountLocal
+    [junit] 11/01/07 20:37:19 ERROR java: Exception in thread "main" java.lang.ClassNotFoundException: azkaban.test.WordCountLocal
+    [junit] 11/01/07 20:37:19 ERROR java: 	at java.net.URLClassLoader$1.run(URLClassLoader.java:202)
+    [junit] 11/01/07 20:37:19 ERROR java: 	at java.security.AccessController.doPrivileged(Native Method)
+    [junit] 11/01/07 20:37:19 ERROR java: 	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+    [junit] 11/01/07 20:37:19 ERROR java: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:307)
+    [junit] 11/01/07 20:37:19 ERROR java: 	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+    [junit] 11/01/07 20:37:19 ERROR java: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:248)
+    [junit] 11/01/07 20:37:19 ERROR java: 	at azkaban.jobs.builtin.JavaJobRunnerMain.getObject(JavaJobRunnerMain.java:201)
+    [junit] 11/01/07 20:37:19 ERROR java: 	at azkaban.jobs.builtin.JavaJobRunnerMain.<init>(JavaJobRunnerMain.java:92)
+    [junit] 11/01/07 20:37:19 ERROR java: 	at azkaban.jobs.builtin.JavaJobRunnerMain.main(JavaJobRunnerMain.java:60)
+    [junit] 11/01/07 20:37:19 INFO java: Using hadoop config found in /Users/rpark/Documents/azkaban/batch/common/hadoop-conf/dev
+    [junit] 11/01/07 20:37:19 INFO java: 1 commands to execute.
+    [junit] cwd=.
+    [junit] 11/01/07 20:37:19 INFO java: Executing command: java  -Xms64M -Xmx256M -cp /Users/rpark/github/azkaban/lib/avro-1.3.3.jar:/Users/rpark/github/azkaban/lib/catalina-ant.jar:/Users/rpark/github/azkaban/lib/cglib-nodep-2.2.jar:/Users/rpark/github/azkaban/lib/commons-cli-2.0-SNAPSHOT.jar:/Users/rpark/github/azkaban/lib/commons-codec-1.4.jar:/Users/rpark/github/azkaban/lib/commons-collections-3.1.jar:/Users/rpark/github/azkaban/lib/commons-fileupload-1.2.1.jar:/Users/rpark/github/azkaban/lib/commons-httpclient-3.1.jar:/Users/rpark/github/azkaban/lib/commons-io-1.4.jar:/Users/rpark/github/azkaban/lib/commons-lang-2.4.jar:/Users/rpark/github/azkaban/lib/commons-logging-1.1.1.jar:/Users/rpark/github/azkaban/lib/commons-pool-1.4.jar:/Users/rpark/github/azkaban/lib/easymock-2.5.2.jar:/Users/rpark/github/azkaban/lib/easymockclassextension-2.5.2.jar:/Users/rpark/github/azkaban/lib/google-collect-1.0-rc2.jar:/Users/rpark/github/azkaban/lib/hadoop-0.20.2-core.jar:/Users/rpark/github/azkaban/lib/jackson-core-asl-1.5.5.jar:/Users/rpark/github/azkaban/lib/jackson-mapper-asl-1.5.5.jar:/Users/rpark/github/azkaban/lib/jdom-1.1.jar:/Users/rpark/github/azkaban/lib/jetty-5.1.4.jar:/Users/rpark/github/azkaban/lib/joda-time-1.6.jar:/Users/rpark/github/azkaban/lib/jopt-simple-3.2.jar:/Users/rpark/github/azkaban/lib/json_simple-1.1.jar:/Users/rpark/github/azkaban/lib/junit-4.8.1.jar:/Users/rpark/github/azkaban/lib/log4j-1.2.15.jar:/Users/rpark/github/azkaban/lib/mail-1.4.1.jar:/Users/rpark/github/azkaban/lib/objenesis-1.2.jar:/Users/rpark/github/azkaban/lib/org-json-2010-02-26.jar:/Users/rpark/github/azkaban/lib/servlet-api-2.5.jar:/Users/rpark/github/azkaban/lib/slf4j-api-1.5.6.jar:/Users/rpark/github/azkaban/lib/slf4j-log4j12-1.5.6.jar:/Users/rpark/github/azkaban/lib/velocity-1.6.3.jar:/Users/rpark/github/azkaban/lib/voldemort-0.70.1.jar:/Users/rpark/github/azkaban/lib/voldemort-contrib-0.70.1.jar:/Users/rpark/github/azkaban/dist/azkaban-common/jars/azkaban-common-0.06.jar:/Users/rpark/github/azkaban/dist/azkaban/classes:/Users/rpark/github/azkaban/dist/azkaban/jars/azkaban-0.06-unit.jar:/Users/rpark/instantclient10/jdbc/lib/classes12.jar:/local/apache-ant-1.7.0/lib/ant-launcher.jar:/local/ant/lib/ant.jar:/local/ant/lib/ant-junit.jar:/Users/rpark/github/azkaban/dist/azkaban/classes/:/Users/rpark/github/azkaban/lib/log4j-1.2.15.jar:/Users/rpark/Documents/azkaban/batch/common/hadoop-conf/dev/conf azkaban.jobs.builtin.JavaJobRunnerMain 
+    [junit] 11/01/07 20:37:19 INFO java: Spawned thread with processId 34195
+    [junit] 11/01/07 20:37:19 INFO java:  Running job java
+    [junit] 11/01/07 20:37:19 INFO java:  Class name azkaban.test.WordCountLocal
+    [junit] 11/01/07 20:37:19 ERROR java: Exception in thread "main" java.lang.ClassNotFoundException: azkaban.test.WordCountLocal
+    [junit] 11/01/07 20:37:19 ERROR java: 	at java.net.URLClassLoader$1.run(URLClassLoader.java:202)
+    [junit] 11/01/07 20:37:19 ERROR java: 	at java.security.AccessController.doPrivileged(Native Method)
+    [junit] 11/01/07 20:37:19 ERROR java: 	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+    [junit] 11/01/07 20:37:19 ERROR java: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:307)
+    [junit] 11/01/07 20:37:19 ERROR java: 	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+    [junit] 11/01/07 20:37:19 ERROR java: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:248)
+    [junit] 11/01/07 20:37:19 ERROR java: 	at azkaban.jobs.builtin.JavaJobRunnerMain.getObject(JavaJobRunnerMain.java:201)
+    [junit] 11/01/07 20:37:19 ERROR java: 	at azkaban.jobs.builtin.JavaJobRunnerMain.<init>(JavaJobRunnerMain.java:92)
+    [junit] 11/01/07 20:37:19 ERROR java: 	at azkaban.jobs.builtin.JavaJobRunnerMain.main(JavaJobRunnerMain.java:60)
+    [junit] Tests run: 2, Failures: 0, Errors: 1, Time elapsed: 1.198 sec
+    [junit] Running azkaban.jobs.builtin.ProcessJobTest
+    [junit] 11/01/07 20:37:20 INFO process: 1 commands to execute.
+    [junit] cwd=.
+    [junit] 11/01/07 20:37:20 INFO process: Executing command: ls -al
+    [junit] 11/01/07 20:37:20 INFO process: Spawned thread with processId 34197
+    [junit] 11/01/07 20:37:20 INFO process: total 160
+    [junit] 11/01/07 20:37:20 INFO process: drwxr-xr-x  27 rpark  502    918 Jan  7 20:37 .
+    [junit] 11/01/07 20:37:20 INFO process: drwxr-xr-x   8 rpark  502    272 Dec  1 15:24 ..
+    [junit] 11/01/07 20:37:20 INFO process: -rw-r--r--@  1 rpark  502   6148 Nov 18 18:32 .DS_Store
+    [junit] 11/01/07 20:37:20 INFO process: -rw-r--r--   1 rpark  502   2436 Jan  7 15:00 .classpath
+    [junit] 11/01/07 20:37:20 INFO process: drwxr-xr-x  15 rpark  502    510 Jan  7 20:11 .git
+    [junit] 11/01/07 20:37:20 INFO process: -rw-r--r--   1 rpark  502     48 Oct 25 08:34 .gitignore
+    [junit] 11/01/07 20:37:20 INFO process: -rw-r--r--   1 rpark  502    366 Mar  5  2010 .project
+    [junit] 11/01/07 20:37:20 INFO process: -rw-r--r--   1 rpark  502  11358 Mar 25  2010 LICENSE
+    [junit] 11/01/07 20:37:20 INFO process: -rw-r--r--   1 rpark  502   4479 Nov 18 12:40 NOTICE
+    [junit] 11/01/07 20:37:20 INFO process: -rw-r--r--   1 rpark  502   2669 Mar 25  2010 README.md
+    [junit] 11/01/07 20:37:20 INFO process: drwxr-xr-x   9 rpark  502    306 Jan  7 20:37 azkaban
+    [junit] 11/01/07 20:37:20 INFO process: drwxr-xr-x   4 rpark  502    136 Sep  8 14:57 azkaban-common
+    [junit] 11/01/07 20:37:20 INFO process: drwxr-xr-x   4 rpark  502    136 Nov 18 13:31 bin
+    [junit] 11/01/07 20:37:20 INFO process: -rw-r--r--   1 rpark  502    640 Jan  6 11:49 build.properties
+    [junit] 11/01/07 20:37:20 INFO process: -rw-r--r--   1 rpark  502   4978 Oct 25 08:34 build.xml
+    [junit] 11/01/07 20:37:20 INFO process: drwxr-xr-x   3 rpark  502    102 Oct 25 08:34 contrib
+    [junit] 11/01/07 20:37:20 INFO process: drwxr-xr-x   5 rpark  502    170 Jan  7 20:37 dist
+    [junit] 11/01/07 20:37:20 INFO process: drwxr-xr-x   5 rpark  502    170 Mar 29  2010 eclipse-config
+    [junit] 11/01/07 20:37:20 INFO process: drwxr-xr-x   4 rpark  502    136 Nov 18 17:02 examples
+    [junit] 11/01/07 20:37:20 INFO process: drwxr-xr-x   7 rpark  502    238 Jan  7 14:57 jobs
+    [junit] 11/01/07 20:37:20 INFO process: drwxr-xr-x  37 rpark  502   1258 Nov 18 17:10 lib
+    [junit] 11/01/07 20:37:20 INFO process: -rw-r--r--   1 rpark  502     59 Jan  7 20:37 process_7669394983327409179_tmp
+    [junit] 11/01/07 20:37:20 INFO process: -rw-r--r--   1 rpark  502      0 Jan  7 20:37 process_output_1332949798331030988_tmp
+    [junit] 11/01/07 20:37:20 INFO process: -rw-r--r--   1 rpark  502  16532 Jan  7 20:37 results.txt
+    [junit] 11/01/07 20:37:20 INFO process: drwxr-xr-x   2 rpark  502     68 Nov  9 18:11 temp
+    [junit] 11/01/07 20:37:20 INFO process: drwxr-xr-x  13 rpark  502    442 Jan  7 20:12 test
+    [junit] 11/01/07 20:37:20 INFO process: drwxr-xr-x   5 rpark  502    170 Sep  7 17:49 test-job-set
+    [junit] output properties file=/Users/rpark/github/azkaban/./process_output_1332949798331030988_tmp
+    [junit] 11/01/07 20:37:20 INFO process: 1 commands to execute.
+    [junit] cwd=.
+    [junit] 11/01/07 20:37:20 INFO process: Executing command: xls -al
+    [junit] java.lang.RuntimeException: java.io.IOException: Cannot run program "xls" (in directory "."): error=2, No such file or directory
+    [junit] 	at azkaban.jobs.builtin.ProcessJob.run(ProcessJob.java:78)
+    [junit] 	at azkaban.jobs.builtin.ProcessJobTest.testFailedUnixCommand(ProcessJobTest.java:56)
+    [junit] 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    [junit] 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+    [junit] 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+    [junit] 	at java.lang.reflect.Method.invoke(Method.java:597)
+    [junit] 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
+    [junit] 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+    [junit] 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
+    [junit] 	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+    [junit] 	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+    [junit] 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:76)
+    [junit] 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+    [junit] 	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
+    [junit] 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
+    [junit] 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
+    [junit] 	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
+    [junit] 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
+    [junit] 	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+    [junit] 	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:39)
+    [junit] 	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:421)
+    [junit] 	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:912)
+    [junit] 	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:766)
+    [junit] Caused by: java.io.IOException: Cannot run program "xls" (in directory "."): error=2, No such file or directory
+    [junit] 	at java.lang.ProcessBuilder.start(ProcessBuilder.java:460)
+    [junit] 	at azkaban.jobs.builtin.ProcessJob.run(ProcessJob.java:75)
+    [junit] 	... 22 more
+    [junit] Caused by: java.io.IOException: error=2, No such file or directory
+    [junit] 	at java.lang.UNIXProcess.forkAndExec(Native Method)
+    [junit] 	at java.lang.UNIXProcess.<init>(UNIXProcess.java:53)
+    [junit] 	at java.lang.ProcessImpl.start(ProcessImpl.java:91)
+    [junit] 	at java.lang.ProcessBuilder.start(ProcessBuilder.java:453)
+    [junit] 	... 23 more
+    [junit] 11/01/07 20:37:20 INFO process: 3 commands to execute.
+    [junit] cwd=.
+    [junit] 11/01/07 20:37:20 INFO process: Executing command: pwd
+    [junit] 11/01/07 20:37:20 INFO process: Spawned thread with processId 34199
+    [junit] 11/01/07 20:37:20 INFO process: /Users/rpark/github/azkaban
+    [junit] 11/01/07 20:37:20 INFO process: Executing command: date
+    [junit] 11/01/07 20:37:20 INFO process: Spawned thread with processId 34200
+    [junit] 11/01/07 20:37:20 INFO process: Fri Jan  7 20:37:20 PST 2011
+    [junit] 11/01/07 20:37:20 INFO process: Executing command: whoami
+    [junit] 11/01/07 20:37:20 INFO process: Spawned thread with processId 34201
+    [junit] 11/01/07 20:37:20 INFO process: rpark
+    [junit] output properties file=/Users/rpark/github/azkaban/./process_output_3461024063648116682_tmp
+    [junit] Tests run: 3, Failures: 0, Errors: 0, Time elapsed: 0.44 sec
+    [junit] Running azkaban.jobs.builtin.PythonJobTest
+    [junit] 11/01/07 20:37:21 INFO script: Command: python /tmp/azkaban_python1294461441308.py --t 90 --working.dir .
+    [junit] 11/01/07 20:37:21 INFO script: Working directory: .
+    [junit] cwd=.
+    [junit] 11/01/07 20:37:21 INFO script: 90 F = 32C
+    [junit] 11/01/07 20:37:21 INFO script: Process completed successfully in 0 seconds.
+    [junit] output properties file=/Users/rpark/github/azkaban/./script_output_2457831703329775254_tmp
+    [junit] Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 0.402 sec
+    [junit] Running azkaban.scheduler.ScheduleManagerTest
+    [junit] 11/01/07 20:37:22 INFO scheduler.ScheduleManager: Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2011-01-07T20:37:27.324-08:00, period=PT30S, jobName='test1'} to schedule.
+    [junit] 11/01/07 20:37:22 INFO scheduler.ScheduleManager: Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2011-01-07T20:37:37.324-08:00, period=null, jobName='test2'} to schedule.
+    [junit] 11/01/07 20:37:22 INFO scheduler.ScheduleManager: Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2011-01-07T20:37:32.324-08:00, period=PT45S, jobName='test3'} to schedule.
+    [junit] 11/01/07 20:37:22 INFO scheduler.ScheduleManager: Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2011-01-07T20:37:33.324-08:00, period=PT12S, jobName='test5'} to schedule.
+    [junit] 11/01/07 20:37:22 INFO scheduler.ScheduleManager: Scheduling job 'test4' for 01-07-2011 20:37:24:324 with a period of 20 seconds
+    [junit] 11/01/07 20:37:22 INFO scheduler.ScheduleManager: Adding ScheduledJob{ignoreDependency=true, nextScheduledExecution=2011-01-07T20:37:24.324-08:00, period=PT20S, jobName='test4'} to schedule.
+    [junit] 11/01/07 20:37:22 INFO scheduler.ScheduleManager: Scheduling job 'test6' for 01-07-2011 20:37:57:324
+    [junit] 11/01/07 20:37:22 INFO scheduler.ScheduleManager: Adding ScheduledJob{ignoreDependency=true, nextScheduledExecution=2011-01-07T20:37:57.324-08:00, period=null, jobName='test6'} to schedule.
+    [junit] Tick Tock 0
+    [junit] 11/01/07 20:37:24 INFO scheduler.ScheduleManager: Scheduler attempting to run test4
+    [junit] Running test4 at time 2011-01-07T20:37:24.325-08:00
+    [junit] 11/01/07 20:37:27 INFO scheduler.ScheduleManager: Scheduler attempting to run test1
+    [junit] Running test1 at time 2011-01-07T20:37:27.324-08:00
+    [junit] Tick Tock 5000
+    [junit] 11/01/07 20:37:32 INFO scheduler.ScheduleManager: Scheduler attempting to run test3
+    [junit] Running test3 at time 2011-01-07T20:37:32.325-08:00
+    [junit] Tick Tock 10000
+    [junit] 11/01/07 20:37:33 INFO scheduler.ScheduleManager: Scheduler attempting to run test5
+    [junit] Running test5 at time 2011-01-07T20:37:33.325-08:00
+    [junit] 11/01/07 20:37:37 INFO scheduler.ScheduleManager: Scheduler attempting to run test2
+    [junit] Running test2 at time 2011-01-07T20:37:37.324-08:00
+    [junit] 11/01/07 20:37:37 INFO scheduler.ScheduleManager: Removing ScheduledJob{ignoreDependency=false, nextScheduledExecution=2011-01-07T20:37:37.324-08:00, period=null, jobName='test2'} from the schedule.
+    [junit] Tick Tock 15000
+    [junit] Tick Tock 20000
+    [junit] 11/01/07 20:37:44 INFO scheduler.ScheduleManager: Scheduler attempting to run test4
+    [junit] Running test4 at time 2011-01-07T20:37:44.324-08:00
+    [junit] 11/01/07 20:37:45 INFO scheduler.ScheduleManager: Scheduler attempting to run test5
+    [junit] Running test5 at time 2011-01-07T20:37:45.325-08:00
+    [junit] Tick Tock 25000
+    [junit] Tick Tock 30000
+    [junit] 11/01/07 20:37:57 INFO scheduler.ScheduleManager: Scheduler attempting to run test1
+    [junit] 11/01/07 20:37:57 INFO scheduler.ScheduleManager: Scheduler attempting to run test5
+    [junit] Running test1 at time 2011-01-07T20:37:57.325-08:00
+    [junit] Running test5 at time 2011-01-07T20:37:57.325-08:00
+    [junit] 11/01/07 20:37:57 INFO scheduler.ScheduleManager: Scheduler attempting to run test6
+    [junit] 11/01/07 20:37:57 INFO scheduler.ScheduleManager: Removing ScheduledJob{ignoreDependency=true, nextScheduledExecution=2011-01-07T20:37:57.324-08:00, period=null, jobName='test6'} from the schedule.
+    [junit] Running test6 at time 2011-01-07T20:37:57.325-08:00
+    [junit] Tick Tock 35000
+    [junit] Tick Tock 40000
+    [junit] 11/01/07 20:38:04 INFO scheduler.ScheduleManager: Scheduler attempting to run test4
+    [junit] Running test4 at time 2011-01-07T20:38:04.324-08:00
+    [junit] 11/01/07 20:38:07 ERROR scheduler.ScheduleManager: Shutting down scheduler thread
+    [junit] 11/01/07 20:38:07 INFO scheduler.ScheduleManager: Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2011-01-07T20:38:17.953-08:00, period=PT30S, jobName='test1'} to schedule.
+    [junit] 11/01/07 20:38:07 INFO scheduler.ScheduleManager: Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2011-01-07T20:38:22.953-08:00, period=null, jobName='test2'} to schedule.
+    [junit] 11/01/07 20:38:07 INFO scheduler.ScheduleManager: Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2011-01-07T20:38:27.953-08:00, period=PT45S, jobName='test3'} to schedule.
+    [junit] 11/01/07 20:38:07 INFO scheduler.ScheduleManager: Adding ScheduledJob{ignoreDependency=true, nextScheduledExecution=2011-01-07T20:38:12.953-08:00, period=PT20S, jobName='test4'} to schedule.
+    [junit] 11/01/07 20:38:07 INFO scheduler.ScheduleManager: Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2011-01-07T20:38:18.953-08:00, period=PT12S, jobName='test5'} to schedule.
+    [junit] 11/01/07 20:38:10 INFO scheduler.ScheduleManager: Removing ScheduledJob{ignoreDependency=true, nextScheduledExecution=2011-01-07T20:38:12.953-08:00, period=PT20S, jobName='test4'} from the schedule.
+    [junit] 11/01/07 20:38:10 INFO scheduler.ScheduleManager: Removing ScheduledJob{ignoreDependency=false, nextScheduledExecution=2011-01-07T20:38:18.953-08:00, period=PT12S, jobName='test5'} from the schedule.
+    [junit] 11/01/07 20:38:10 INFO scheduler.ScheduleManager: Scheduling job 'test5' for 01-07-2011 20:38:32:953 with a period of 12 seconds
+    [junit] 11/01/07 20:38:10 INFO scheduler.ScheduleManager: Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2011-01-07T20:38:32.953-08:00, period=PT12S, jobName='test5'} to schedule.
+    [junit] Tick Tock 0
+    [junit] Tick Tock 5000
+    [junit] 11/01/07 20:38:17 INFO scheduler.ScheduleManager: Scheduler attempting to run test1
+    [junit] Running test1 at time 2011-01-07T20:38:17.954-08:00
+    [junit] Tick Tock 10000
+    [junit] 11/01/07 20:38:22 INFO scheduler.ScheduleManager: Scheduler attempting to run test2
+    [junit] Running test2 at time 2011-01-07T20:38:22.954-08:00
+    [junit] 11/01/07 20:38:22 INFO scheduler.ScheduleManager: Removing ScheduledJob{ignoreDependency=false, nextScheduledExecution=2011-01-07T20:38:22.953-08:00, period=null, jobName='test2'} from the schedule.
+    [junit] Tick Tock 15000
+    [junit] 11/01/07 20:38:27 INFO scheduler.ScheduleManager: Scheduler attempting to run test3
+    [junit] Running test3 at time 2011-01-07T20:38:27.954-08:00
+    [junit] Tick Tock 20000
+    [junit] 11/01/07 20:38:32 INFO scheduler.ScheduleManager: Scheduler attempting to run test5
+    [junit] Running test5 at time 2011-01-07T20:38:32.953-08:00
+    [junit] Tick Tock 25000
+    [junit] 11/01/07 20:38:40 ERROR scheduler.ScheduleManager: Shutting down scheduler thread
+    [junit] Tests run: 2, Failures: 0, Errors: 0, Time elapsed: 78.8 sec
+    [junit] Running azkaban.utils.CircularBufferTest
+    [junit] Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 0.079 sec
+    [junit] Running azkaban.utils.UtilsTest
+    [junit] Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 0.173 sec
+    [junit] Running azkaban.utils.json.JSONUtilTest
+    [junit] {test=[1, 2, tree], test4=bye, test2={a=b}}
+    [junit] {"test":[1,2,"tree"],"test4":"bye","test2":{"a":"b"}}
+    [junit] Tests run: 3, Failures: 0, Errors: 0, Time elapsed: 0.082 sec
+    [junit] Running azkaban.utils.process.ProcessTest
+    [junit] 11/01/07 20:38:43 INFO process.AzkabanProcess: hello world
+    [junit] 11/01/07 20:38:43 ERROR process.AzkabanProcess: ls: alkdjfalsjdflkasdjf: No such file or directory
+    [junit] 11/01/07 20:38:43 ERROR process.AzkabanProcess: Error reading from logging stream:
+    [junit] java.io.IOException: Bad file descriptor
+    [junit] Tests run: 4, Failures: 0, Errors: 0, Time elapsed: 0.243 sec
+    [junit] 	at java.io.FileInputStream.readBytes(Native Method)
+    [junit] 	at java.io.FileInputStream.read(FileInputStream.java:199)
+    [junit] 	at java.lang.UNIXProcess$DeferredCloseInputStream.read(UNIXProcess.java:227)
+    [junit] 	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:264)
+    [junit] 	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:306)
+    [junit] 	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:158)
+    [junit] 	at java.io.InputStreamReader.read(InputStreamReader.java:167)
+    [junit] 	at java.io.BufferedReader.fill(BufferedReader.java:136)
+    [junit] 	at java.io.BufferedReader.readLine(BufferedReader.java:299)
+    [junit] 	at java.io.BufferedReader.readLine(BufferedReader.java:362)
+    [junit] 	at azkaban.util.process.AzkabanProcess$LogGobbler.run(AzkabanProcess.java:230)
+    [junit] 11/01/07 20:38:43 ERROR process.AzkabanProcess: Error reading from logging stream:
+    [junit] java.io.IOException: Stream closed
+    [junit] 	at java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:145)
+    [junit] 	at java.io.BufferedInputStream.read(BufferedInputStream.java:308)
+    [junit] 	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:264)
+    [junit] 	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:306)
+    [junit] 	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:158)
+    [junit] 	at java.io.InputStreamReader.read(InputStreamReader.java:167)
+    [junit] 	at java.io.BufferedReader.fill(BufferedReader.java:136)
+    [junit] 	at java.io.BufferedReader.readLine(BufferedReader.java:299)
+    [junit] 	at java.io.BufferedReader.readLine(BufferedReader.java:362)
+    [junit] 	at azkaban.util.process.AzkabanProcess$LogGobbler.run(AzkabanProcess.java:230)
+[junitreport] Processing /Users/rpark/github/azkaban/dist/azkaban/unit_html/TESTS-TestSuites.xml to /var/folders/a8/a8LrU3XZHcaY+sLolzWQnE+++TM/-Tmp-/null871507971
+[junitreport] Loading stylesheet jar:file:/local/ant/lib/ant-junit.jar!/org/apache/tools/ant/taskdefs/optional/junit/xsl/junit-frames.xsl
+[junitreport] Transform time: 1439ms
+[junitreport] Deleting: /var/folders/a8/a8LrU3XZHcaY+sLolzWQnE+++TM/-Tmp-/null871507971

@@ -1,0 +1,120 @@
+2012/10/09 11:13:12.280 -0700 INFO [AzkabanApp] [] Job log directory set to /var/folders/5n/f984qm_d1jz9jtxz4p3cszg40000gn/T
+2012/10/09 11:13:12.281 -0700 INFO [AzkabanApp] [] Job directories set to [azkaban-jobs]
+2012/10/09 11:13:12.287 -0700 INFO [AzkabanApplication] [] HADOOP_HOME not set, using default hadoop config.
+2012/10/09 11:13:12.354 -0700 INFO [AzkabanApplication] [] Schedule file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/09 11:13:12.354 -0700 INFO [AzkabanApplication] [] Schedule backup file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule.backup
+2012/10/09 11:13:12.357 -0700 INFO [AzkabanApplication] [] Using path[/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/executions] for storing executions.
+2012/10/09 11:13:12.358 -0700 INFO [AzkabanApplication] [] Last known execution id was [74]
+2012/10/09 11:13:12.468 -0700 INFO [AzkabanApp] [] Server running on port 8081.
+2012/10/09 12:37:40.775 -0700 INFO [AzkabanApp] [] Shutting down http server...
+2012/10/09 12:37:40.811 -0700 INFO [AzkabanApp] [] kk thx bye.
+2012/10/09 12:37:48.031 -0700 INFO [AzkabanApp] [] Job log directory set to /var/folders/5n/f984qm_d1jz9jtxz4p3cszg40000gn/T
+2012/10/09 12:37:48.032 -0700 INFO [AzkabanApp] [] Job directories set to [azkaban-jobs]
+2012/10/09 12:37:48.038 -0700 INFO [AzkabanApplication] [] HADOOP_HOME not set, using default hadoop config.
+2012/10/09 12:37:48.117 -0700 INFO [AzkabanApplication] [] Schedule file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/09 12:37:48.117 -0700 INFO [AzkabanApplication] [] Schedule backup file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule.backup
+2012/10/09 12:37:48.119 -0700 INFO [AzkabanApplication] [] Using path[/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/executions] for storing executions.
+2012/10/09 12:37:48.120 -0700 INFO [AzkabanApplication] [] Last known execution id was [74]
+2012/10/09 12:37:48.232 -0700 INFO [AzkabanApp] [] Server running on port 8081.
+2012/10/09 16:16:11.794 -0700 INFO [AzkabanApp] [] Shutting down http server...
+2012/10/09 16:16:11.831 -0700 INFO [AzkabanApp] [] kk thx bye.
+2012/10/09 16:16:14.962 -0700 INFO [AzkabanApp] [] Job log directory set to /var/folders/5n/f984qm_d1jz9jtxz4p3cszg40000gn/T
+2012/10/09 16:16:14.963 -0700 INFO [AzkabanApp] [] Job directories set to [azkaban-jobs]
+2012/10/09 16:16:14.969 -0700 INFO [AzkabanApplication] [] HADOOP_HOME not set, using default hadoop config.
+2012/10/09 16:16:15.035 -0700 INFO [AzkabanApplication] [] Schedule file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/09 16:16:15.035 -0700 INFO [AzkabanApplication] [] Schedule backup file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule.backup
+2012/10/09 16:16:15.038 -0700 INFO [AzkabanApplication] [] Using path[/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/executions] for storing executions.
+2012/10/09 16:16:15.038 -0700 INFO [AzkabanApplication] [] Last known execution id was [74]
+2012/10/09 16:16:15.148 -0700 INFO [AzkabanApp] [] Server running on port 8081.
+2012/10/09 16:16:34.721 -0700 INFO [ScheduleManager] [] Scheduling job 'test' for 10-09-2012 16:17:00:000 with a period of 1 hour
+2012/10/09 16:18:01.296 -0700 INFO [AzkabanApp] [] Shutting down http server...
+2012/10/09 16:18:01.334 -0700 INFO [AzkabanApp] [] kk thx bye.
+2012/10/09 16:18:13.452 -0700 INFO [AzkabanApp] [] Job log directory set to /var/folders/5n/f984qm_d1jz9jtxz4p3cszg40000gn/T
+2012/10/09 16:18:13.453 -0700 INFO [AzkabanApp] [] Job directories set to [azkaban-jobs]
+2012/10/09 16:18:13.458 -0700 INFO [AzkabanApplication] [] HADOOP_HOME not set, using default hadoop config.
+2012/10/09 16:18:13.525 -0700 INFO [AzkabanApplication] [] Schedule file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/09 16:18:13.525 -0700 INFO [AzkabanApplication] [] Schedule backup file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule.backup
+2012/10/09 16:18:13.527 -0700 INFO [AzkabanApplication] [] Using path[/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/executions] for storing executions.
+2012/10/09 16:18:13.527 -0700 INFO [AzkabanApplication] [] Last known execution id was [74]
+2012/10/09 16:18:13.637 -0700 INFO [AzkabanApp] [] Server running on port 8081.
+2012/10/09 16:18:29.261 -0700 INFO [ScheduleManager] [] Scheduling job 'test' for 10-09-2012 16:19:00:000 with a period of 1 day
+2012/10/09 16:18:29.264 -0700 INFO [ScheduleManager] [] Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-09T16:19:00.000-07:00, period=P1D, jobName='test'} to schedule.
+2012/10/09 16:19:00.000 -0700 INFO [ScheduleManager] [] Scheduler attempting to run test
+2012/10/09 16:19:00.003 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/09 16:19:00.005 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/09 16:19:00.039 -0700 INFO [Props] [] Return props for job[test]
+2012/10/09 16:19:00.109 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses
+2012/10/09 16:19:16.917 -0700 INFO [AzkabanApp] [] Shutting down http server...
+2012/10/09 16:19:16.968 -0700 INFO [AzkabanApp] [] kk thx bye.
+2012/10/09 16:20:01.517 -0700 INFO [AzkabanApp] [] Job log directory set to /var/folders/5n/f984qm_d1jz9jtxz4p3cszg40000gn/T
+2012/10/09 16:20:01.518 -0700 INFO [AzkabanApp] [] Job directories set to [azkaban-jobs]
+2012/10/09 16:20:01.524 -0700 INFO [AzkabanApplication] [] HADOOP_HOME not set, using default hadoop config.
+2012/10/09 16:20:01.589 -0700 INFO [AzkabanApplication] [] Schedule file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/09 16:20:01.589 -0700 INFO [AzkabanApplication] [] Schedule backup file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule.backup
+2012/10/09 16:20:01.592 -0700 INFO [AzkabanApplication] [] Using path[/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/executions] for storing executions.
+2012/10/09 16:20:01.592 -0700 INFO [AzkabanApplication] [] Last known execution id was [75]
+2012/10/09 16:20:01.693 -0700 INFO [ScheduleManager] [] Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-10T16:19:00.000-07:00, period=P1D, jobName='test'} to schedule.
+2012/10/09 16:20:01.763 -0700 INFO [AzkabanApp] [] Server running on port 8081.
+2012/10/09 16:20:05.689 -0700 INFO [ScheduleManager] [] Removing ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-10T16:19:00.000-07:00, period=P1D, jobName='test'} from the schedule.
+2012/10/09 16:20:49.252 -0700 INFO [JobManager] [] Deployed job test to path 
+2012/10/09 16:21:09.243 -0700 INFO [ScheduleManager] [] Scheduling job 'test' for 10-09-2012 16:22:00:000 with a period of 1 day
+2012/10/09 16:21:09.243 -0700 INFO [ScheduleManager] [] Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-09T16:22:00.000-07:00, period=P1D, jobName='test'} to schedule.
+2012/10/09 16:22:00.000 -0700 INFO [ScheduleManager] [] Scheduler attempting to run test
+2012/10/09 16:22:00.003 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/09 16:22:00.004 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/09 16:22:00.036 -0700 INFO [Props] [] Return props for job[test]
+2012/10/09 16:22:00.115 -0700 WARN [Mailman] [] Error while sending email: Could not connect to SMTP host: localhost, port: 25
+2012/10/09 16:22:08.633 -0700 INFO [AzkabanApp] [] Shutting down http server...
+2012/10/09 16:22:08.684 -0700 INFO [AzkabanApp] [] kk thx bye.
+2012/10/09 16:34:50.615 -0700 INFO [AzkabanApp] [] Job log directory set to /var/folders/5n/f984qm_d1jz9jtxz4p3cszg40000gn/T
+2012/10/09 16:34:50.616 -0700 INFO [AzkabanApp] [] Job directories set to [azkaban-jobs]
+2012/10/09 16:34:50.622 -0700 INFO [AzkabanApplication] [] HADOOP_HOME not set, using default hadoop config.
+2012/10/09 16:34:50.688 -0700 INFO [AzkabanApplication] [] Schedule file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/09 16:34:50.688 -0700 INFO [AzkabanApplication] [] Schedule backup file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule.backup
+2012/10/09 16:34:50.690 -0700 INFO [AzkabanApplication] [] Using path[/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/executions] for storing executions.
+2012/10/09 16:34:50.690 -0700 INFO [AzkabanApplication] [] Last known execution id was [76]
+2012/10/09 16:34:50.792 -0700 INFO [ScheduleManager] [] Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-10T16:22:00.000-07:00, period=P1D, jobName='test'} to schedule.
+2012/10/09 16:34:50.864 -0700 INFO [AzkabanApp] [] Server running on port 8081.
+2012/10/09 16:36:55.177 -0700 INFO [AzkabanApp] [] Shutting down http server...
+2012/10/09 16:36:55.222 -0700 INFO [AzkabanApp] [] kk thx bye.
+2012/10/09 16:37:02.659 -0700 INFO [AzkabanApp] [] Job log directory set to /var/folders/5n/f984qm_d1jz9jtxz4p3cszg40000gn/T
+2012/10/09 16:37:02.660 -0700 INFO [AzkabanApp] [] Job directories set to [azkaban-jobs]
+2012/10/09 16:37:02.666 -0700 INFO [AzkabanApplication] [] HADOOP_HOME not set, using default hadoop config.
+2012/10/09 16:37:02.736 -0700 INFO [AzkabanApplication] [] Schedule file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/09 16:37:02.736 -0700 INFO [AzkabanApplication] [] Schedule backup file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule.backup
+2012/10/09 16:37:02.738 -0700 INFO [AzkabanApplication] [] Using path[/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/executions] for storing executions.
+2012/10/09 16:37:02.738 -0700 INFO [AzkabanApplication] [] Last known execution id was [76]
+2012/10/09 16:37:02.841 -0700 INFO [ScheduleManager] [] Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-10T16:22:00.000-07:00, period=P1D, jobName='test'} to schedule.
+2012/10/09 16:37:02.912 -0700 INFO [AzkabanApp] [] Server running on port 8081.
+2012/10/09 16:37:07.841 -0700 INFO [ScheduleManager] [] Removing ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-10T16:22:00.000-07:00, period=P1D, jobName='test'} from the schedule.
+2012/10/09 16:37:23.416 -0700 INFO [ScheduleManager] [] Scheduling job 'test' for 10-09-2012 16:38:00:000 with a period of 1 day
+2012/10/09 16:37:23.416 -0700 INFO [ScheduleManager] [] Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-09T16:38:00.000-07:00, period=P1D, jobName='test'} to schedule.
+2012/10/09 16:38:00.000 -0700 INFO [ScheduleManager] [] Scheduler attempting to run test
+2012/10/09 16:38:00.003 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/09 16:38:00.004 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING ID : test
+2012/10/09 16:38:00.005 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/09 16:38:00.037 -0700 INFO [Props] [] Return props for job[test]
+2012/10/09 16:38:00.121 -0700 WARN [Mailman] [] Error while sending email: Could not connect to SMTP host: localhost, port: 25
+2012/10/09 16:38:07.354 -0700 INFO [ScheduleManager] [] Removing ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-10T16:38:00.000-07:00, period=P1D, jobName='test'} from the schedule.
+2012/10/09 16:38:10.784 -0700 INFO [AzkabanApp] [] Shutting down http server...
+2012/10/09 16:38:10.832 -0700 INFO [AzkabanApp] [] kk thx bye.
+2012/10/09 16:57:58.028 -0700 INFO [AzkabanApp] [] Job log directory set to /var/folders/5n/f984qm_d1jz9jtxz4p3cszg40000gn/T
+2012/10/09 16:57:58.029 -0700 INFO [AzkabanApp] [] Job directories set to [azkaban-jobs]
+2012/10/09 16:57:58.035 -0700 INFO [AzkabanApplication] [] HADOOP_HOME not set, using default hadoop config.
+2012/10/09 16:57:58.101 -0700 INFO [AzkabanApplication] [] Schedule file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/09 16:57:58.101 -0700 INFO [AzkabanApplication] [] Schedule backup file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule.backup
+2012/10/09 16:57:58.103 -0700 INFO [AzkabanApplication] [] Using path[/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/executions] for storing executions.
+2012/10/09 16:57:58.103 -0700 INFO [AzkabanApplication] [] Last known execution id was [77]
+2012/10/09 16:57:58.214 -0700 INFO [AzkabanApp] [] Server running on port 8081.
+2012/10/09 16:58:18.237 -0700 INFO [ScheduleManager] [] Scheduling job 'test' for 10-09-2012 16:59:00:000 with a period of 1 day
+2012/10/09 16:58:18.240 -0700 INFO [ScheduleManager] [] Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-09T16:59:00.000-07:00, period=P1D, jobName='test'} to schedule.
+2012/10/09 16:59:00.000 -0700 INFO [ScheduleManager] [] Scheduler attempting to run test
+2012/10/09 16:59:00.000 -0700 INFO [JobExecutorManager] [] EXECUTE ID ? : test
+2012/10/09 16:59:00.003 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/09 16:59:00.004 -0700 INFO [ScheduleManager] [] INSIDE JOBEXECUTION, CHECKING ID : test
+2012/10/09 16:59:00.005 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/09 16:59:00.038 -0700 INFO [Props] [] Return props for job[test]
+2012/10/09 16:59:00.119 -0700 WARN [Mailman] [] Error while sending email: Could not connect to SMTP host: localhost, port: 25
+2012/10/09 16:59:07.366 -0700 INFO [ScheduleManager] [] Removing ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-10T16:59:00.000-07:00, period=P1D, jobName='test'} from the schedule.
+2012/10/09 16:59:11.543 -0700 INFO [AzkabanApp] [] Shutting down http server...
+2012/10/09 16:59:11.590 -0700 INFO [AzkabanApp] [] kk thx bye.

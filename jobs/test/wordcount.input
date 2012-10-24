@@ -1,0 +1,13 @@
+
+If you are issuing PigLatin through Grunt
+
+The command dump <alias> will dump the contents of the alias on your screen. This is typically useful only as a sanity check to see if the correct results are being produced.
+
+The command store <alias> into <filename> [ using <store function spec>] will store the contents of the alias into the requested filename using the requested storage function (or the default function PigStorage if the storage function is not specified. ) 
+
+
+If you are issuing PigLatin through your java program
+
+The call PigServer.openIterator(String alias) will give you an iterator over the contents of the alias. You may find it useful to know the PigDataTypeApis to process these contents.
+
+The call PigServer.store(String alias, String fileName, String storeFunc) will (like the store command in grunt) store the contents of the alias into the requested filename using the requested storage function (or the default function PigStorage if the storage function is not specified). 

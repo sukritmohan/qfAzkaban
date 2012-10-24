@@ -1,0 +1,41 @@
+2012/10/02 10:01:06.278 -0700 INFO [AzkabanApp] [] Job log directory set to /var/folders/5n/f984qm_d1jz9jtxz4p3cszg40000gn/T
+2012/10/02 10:01:06.279 -0700 INFO [AzkabanApp] [] Job directories set to [azkaban-jobs]
+2012/10/02 10:01:06.288 -0700 INFO [AzkabanApplication] [] HADOOP_HOME not set, using default hadoop config.
+2012/10/02 10:01:06.375 -0700 INFO [AzkabanApplication] [] Schedule file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/02 10:01:06.375 -0700 INFO [AzkabanApplication] [] Schedule backup file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule.backup
+2012/10/02 10:01:06.377 -0700 INFO [AzkabanApplication] [] Using path[/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/executions] for storing executions.
+2012/10/02 10:01:06.377 -0700 INFO [AzkabanApplication] [] Last known execution id was [0]
+2012/10/02 10:01:06.418 -0700 WARN [LocalFileScheduleLoader] [] No schedule files found looking for /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/02 10:01:06.534 -0700 INFO [AzkabanApp] [] Server running on port 8081.
+2012/10/02 10:01:23.348 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/02 10:01:23.350 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/02 10:01:23.449 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses
+2012/10/02 10:01:50.916 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/02 10:01:50.917 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/02 10:01:50.927 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses
+2012/10/02 10:02:11.775 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/02 10:02:11.775 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/02 10:02:11.783 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses
+2012/10/02 10:02:43.496 -0700 INFO [JobManager] [] Deployed job test to path 
+2012/10/02 10:02:46.278 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/02 10:02:46.278 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/02 10:02:46.302 -0700 INFO [Props] [] Return props for job[test]
+2012/10/02 10:02:46.305 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses
+2012/10/02 10:03:01.234 -0700 INFO [JobManager] [] Deployed job test to path 
+2012/10/02 10:03:09.104 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/02 10:03:09.104 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/02 10:03:09.121 -0700 INFO [Props] [] Return props for job[test]
+2012/10/02 10:03:09.124 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses
+2012/10/02 11:50:44.424 -0700 INFO [AzkabanApp] [] Shutting down http server...
+2012/10/02 11:50:44.472 -0700 INFO [AzkabanApp] [] kk thx bye.
+2012/10/02 15:27:59.072 -0700 INFO [AzkabanApp] [] Job log directory set to /var/folders/5n/f984qm_d1jz9jtxz4p3cszg40000gn/T
+2012/10/02 15:27:59.074 -0700 INFO [AzkabanApp] [] Job directories set to [azkaban-jobs]
+2012/10/02 15:27:59.079 -0700 INFO [AzkabanApplication] [] HADOOP_HOME not set, using default hadoop config.
+2012/10/02 15:27:59.144 -0700 INFO [AzkabanApplication] [] Schedule file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/02 15:27:59.144 -0700 INFO [AzkabanApplication] [] Schedule backup file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule.backup
+2012/10/02 15:27:59.146 -0700 INFO [AzkabanApplication] [] Using path[/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/executions] for storing executions.
+2012/10/02 15:27:59.146 -0700 INFO [AzkabanApplication] [] Last known execution id was [6]
+2012/10/02 15:27:59.173 -0700 WARN [LocalFileScheduleLoader] [] No schedule files found looking for /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/02 15:27:59.245 -0700 INFO [AzkabanApp] [] Server running on port 8081.
+2012/10/02 15:31:04.692 -0700 INFO [AzkabanApp] [] Shutting down http server...
+2012/10/02 15:31:04.728 -0700 INFO [AzkabanApp] [] kk thx bye.

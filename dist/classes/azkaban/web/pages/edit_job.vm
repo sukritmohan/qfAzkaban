@@ -1,0 +1,112 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>#appname()</title>
+    <link rel="stylesheet" type="text/css" href="${context}/static/css/azkaban-common.css"></link>
+    <style type="text/css">
+      .jobtable td {border: none}
+    </style>
+    <script type="text/javascript" src="${context}/static/js/jquery/jquery.js"></script>
+    <script type="text/javascript">
+    	var data = ${jsonData};
+    	var rownum = 0;
+    
+    	$(function () {
+			var params = data;
+			
+			for (var key in params) {
+				var value = params[key];
+				addNewRow(key, value);
+			}
+			
+			addNewRow("", "");
+		});
+    
+    	function addNewRow(key, value) {
+			var tbody = document.getElementById("data_rows");
+			var tr = document.createElement("tr");
+			tr.setAttribute("id", "row" + rownum);
+		
+			var tdKey = document.createElement("td"); 
+			var keyInput = document.createElement("input");
+			keyInput.setAttribute("type", "text");
+			keyInput.setAttribute("name", "key" + rownum);
+			keyInput.setAttribute("class", "key-input");
+			$(keyInput).val(key);
+			tdKey.appendChild(keyInput);
+			
+			var tdValue = document.createElement("td"); 
+			var valInput = document.createElement("input");
+			valInput.setAttribute("type", "text");
+			valInput.setAttribute("name", "val" + rownum);
+			valInput.setAttribute("class", "val-input");
+			valInput.setAttribute("size", 50);
+			$(valInput).val(value);
+			tdValue.appendChild(valInput);
+			
+			tr.appendChild(tdKey);
+			tr.appendChild(tdValue);
+			
+			tbody.appendChild(tr);
+			rownum++;
+		}
+
+    	function addRow() {
+			addNewRow("", ""); 
+		}
+    
+      $(document).ready(
+      function() {
+        $("#add_row_button").click(addRow);
+      });
+    </script>
+  </head>
+  <body>
+    #appnamebox()
+    
+    <div id="main">
+        <h2 class="title" >Edit Job</h2>
+  	    <div id="variableWidth">
+  	        #messages()
+  	       <form name="props_form" method="post" action="">
+  	       <div class="box">
+  	       	  <h3>Job Description</h3>
+		        <div class="jobdesc">
+		          <div>
+		            <span class="h3like">Job Name</span> 
+		            <input id="jobname" name="job_name" type="text" value="$!job.id"/><br/>
+		          </div>
+		          <div>
+		            <span class="h3like">Path</span> <input id="editPath" name="job_path" type="text" value="$!job.path" />
+		          </div>
+		        </div>
+		   </div>
+		   <div class="box">
+		   		<h3>Job Parameters</h3>
+		        <table id="jobtable" class="jobtable">
+		          <tr>
+		            <th>Key</th>
+		            <th>Value</th>
+		          </tr>
+		 		  <tbody id="data_rows">
+		          </tbody>
+		   			
+		        </table>
+		        
+		        <table class="jobtable">
+		          <tr>
+		            <td style="text-align: right">
+		              <input id="add_row_button" type="button" value="Add Row">
+		              <input id="save_button" type="submit" value="Save">
+		            </td>
+		          </tr>
+		        </table>
+  	       </div>
+  	       </form>
+  	    </div>
+  	</div>
+  	<div><p class="currentTime">Current Time: $utils.formatDateTimeAndZone($utils.now)</p></div>
+  </body>
+</html>

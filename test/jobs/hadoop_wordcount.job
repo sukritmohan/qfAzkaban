@@ -1,0 +1,5 @@
+type=java
+job.class=azkaban.test.WordCountGrid
+method.run=run
+input=wordcount.input
+output=wordcount.output

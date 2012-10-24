@@ -1,0 +1,4 @@
+#Mon Nov 22 15:57:08 PST 2010
+jars=azkaban-tests.jar
+job.class=azkaban.test.SleepyTest
+type=java

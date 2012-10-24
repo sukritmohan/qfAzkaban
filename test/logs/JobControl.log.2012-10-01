@@ -1,0 +1,11 @@
+2012/10/01 14:42:55.106 -0700 INFO [AzkabanApp] [] Job log directory set to /var/folders/5n/f984qm_d1jz9jtxz4p3cszg40000gn/T
+2012/10/01 14:42:55.107 -0700 INFO [AzkabanApp] [] Job directories set to [/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs]
+2012/10/01 14:42:55.113 -0700 INFO [AzkabanApplication] [] HADOOP_HOME not set, using default hadoop config.
+2012/10/01 14:42:55.179 -0700 INFO [AzkabanApplication] [] Schedule file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/01 14:42:55.179 -0700 INFO [AzkabanApplication] [] Schedule backup file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule.backup
+2012/10/01 14:42:55.181 -0700 INFO [AzkabanApplication] [] Using path[/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/executions] for storing executions.
+2012/10/01 14:42:55.181 -0700 INFO [AzkabanApplication] [] Last known execution id was [0]
+2012/10/01 14:42:55.205 -0700 WARN [LocalFileScheduleLoader] [] No schedule files found looking for /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/01 14:42:55.278 -0700 INFO [AzkabanApp] [] Server running on port 8081.
+2012/10/01 17:48:41.007 -0700 INFO [AzkabanApp] [] Shutting down http server...
+2012/10/01 17:48:41.042 -0700 INFO [AzkabanApp] [] kk thx bye.

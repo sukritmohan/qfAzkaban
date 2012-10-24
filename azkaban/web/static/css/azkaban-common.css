@@ -1,0 +1,628 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 90%;
+	font-family: helvetica, arial, sans-serif;
+	background-color: #28282C;
+	color: #CCC;
+	min-width: 800px;
+}
+
+.title {
+	font-family: helvetica, arial, sans-serif;
+	font-style: none;
+	font-size: 2.2em;
+	position: relative;
+	color: #CCC;
+	
+	/*text-shadow: #000000 3px 4px 2px;*/
+	padding: 20px 10px 6px 50px;
+	margin: 0px;
+}
+
+.translucent {
+	background-color: rgba(255, 255, 255, .25);
+}
+
+#header {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 108px;
+	color: #000;
+	background-image: url(../bannerLength.png);
+	background-repeat: repeat-x;
+	background-position: 0px 0px;
+}
+
+#header #label {
+	font-size: 1.75em;
+	position: relative;
+	text-align: right;
+	float: right;
+	left: 355px;
+	top: -45px;
+	color: #CCCCCC;
+	/*text-shadow: 0.07em 0.07em #333*/
+}
+#header #label p {
+	height: 35px;
+	margin: 0;
+}
+
+#header #icon {
+	position: relative;
+	float: left;
+	top: 24px;
+	left: 20px;
+	background-image: url(../tempIcon.png);
+	height: 70px;
+	width: 70px;
+	background-repeat: no-repeat;
+}
+
+#header #title {
+	position: relative;
+	top: 25px;
+	left: 90px;
+	background-image: url(../titleText.png);
+	height: 66px;
+	width: 287px;
+	background-repeat: no-repeat;
+}
+
+#main {
+	background-image: url(../bannerLength.png);
+	background-repeat: repeat-x;
+	background-position: 0px -108px;
+}
+
+#navmenu {
+	float: right;
+	font-weight: bold;
+	font-size: 10px;
+	padding-right: 5px;
+	position: relative;
+}
+
+#navmenu:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+#navmenu ul {
+	border: 1px solid #000000;
+	background: url(../menubg.png) bottom center repeat-x;
+	padding: 8px 0;
+	margin: 0;
+	text-align: left;
+}
+
+#navmenu ul li {
+	display: inline;
+}
+
+#navmenu ul li a {
+	color: #CCC;
+	padding: 10px;
+	margin: 0;
+	text-shadow: rgba(0, 0, 0, .4) 0px 3px 6px;
+	text-decoration: none;
+	font-size: 1.4em;
+}
+
+#navmenu ul li em {
+	color: #FFFFFF;
+	padding: 10px;
+	margin: 0;
+	text-shadow: rgba(0, 0, 0, .4) 0px 3px 6px;
+	text-decoration: none;
+	font-style: normal;
+}
+
+#navmenu ul li a:hover {
+	color: #FFF;
+}
+
+a:hover {
+	color:#FFF;
+}
+
+a {
+	color:#a7ceff;
+}
+
+.box {
+	min-height: 125px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 20px;
+	margin-bottom: 10px;
+	text-align: center;
+	color: #FFF;
+	background-image: url("../background1.png");
+	background-color: #2c2f32;
+	background-repeat:repeat-x;
+}
+
+.box.message {
+	min-height: 10px;
+}
+
+.box hr {
+	width : 75%;
+	border-color: rgba(255,255,255, .2);
+}
+
+.box h3 {
+	color: #CCC;
+	font-size: 1.4em;
+}
+
+.box .h3like {
+	color: #CCC;
+	font-size: 12pt;
+}
+
+#variableWidth {
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	padding: 12px;
+	margin-left : 50px;
+	margin-right : 50px;
+	background-color: #AAA; 
+	
+	background-image: -webkit-gradient(linear, left top, left bottom, 
+                             from(#EEEEEE), to(EEEEEE), 
+                             color-stop(0.5, a1a1a1));
+}
+
+.jobtable {
+	margin: auto;
+	border-spacing: 0px;
+	border-collapse: collapse;
+	font-size: 100%;
+	
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.jobtable th {
+	padding: 5px;
+}
+
+.jobtable td {
+	border-style: solid;
+	border-width: 1px;
+	border-color: rgba(255,255,255, .3);
+	padding: 5px;
+}
+
+.jobfolder .folderIcon {
+	margin-top: 7px;
+	margin-left: 2px;
+	margin-right: 5px;
+	width:16px;
+	height:16px;
+	float: left;
+	cursor: pointer;
+}
+
+.jobfolder.expand .folderIcon {
+	background-image: url("../js/jqueryui/themes/custom-theme/images/ui-icons_cccccc_256x240.png");
+	background-position: -32px -16px;
+}
+
+.jobfolder.collapse .folderIcon{
+	background-image: url("../js/jqueryui/themes/custom-theme/images/ui-icons_cccccc_256x240.png");
+	background-position: 0 -16px;
+}
+
+.jobfolder.wait .folderIcon {
+	background-image: url("../js/jqueryui/themes/custom-theme/images/ui-icons_cccccc_256x240.png");
+	background-position: -64px -80px
+}
+
+#graph{ 
+	width: 100%;
+	position: relative;
+	top: 0px;
+	left: 0px;
+}
+
+#graphTab{
+	background: #FFFFFF;
+	height: 510px;
+}
+
+#navigation {
+	float:left;
+	width:270px;
+	margin-left:-100%;
+	/*background: #FFFFFF;*/
+	height:561px;
+}
+
+#treeWrap {
+	background-image: url("../js/jquery/themes/apple/bg.jpg");
+	overflow:auto;
+	height:530px;
+}
+
+#fileRibbon {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background: #777;
+}
+
+#buttonpanel {
+	font-size:8pt;
+	margin: 2px;
+	padding-left: 1px;
+	float: right;
+}
+
+#extra{
+	clear:left;
+	height: 30px;
+	width:100%;
+	margin-top: 50px;
+	background:#777;
+}
+
+#extra2{
+	clear:left;
+	height: 30px;
+	width:100%;
+}
+
+.editOverlay {
+	float:right;
+	background-color:rgba(0,0,0,0.0);
+	position: relative;
+	bottom: 0px;
+}
+
+#editbutton {
+	margin-top: 10px;
+}
+
+.editButton.ui-button {
+	float: right;
+	font-size:8pt;
+	padding: 0px;
+	margin-top: 10px;
+	margin-left: 2px;
+}
+
+.leftButton.ui-button {
+	float: left;
+	font-size:8pt;
+	padding: 0px;
+	margin-left: 2px;
+}
+
+.errorBox {
+	background-color: #ffaa66;
+	padding: 5px;
+}
+
+.flowViewButton  {
+	margin-left: 5px;
+}
+
+.flowViewButton.hidden{
+	visibility: hidden;
+	font-size: 8pt;
+	text-decoration: underline;
+}
+
+.flowViewButton.show{
+	font-size: 8pt;
+	text-decoration: underline;
+}
+
+.flowViewButton.show:hover{
+	font-size: 8pt;
+	text-decoration: underline;
+}
+
+/* Index page job list*/
+.joblist {
+
+	text-align: left;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 15px;
+	padding: 2px 3px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+.joblist a {
+	color: #A7CEFF;
+	padding-left:3px;
+	text-decoration:none;
+	vertical-align:top;
+}
+
+.joblist a:hover {
+	color: #FFFFFF;
+	padding-left:3px;
+	text-decoration:none;
+	vertical-align:top;
+}
+
+.joblist li {
+	background-color: transparent;
+}
+
+.joblist li {
+	xlist-style-type: none;
+	xpadding: 1px;
+	xmargin: 1px;
+}
+
+/* Index page schedule*/
+
+.jobfolder p{
+	padding: 7px 10px 7px 10px;
+	margin: 2px;
+	cursor: pointer;
+	text-shadow: rgba(0,0,0, 0.4) 0px 0px 0.2em;
+}
+
+.jobfolder {
+	color: #FFFFFF;
+	font-size: 12pt;
+	
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+
+	background: #A0A5AF; /* old browsers */
+	background: -moz-linear-gradient(top, #A0A5AF 0%, #828c95 36%, #28343b 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#A0A5AF), color-stop(36%,#828c95), color-stop(100%,#28343b)); /* webkit */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#A0A5AF', endColorstr='#28343b',GradientType=0 ); /* ie */
+}
+
+.jobtable a {
+	text-decoration: none;
+	color: #A7CEFF;
+}
+
+.jobtable .job-name-FAILED {
+	color: darkred;
+}
+
+.jobtable .job-name-READY {
+	color: #CCC; 
+}
+
+.jobtable .job-name-RUNNING {
+	color: #008;
+}
+
+.jobtable .job-name-SUCCEEDED {
+	color: #0C5;
+}
+
+.jobtable .job-name-COMPLETED {
+	color: #CCC;
+}
+
+.jobtable .job-name-IGNORED {
+	color: #888;
+}
+
+.jobdesc {
+	margin: 10px;
+	color: #AAA;
+}
+
+.jobdesc input {
+	margin-bottom: 10px;
+}
+
+.jobdesc a{
+	text-decoration: none;
+}
+
+.jobtable a:hover {
+	color: #FFF;
+}
+
+.treeview {
+	text-align: left;
+}
+
+.treeview ul {
+	background-color: transparent;
+	padding: 1 0 3 16px;
+}
+
+.treeview .hitarea {
+	background-color: transparent;
+	xpadding-right: 3px;
+}
+
+
+span.running {
+	color: #037;
+}
+
+span.failed {
+	color: #A00;
+}
+
+span.succeeded {
+	color: #070;
+}
+
+span.ready {
+	color: #444;
+}
+
+rect.button.running  {
+	fill: #037;
+}
+
+rect.button.failed  {
+	fill: #A00;
+}
+
+rect.button.succeeded  {
+	fill: #070;
+}
+
+rect.button {
+	fill: #444;
+	stroke: #000;
+	stroke-width: 3px;
+}
+
+g.node {
+	cursor: pointer;
+}
+
+g.node text{
+	fill: #FFF;
+}
+
+g.node.selected text{
+	fill: #EE0;
+}
+
+g.node:hover {
+	stroke-width: 1px;
+	stroke: #EE0;
+}
+
+g.node.disabled {
+	opacity: 0.2;
+}
+
+rect.zoomPicker {
+	fill: #666;
+	cursor: pointer;
+}
+
+rect.zoomLine {
+	fill: #AAA;
+}
+
+.zoomSlider line {
+	stroke-width: 4;
+	stroke: #777;
+	stroke-dasharray: 3, 25;
+}
+
+.zoomButton {
+	cursor: pointer;
+}
+
+.zoomButton rect {
+	fill: #CCC;
+}
+
+.zoomButton circle {
+	fill: #666;
+}
+
+.zoomButton:hover rect{
+	fill: #FF0;
+}
+
+.fileTable a {
+  text-decoration: none;
+  color: darkred;
+  font-weight: bold;
+  font-size: 14pt;
+}
+
+.fileTable a:hover {
+  color: #F00000;
+}
+
+#file {
+	color: #AAA;	
+}
+
+#helpbutton {
+	width: 32px;
+	height: 32px;
+	float: left;
+	background: url('../help.png') 0 0;
+	cursor: pointer;
+}
+
+#helpbutton:hover {
+	background-position: 0px 63px;
+}
+
+#helpbutton.selected {
+	background-position: 0px 32px;
+}
+
+.message {
+	font-size: 14pt;
+	padding: 5px;
+}
+
+.pagination a {
+    font-size: 150%;
+	text-decoration: none;
+}
+
+.pagination {
+	padding: 10px;
+}
+
+.ui-datepicker-div {
+	float: bottom;
+}
+
+.ui-datepicker-calendar a:hover, .ui-datepicker-header a:hover {
+	color: #AAA;
+}
+
+.ui-datepicker-title span, .ui-datepicker-calendar thead {
+	color: #AAA;
+	font-weight: bold;
+}
+
+.ui-datepicker {
+	background: white;
+	border: 3px solid #AAA;
+	padding: 4px;
+}
+
+.ui-datepicker-prev, .ui-datepicker-next {
+	cursor: pointer;
+	display: block;
+}
+
+.ui-datepicker-prev {
+	float: left;
+}
+
+.ui-datepicker-next {
+	float: right;
+}
+
+.ui-datepicker-calendar a {
+	text-decoration: none;
+}
+
+.currentTime {
+	margin-right: 50px;
+	text-align: right;
+}

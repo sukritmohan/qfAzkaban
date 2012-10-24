@@ -1,0 +1,70 @@
+{
+  "flow": {
+    "dependencies": {
+      "command_ls": [
+        "java_sleep",
+        "java_wordcount"
+      ],
+      "java_sleep": ["hadoop_wordcount"],
+      "java_wordcount": ["hadoop_wordcount"]
+    },
+    "id": "4",
+    "jobs": {
+      "command_ls": {
+        "id": "4",
+        "name": "command_ls",
+        "status": "READY",
+        "type": "jobManagerLoaded"
+      },
+      "hadoop_wordcount": {
+        "endTime": "2010-11-22T17:42:17.631-08:00",
+        "id": "4",
+        "name": "hadoop_wordcount",
+        "overrideProps": {
+          "azkaban.flow.id": "4",
+          "azkaban.flow.start.day": "22",
+          "azkaban.flow.start.hour": "17",
+          "azkaban.flow.start.milliseconds": "039",
+          "azkaban.flow.start.minute": "42",
+          "azkaban.flow.start.month": "11",
+          "azkaban.flow.start.seconds": "17",
+          "azkaban.flow.start.timestamp": "2010-11-22T17:42:17.039-08:00",
+          "azkaban.flow.start.timezone": "America/Los_Angeles",
+          "azkaban.flow.start.year": "2010",
+          "azkaban.flow.uuid": "30870aaa-9acc-4493-a657-d8d9f617ca16"
+        },
+        "returnProps": {},
+        "startTime": "2010-11-22T17:42:17.039-08:00",
+        "status": "FAILED",
+        "type": "jobManagerLoaded"
+      },
+      "java_sleep": {
+        "id": "4",
+        "name": "java_sleep",
+        "status": "READY",
+        "type": "jobManagerLoaded"
+      },
+      "java_wordcount": {
+        "id": "4",
+        "name": "java_wordcount",
+        "status": "READY",
+        "type": "jobManagerLoaded"
+      }
+    },
+    "root": ["command_ls"]
+  },
+  "parentProps": {
+    "azkaban.flow.id": "4",
+    "azkaban.flow.start.day": "22",
+    "azkaban.flow.start.hour": "17",
+    "azkaban.flow.start.milliseconds": "039",
+    "azkaban.flow.start.minute": "42",
+    "azkaban.flow.start.month": "11",
+    "azkaban.flow.start.seconds": "17",
+    "azkaban.flow.start.timestamp": "2010-11-22T17:42:17.039-08:00",
+    "azkaban.flow.start.timezone": "America/Los_Angeles",
+    "azkaban.flow.start.year": "2010",
+    "azkaban.flow.uuid": "30870aaa-9acc-4493-a657-d8d9f617ca16"
+  },
+  "type": "FlowExecutionHolder"
+}

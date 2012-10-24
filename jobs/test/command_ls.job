@@ -1,0 +1,5 @@
+#Fri Jan 07 21:48:07 PST 2011
+env.testenv=testingEnv
+type=command
+logger.pattern=%d{dd-MM-yyyy} %c{1} %p - %m\n
+command=ls -la

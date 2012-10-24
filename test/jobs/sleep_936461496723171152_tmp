@@ -1,0 +1,21 @@
+#Fri Jan 07 11:31:56 PST 2011
+azkaban.flow.start.timezone=America/Los_Angeles
+type=command
+server.url=http\://<azkaban-server-host-name>\:8081/
+azkaban.flow.uuid=2b2706dd-333f-4047-a877-d22ac23fff30
+mail.sender=
+command=sleep 100
+azkaban.flow.start.timestamp=2011-01-06T23\:39\:10.904-08\:00
+mail.host=<mail-host>
+azkaban.flow.start.milliseconds=904
+azkaban.flow.start.hour=23
+azkaban.flow.id=34
+classpath=../../lib/commons-logging-1.1.1.jar\:../../lib/hadoop-0.20.2-core.jar\:../../lib/log4j-1.2.15.jar\:../../lib/voldemort-0.70.1.jar\:../../lib/hadoop-0.20.2-core.ja\:../dist/azkaban-tests.jar\:../../lib/joda-time-1.6.jar\:../../dist/azkaban-common/jars/azkaban-common-0.04.jar\:lib/linkedin-pig-0.7.jar\:lib/pig-0.7.0-core.jar\:../../lib/commons-io-1.4.jar
+job.failure.email=
+azkaban.flow.start.seconds=10
+azkaban.flow.start.year=2011
+working.dir=test/jobs
+azkaban.flow.start.month=01
+job.success.email=
+azkaban.flow.start.minute=39
+azkaban.flow.start.day=06

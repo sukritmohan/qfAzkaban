@@ -1,0 +1,5 @@
+#Thu Jan 13 20:03:40 UTC 2011
+script=python_celsius.py
+t=90
+type=python
+dependencies=java_wordcount

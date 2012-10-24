@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<project name="azkaban-pig-example" basedir="." default="all">
+	<property name="base.dir" value="${basedir}/../.." />
+	<property file="${base.dir}/build.properties" />
+	<property name="example.java.dir" value = "./java"/>
+	<property name="example.conf.dir" value = "./conf"/>
+	<property name="example.lib.dir" value = "./lib"/>
+	<property name="example.resource.dir" value = "./resources"/>
+	<property name="example.script.dir" value = "./script"/>
+	<property name="example.dist.dir" value = "./dist"/>
+	<property name="example.class.dir" value = "${example.dist.dir}/classes"/>
+	<property name="package.name" value = "pig-example"/>
+
+	<path id="main-classpath">
+		<fileset dir="${example.lib.dir}">
+			<include name="*.jar" />
+		</fileset>
+		<pathelement path="${example.class.dir}" />
+	</path>
+	
+	<target name="all" depends="clean, zip" description="Builds and packages the job" />
+	
+	<target name="clean" description="Clean all created files" >
+	    <echo message="cleaning all jobs."/>
+	</target>
+	
+	<target name="zip" description="build install zip">
+		<mkdir dir="${example.dist.dir}" />
+		<zip destfile="${example.dist.dir}/${package.name}.zip">
+			<fileset dir="${example.lib.dir}">
+				<include name="**/*.jar" />
+			</fileset>
+			<fileset dir="${example.conf.dir}">
+				<include name="**/*.*" />
+			</fileset>
+			<fileset dir="${example.script.dir}">
+				<include name="**/*.*" />
+			</fileset>
+		</zip>
+	</target>
+</project>

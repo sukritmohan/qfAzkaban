@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<project name="azkaban" basedir="." default="all">
+	<property name="azkaban.base.dir" value="${basedir}" />
+	<property file="build.properties" />
+
+	<property name="name" value="azkaban" />
+	<property name="display.name" value="Azkaban" />
+	<property name="author" value="Richard Park" />
+	<property environment="env" />
+
+	<!-- set the build number based on environment variable, otherwise blank -->
+	<property environment="env" description="System environment variables (including those set by Hudson)" />
+	<condition property="curr.release.snapshot" value="${curr.release}-snapshot-${env.BUILD_NUMBER}" else="${curr.release}">
+		<and>
+			<isset property="env.BUILD_NUMBER" />
+			<not>
+				<equals arg1="" arg2="${env.BUILD_NUMBER}" trim="yes" />
+			</not>
+		</and>
+	</condition>
+
+	<target name="all" depends="clean, jars, war" description="Builds all jars" />
+
+	<target name="clean" description="Delete generated files.">
+		<!--echo message="Deleting dist directory: ${azkaban.base.dir}/${dist.dir}, ${azkaban.base.dir}/${build.dir}" />
+		<delete dir="${azkaban.base.dir}/${dist.dir}" /-->
+
+		<echo message="Deleting generated files in azkaban-common" />
+		<subant target="clean">
+			<fileset dir="azkaban-common" includes="build.xml" />
+		</subant>
+
+		<echo message="Deleting generated files in azkaban" />
+		<subant target="clean">
+			<fileset dir="azkaban" includes="build.xml" />
+		</subant>
+	</target>
+
+	<target name="jars" depends="clean" description="Compile main source tree java files">
+		<echo message="building azkaban-common.jar" />
+		<subant target="jars">
+			<fileset dir="azkaban-common" includes="build.xml" />
+		</subant>
+		<echo message="building azkaban.jar" />
+		<subant target="jars">
+			<fileset dir="azkaban" includes="build.xml" />
+		</subant>
+	</target>
+
+    <target name="jar-with-deps" depends="jars" description="Make big bad jar">
+        <delete dir="${dist.dir}/jar-with-deps"/>
+        <mkdir dir="${dist.dir}/jar-with-deps"/>
+
+        <jar jarfile="${dist.dir}/jar-with-deps/${name}-self-contained-${curr.release}.jar" filesetmanifest="merge">
+            <manifest>
+                <attribute name="Main-Class" value="azkaban.jobs.CommandLineJobRunner"/>
+            </manifest>
+            <fileset dir="${dist.dir}/azkaban/classes"/>
+            <fileset dir="${dist.dir}/azkaban-common/classes"/>
+            <zipgroupfileset dir="${lib.dir}" includes="*.jar" excludes="jarjar-1.0.jar" />
+        </jar>
+    </target>
+
+	<target name="unit" 
+			description="Compile and run unit tests"
+			depends="jars" >
+
+		<!--. Run JUnit tests: use -Dtests.to.run=testA,testB,... to run tests selectively"--> 
+		<echo message="building and running unit tests" />
+		<subant target="unit">
+			<fileset dir="azkaban-common" includes="build.xml" />
+		</subant>
+		<subant target="unit">
+			<fileset dir="azkaban" includes="build.xml" />
+		</subant>
+
+	</target>
+
+    <target name="build-tests" description="Generate test packages.">
+		<echo message="Create test jar in test/dist/azkaban-tests.zip " />
+		<subant target="build-tests">
+			<fileset dir="test" includes="build.xml" />
+		</subant>
+	</target>
+
+	<target name="war" depends="jars" description="creates azkaban war.">
+		<echo message="building azkaban.war" />
+		<subant target="war">
+			<fileset dir="azkaban" includes="build.xml" />
+		</subant>
+	</target>
+
+	<target name="deploy" depends="all" description="Deploys azkaban to tomcat.">
+		<subant target="deploy">
+			<fileset dir="azkaban" includes="build.xml" />
+		</subant>
+	</target>
+
+	<target name="snapshot" description="Create a release snapshot artifacts">
+		<create-release-artifacts version="${curr.release.snapshot}" />
+	</target>
+
+	<target name="release" description="Create a release artifacts">
+		<create-release-artifacts version="${curr.release}" />
+	</target>
+
+	<macrodef name="create-release-artifacts">
+		<attribute name="version" />
+		<sequential>
+			<antcall target="jars" />
+			<zip destfile="${dist.dir}/${name}-@{version}.zip">
+				<zipfileset dir="." prefix="azkaban-@{version}" filemode="755" includes="bin/*" />
+				<zipfileset dir="." prefix="azkaban-@{version}" includes="**">
+					<exclude name="${dist.dir}/azkaban"/>
+					<exclude name="${dist.dir}/azkaban-common"/>
+					<exclude name="${dist.dir}/*.tar.gz"/>
+					<exclude name="${dist.dir}/*.zip"/>
+					<exclude name="bin/*" />
+					<exclude name=".git*/**" />
+				</zipfileset>
+			</zip>
+			<tar destfile="${dist.dir}/${name}-@{version}.tar.gz" compression="gzip" longfile="gnu">
+				<tarfileset dir="." prefix="azkaban-@{version}" filemode="755" includes="bin/*" />
+				<tarfileset dir="." prefix="azkaban-@{version}" includes="**">
+					<exclude name="${dist.dir}/azkaban"/>
+					<exclude name="${dist.dir}/azkaban-common"/>
+					<exclude name="${dist.dir}/*.tar.gz"/>
+					<exclude name="${dist.dir}/*.zip"/>
+					<exclude name="bin/*" />
+					<exclude name=".git*/**" />
+				</tarfileset>
+			</tar>
+		</sequential>
+	</macrodef>
+
+</project>

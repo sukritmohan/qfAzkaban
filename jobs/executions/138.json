@@ -1,0 +1,43 @@
+{
+  "flow": {
+    "dependencies": {},
+    "id": "138",
+    "jobs": {"java_wordcount": {
+      "endTime": "2011-01-14T02:49:42.971Z",
+      "id": "138",
+      "name": "java_wordcount",
+      "overrideProps": {
+        "azkaban.flow.id": "138",
+        "azkaban.flow.start.day": "14",
+        "azkaban.flow.start.hour": "02",
+        "azkaban.flow.start.milliseconds": "388",
+        "azkaban.flow.start.minute": "49",
+        "azkaban.flow.start.month": "01",
+        "azkaban.flow.start.seconds": "42",
+        "azkaban.flow.start.timestamp": "2011-01-14T02:49:42.388Z",
+        "azkaban.flow.start.timezone": "UTC",
+        "azkaban.flow.start.year": "2011",
+        "azkaban.flow.uuid": "4a84e166-a5b8-4a19-a828-f8bf4bc76620"
+      },
+      "returnProps": {},
+      "startTime": "2011-01-14T02:49:42.392Z",
+      "status": "FAILED",
+      "type": "jobManagerLoaded"
+    }},
+    "root": ["java_wordcount"]
+  },
+  "parentProps": {
+    "azkaban.flow.id": "138",
+    "azkaban.flow.start.day": "14",
+    "azkaban.flow.start.hour": "02",
+    "azkaban.flow.start.milliseconds": "388",
+    "azkaban.flow.start.minute": "49",
+    "azkaban.flow.start.month": "01",
+    "azkaban.flow.start.seconds": "42",
+    "azkaban.flow.start.timestamp": "2011-01-14T02:49:42.388Z",
+    "azkaban.flow.start.timezone": "UTC",
+    "azkaban.flow.start.year": "2011",
+    "azkaban.flow.uuid": "4a84e166-a5b8-4a19-a828-f8bf4bc76620"
+  },
+  "type": "FlowExecutionHolder"
+}

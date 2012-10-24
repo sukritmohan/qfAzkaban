@@ -1,0 +1,51 @@
+{
+  "flow": {
+    "dependencies": {"python_celsius": ["java_wordcount"]},
+    "id": "128",
+    "jobs": {
+      "java_wordcount": {
+        "endTime": "2011-01-13T20:03:57.791Z",
+        "id": "128",
+        "name": "java_wordcount",
+        "overrideProps": {
+          "azkaban.flow.id": "128",
+          "azkaban.flow.start.day": "13",
+          "azkaban.flow.start.hour": "20",
+          "azkaban.flow.start.milliseconds": "323",
+          "azkaban.flow.start.minute": "03",
+          "azkaban.flow.start.month": "01",
+          "azkaban.flow.start.seconds": "57",
+          "azkaban.flow.start.timestamp": "2011-01-13T20:03:57.323Z",
+          "azkaban.flow.start.timezone": "UTC",
+          "azkaban.flow.start.year": "2011",
+          "azkaban.flow.uuid": "457334a0-ba7e-4d3b-8490-1fa004d25d8e"
+        },
+        "returnProps": {},
+        "startTime": "2011-01-13T20:03:57.338Z",
+        "status": "FAILED",
+        "type": "jobManagerLoaded"
+      },
+      "python_celsius": {
+        "id": "128",
+        "name": "python_celsius",
+        "status": "READY",
+        "type": "jobManagerLoaded"
+      }
+    },
+    "root": ["python_celsius"]
+  },
+  "parentProps": {
+    "azkaban.flow.id": "128",
+    "azkaban.flow.start.day": "13",
+    "azkaban.flow.start.hour": "20",
+    "azkaban.flow.start.milliseconds": "323",
+    "azkaban.flow.start.minute": "03",
+    "azkaban.flow.start.month": "01",
+    "azkaban.flow.start.seconds": "57",
+    "azkaban.flow.start.timestamp": "2011-01-13T20:03:57.323Z",
+    "azkaban.flow.start.timezone": "UTC",
+    "azkaban.flow.start.year": "2011",
+    "azkaban.flow.uuid": "457334a0-ba7e-4d3b-8490-1fa004d25d8e"
+  },
+  "type": "FlowExecutionHolder"
+}

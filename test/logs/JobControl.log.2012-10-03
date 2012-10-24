@@ -1,0 +1,196 @@
+2012/10/03 00:44:15.636 -0700 INFO [AzkabanApp] [] Job log directory set to /var/folders/5n/f984qm_d1jz9jtxz4p3cszg40000gn/T
+2012/10/03 00:44:15.638 -0700 INFO [AzkabanApp] [] Job directories set to [azkaban-jobs]
+2012/10/03 00:44:15.647 -0700 INFO [AzkabanApplication] [] HADOOP_HOME not set, using default hadoop config.
+2012/10/03 00:44:15.751 -0700 INFO [AzkabanApplication] [] Schedule file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/03 00:44:15.752 -0700 INFO [AzkabanApplication] [] Schedule backup file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule.backup
+2012/10/03 00:44:15.755 -0700 INFO [AzkabanApplication] [] Using path[/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/executions] for storing executions.
+2012/10/03 00:44:15.755 -0700 INFO [AzkabanApplication] [] Last known execution id was [6]
+2012/10/03 00:44:15.806 -0700 WARN [LocalFileScheduleLoader] [] No schedule files found looking for /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/03 00:44:15.944 -0700 INFO [AzkabanApp] [] Server running on port 8081.
+2012/10/03 00:52:12.749 -0700 INFO [AzkabanApp] [] Shutting down http server...
+2012/10/03 00:52:12.787 -0700 INFO [AzkabanApp] [] kk thx bye.
+2012/10/03 10:28:48.535 -0700 INFO [AzkabanApp] [] Job log directory set to /var/folders/5n/f984qm_d1jz9jtxz4p3cszg40000gn/T
+2012/10/03 10:28:48.536 -0700 INFO [AzkabanApp] [] Job directories set to [azkaban-jobs]
+2012/10/03 10:28:48.545 -0700 INFO [AzkabanApplication] [] HADOOP_HOME not set, using default hadoop config.
+2012/10/03 10:28:48.631 -0700 INFO [AzkabanApplication] [] Schedule file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/03 10:28:48.631 -0700 INFO [AzkabanApplication] [] Schedule backup file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule.backup
+2012/10/03 10:28:48.633 -0700 INFO [AzkabanApplication] [] Using path[/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/executions] for storing executions.
+2012/10/03 10:28:48.633 -0700 INFO [AzkabanApplication] [] Last known execution id was [6]
+2012/10/03 10:28:48.674 -0700 WARN [LocalFileScheduleLoader] [] No schedule files found looking for /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/03 10:28:48.788 -0700 INFO [AzkabanApp] [] Server running on port 8081.
+2012/10/03 10:29:46.188 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/03 10:29:46.190 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/03 10:29:46.221 -0700 INFO [Props] [] Return props for job[test]
+2012/10/03 10:29:46.306 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses
+2012/10/03 10:45:43.771 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/03 10:45:43.772 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/03 10:45:43.789 -0700 INFO [Props] [] Return props for job[test]
+2012/10/03 10:45:43.792 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses
+2012/10/03 10:46:17.140 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/03 10:46:17.141 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/03 10:46:17.159 -0700 INFO [Props] [] Return props for job[test]
+2012/10/03 10:46:17.162 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses
+2012/10/03 10:57:12.804 -0700 INFO [AzkabanApp] [] Shutting down http server...
+2012/10/03 10:57:12.846 -0700 INFO [AzkabanApp] [] kk thx bye.
+2012/10/03 10:58:34.645 -0700 INFO [AzkabanApp] [] Job log directory set to /var/folders/5n/f984qm_d1jz9jtxz4p3cszg40000gn/T
+2012/10/03 10:58:34.646 -0700 INFO [AzkabanApp] [] Job directories set to [azkaban-jobs]
+2012/10/03 10:58:34.652 -0700 INFO [AzkabanApplication] [] HADOOP_HOME not set, using default hadoop config.
+2012/10/03 10:58:34.717 -0700 INFO [AzkabanApplication] [] Schedule file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/03 10:58:34.717 -0700 INFO [AzkabanApplication] [] Schedule backup file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule.backup
+2012/10/03 10:58:34.719 -0700 INFO [AzkabanApplication] [] Using path[/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/executions] for storing executions.
+2012/10/03 10:58:34.719 -0700 INFO [AzkabanApplication] [] Last known execution id was [9]
+2012/10/03 10:58:34.748 -0700 WARN [LocalFileScheduleLoader] [] No schedule files found looking for /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/03 10:58:34.820 -0700 INFO [AzkabanApp] [] Server running on port 8081.
+2012/10/03 10:58:47.791 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/03 10:58:47.793 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/03 10:58:47.824 -0700 INFO [Props] [] Return props for job[test]
+2012/10/03 10:58:47.902 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses
+2012/10/03 12:51:38.146 -0700 INFO [JobManager] [] Deployed job test to path 
+2012/10/03 12:51:40.805 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/03 12:51:40.806 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/03 12:51:40.822 -0700 INFO [Props] [] Return props for job[test]
+2012/10/03 12:51:40.826 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses
+2012/10/03 12:52:31.696 -0700 INFO [JobManager] [] Deployed job test to path 
+2012/10/03 12:52:36.322 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/03 12:52:36.323 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/03 12:52:36.344 -0700 INFO [Props] [] Return props for job[test]
+2012/10/03 12:52:36.346 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses
+2012/10/03 12:54:40.616 -0700 INFO [ScheduleManager] [] Scheduling job 'test' for 10-03-2012 12:00:00:000 with a period of 1 day
+2012/10/03 12:54:40.625 -0700 INFO [ScheduleManager] [] Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-04T12:00:00.000-07:00, period=P1D, jobName='test'} to schedule.
+2012/10/03 12:55:08.211 -0700 INFO [ScheduleManager] [] Removing ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-04T12:00:00.000-07:00, period=P1D, jobName='test'} from the schedule.
+2012/10/03 12:55:24.326 -0700 INFO [ScheduleManager] [] Scheduling job 'test' for 10-03-2012 12:56:00:000 with a period of 1 minute
+2012/10/03 12:55:24.326 -0700 INFO [ScheduleManager] [] Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-03T12:56:00.000-07:00, period=PT1M, jobName='test'} to schedule.
+2012/10/03 12:56:00.000 -0700 INFO [ScheduleManager] [] Scheduler attempting to run test
+2012/10/03 12:56:00.001 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/03 12:56:00.001 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/03 12:56:00.022 -0700 INFO [Props] [] Return props for job[test]
+2012/10/03 12:56:00.024 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses
+2012/10/03 12:57:00.000 -0700 INFO [ScheduleManager] [] Scheduler attempting to run test
+2012/10/03 12:57:00.000 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/03 12:57:00.001 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/03 12:57:00.020 -0700 INFO [Props] [] Return props for job[test]
+2012/10/03 12:57:00.023 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses
+2012/10/03 12:58:00.000 -0700 INFO [ScheduleManager] [] Scheduler attempting to run test
+2012/10/03 12:58:00.000 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/03 12:58:00.001 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/03 12:58:00.049 -0700 INFO [Props] [] Return props for job[test]
+2012/10/03 12:58:00.051 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses
+2012/10/03 12:59:00.000 -0700 INFO [ScheduleManager] [] Scheduler attempting to run test
+2012/10/03 12:59:00.001 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/03 12:59:00.002 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/03 12:59:00.020 -0700 INFO [Props] [] Return props for job[test]
+2012/10/03 12:59:00.022 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses
+2012/10/03 13:00:00.000 -0700 INFO [ScheduleManager] [] Scheduler attempting to run test
+2012/10/03 13:00:00.001 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/03 13:00:00.001 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/03 13:00:00.024 -0700 INFO [Props] [] Return props for job[test]
+2012/10/03 13:00:00.026 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses
+2012/10/03 13:01:00.000 -0700 INFO [ScheduleManager] [] Scheduler attempting to run test
+2012/10/03 13:01:00.000 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/03 13:01:00.001 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/03 13:01:00.020 -0700 INFO [Props] [] Return props for job[test]
+2012/10/03 13:01:00.022 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses
+2012/10/03 13:02:00.000 -0700 INFO [ScheduleManager] [] Scheduler attempting to run test
+2012/10/03 13:02:00.000 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/03 13:02:00.001 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/03 13:02:00.022 -0700 INFO [Props] [] Return props for job[test]
+2012/10/03 13:02:00.024 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses
+2012/10/03 13:03:00.001 -0700 INFO [ScheduleManager] [] Scheduler attempting to run test
+2012/10/03 13:03:00.001 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/03 13:03:00.002 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/03 13:03:00.021 -0700 INFO [Props] [] Return props for job[test]
+2012/10/03 13:03:00.023 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses
+2012/10/03 13:04:00.000 -0700 INFO [ScheduleManager] [] Scheduler attempting to run test
+2012/10/03 13:04:00.001 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/03 13:04:00.001 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/03 13:04:00.021 -0700 INFO [Props] [] Return props for job[test]
+2012/10/03 13:04:00.024 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses
+2012/10/03 13:04:33.391 -0700 INFO [ScheduleManager] [] Removing ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-03T13:05:00.000-07:00, period=PT1M, jobName='test'} from the schedule.
+2012/10/03 14:18:50.461 -0700 INFO [ScheduleManager] [] Scheduling job 'test' for 10-03-2012 14:20:00:000 with a period of 1 hour
+2012/10/03 14:18:50.461 -0700 INFO [ScheduleManager] [] Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-03T14:20:00.000-07:00, period=PT1H, jobName='test'} to schedule.
+2012/10/03 14:19:41.645 -0700 INFO [JobManager] [] Deployed job test2 to path 
+2012/10/03 14:19:47.121 -0700 INFO [JobExecutorManager] [] Executing job 'test2' now
+2012/10/03 14:19:47.122 -0700 INFO [JobExecutorManager] [] Starting run of test2
+2012/10/03 14:19:47.138 -0700 INFO [Props] [] Return props for job[test2]
+2012/10/03 14:19:47.140 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses
+2012/10/03 14:20:00.001 -0700 INFO [ScheduleManager] [] Scheduler attempting to run test
+2012/10/03 14:20:00.001 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/03 14:20:00.002 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/03 14:20:00.022 -0700 INFO [Props] [] Return props for job[test]
+2012/10/03 14:20:00.024 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses
+2012/10/03 14:59:18.213 -0700 INFO [AzkabanApp] [] Shutting down http server...
+2012/10/03 14:59:18.261 -0700 INFO [AzkabanApp] [] kk thx bye.
+2012/10/03 15:00:08.772 -0700 INFO [AzkabanApp] [] Job log directory set to /var/folders/5n/f984qm_d1jz9jtxz4p3cszg40000gn/T
+2012/10/03 15:00:08.774 -0700 INFO [AzkabanApp] [] Job directories set to [azkaban-jobs]
+2012/10/03 15:00:08.779 -0700 INFO [AzkabanApplication] [] HADOOP_HOME not set, using default hadoop config.
+2012/10/03 15:00:08.845 -0700 INFO [AzkabanApplication] [] Schedule file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/03 15:00:08.845 -0700 INFO [AzkabanApplication] [] Schedule backup file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule.backup
+2012/10/03 15:00:08.847 -0700 INFO [AzkabanApplication] [] Using path[/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/executions] for storing executions.
+2012/10/03 15:00:08.847 -0700 INFO [AzkabanApplication] [] Last known execution id was [23]
+2012/10/03 15:00:08.943 -0700 INFO [ScheduleManager] [] Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-03T15:20:00.000-07:00, period=PT1H, jobName='test'} to schedule.
+2012/10/03 15:00:09.014 -0700 INFO [AzkabanApp] [] Server running on port 8081.
+2012/10/03 15:00:38.143 -0700 INFO [ScheduleManager] [] Scheduling job 'test' for 10-03-2012 15:01:00:000 with a period of 1 hour
+2012/10/03 15:00:38.144 -0700 INFO [ScheduleManager] [] Removing ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-03T15:20:00.000-07:00, period=PT1H, jobName='test'} from the schedule.
+2012/10/03 15:00:38.144 -0700 INFO [ScheduleManager] [] Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-03T15:01:00.000-07:00, period=PT1H, jobName='test'} to schedule.
+2012/10/03 15:01:00.001 -0700 INFO [ScheduleManager] [] Scheduler attempting to run test
+2012/10/03 15:01:00.004 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/03 15:01:00.006 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/03 15:01:00.036 -0700 INFO [Props] [] Return props for job[test]
+2012/10/03 15:01:00.109 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses
+2012/10/03 15:01:34.570 -0700 INFO [AzkabanApp] [] Shutting down http server...
+2012/10/03 15:01:34.620 -0700 INFO [AzkabanApp] [] kk thx bye.
+2012/10/03 15:02:28.951 -0700 INFO [AzkabanApp] [] Job log directory set to /var/folders/5n/f984qm_d1jz9jtxz4p3cszg40000gn/T
+2012/10/03 15:02:28.952 -0700 INFO [AzkabanApp] [] Job directories set to [azkaban-jobs]
+2012/10/03 15:02:28.958 -0700 INFO [AzkabanApplication] [] HADOOP_HOME not set, using default hadoop config.
+2012/10/03 15:02:29.023 -0700 INFO [AzkabanApplication] [] Schedule file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/03 15:02:29.024 -0700 INFO [AzkabanApplication] [] Schedule backup file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule.backup
+2012/10/03 15:02:29.026 -0700 INFO [AzkabanApplication] [] Using path[/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/executions] for storing executions.
+2012/10/03 15:02:29.026 -0700 INFO [AzkabanApplication] [] Last known execution id was [24]
+2012/10/03 15:02:29.122 -0700 INFO [ScheduleManager] [] Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-03T16:01:00.000-07:00, period=PT1H, jobName='test'} to schedule.
+2012/10/03 15:02:29.193 -0700 INFO [AzkabanApp] [] Server running on port 8081.
+2012/10/03 15:02:50.221 -0700 INFO [ScheduleManager] [] Scheduling job 'test' for 10-03-2012 15:03:00:000 with a period of 1 hour
+2012/10/03 15:02:50.221 -0700 INFO [ScheduleManager] [] IT WORKS!!!!!
+2012/10/03 15:02:50.222 -0700 INFO [ScheduleManager] [] Removing ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-03T16:01:00.000-07:00, period=PT1H, jobName='test'} from the schedule.
+2012/10/03 15:02:50.222 -0700 INFO [ScheduleManager] [] Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-03T15:03:00.000-07:00, period=PT1H, jobName='test'} to schedule.
+2012/10/03 15:03:00.001 -0700 INFO [ScheduleManager] [] Scheduler attempting to run test
+2012/10/03 15:03:00.004 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/03 15:03:00.006 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/03 15:03:00.037 -0700 INFO [Props] [] Return props for job[test]
+2012/10/03 15:03:00.112 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses
+2012/10/03 15:45:41.489 -0700 INFO [ScheduleManager] [] Scheduling job 'test' for 10-03-2012 15:46:00:000 with a period of 543 days
+2012/10/03 15:45:41.489 -0700 INFO [ScheduleManager] [] IT WORKS!!!!!
+2012/10/03 15:45:41.489 -0700 INFO [ScheduleManager] [] Removing ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-03T16:03:00.000-07:00, period=PT1H, jobName='test'} from the schedule.
+2012/10/03 15:45:41.489 -0700 INFO [ScheduleManager] [] Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-03T15:46:00.000-07:00, period=P543D, jobName='test'} to schedule.
+2012/10/03 15:46:00.001 -0700 INFO [ScheduleManager] [] Scheduler attempting to run test
+2012/10/03 15:46:00.001 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/03 15:46:00.002 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/03 15:46:00.022 -0700 INFO [Props] [] Return props for job[test]
+2012/10/03 15:46:00.025 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses
+2012/10/03 15:46:06.977 -0700 INFO [ScheduleManager] [] Removing ScheduledJob{ignoreDependency=false, nextScheduledExecution=2014-03-30T15:46:00.000-07:00, period=P543D, jobName='test'} from the schedule.
+2012/10/03 16:41:50.890 -0700 INFO [AzkabanApp] [] Shutting down http server...
+2012/10/03 16:41:50.942 -0700 INFO [AzkabanApp] [] kk thx bye.
+2012/10/03 16:41:54.934 -0700 INFO [AzkabanApp] [] Job log directory set to /var/folders/5n/f984qm_d1jz9jtxz4p3cszg40000gn/T
+2012/10/03 16:41:54.935 -0700 INFO [AzkabanApp] [] Job directories set to [azkaban-jobs]
+2012/10/03 16:41:54.941 -0700 INFO [AzkabanApplication] [] HADOOP_HOME not set, using default hadoop config.
+2012/10/03 16:41:55.006 -0700 INFO [AzkabanApplication] [] Schedule file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/10/03 16:41:55.007 -0700 INFO [AzkabanApplication] [] Schedule backup file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule.backup
+2012/10/03 16:41:55.009 -0700 INFO [AzkabanApplication] [] Using path[/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/executions] for storing executions.
+2012/10/03 16:41:55.009 -0700 INFO [AzkabanApplication] [] Last known execution id was [26]
+2012/10/03 16:41:55.114 -0700 INFO [AzkabanApp] [] Server running on port 8081.
+2012/10/03 16:42:15.946 -0700 INFO [ScheduleManager] [] Scheduling job 'test' for 10-03-2012 16:43:00:000 with a period of 1 day
+2012/10/03 16:42:15.949 -0700 INFO [ScheduleManager] [] Adding ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-03T16:43:00.000-07:00, period=P1D, jobName='test'} to schedule.
+2012/10/03 16:42:15.949 -0700 INFO [ScheduleManager] [] FILE DOES NOT EXIST... yet...
+2012/10/03 16:42:25.950 -0700 INFO [ScheduleManager] [] FILE DOES NOT EXIST... yet...
+2012/10/03 16:42:35.952 -0700 INFO [ScheduleManager] [] FILE DOES NOT EXIST... yet...
+2012/10/03 16:42:45.953 -0700 INFO [ScheduleManager] [] FILE DOES NOT EXIST... yet...
+2012/10/03 16:42:55.954 -0700 INFO [ScheduleManager] [] FILE DOES NOT EXIST... yet...
+2012/10/03 16:43:05.955 -0700 INFO [ScheduleManager] [] FILE DOES NOT EXIST... yet...
+2012/10/03 16:43:15.956 -0700 INFO [ScheduleManager] [] FILE DOES NOT EXIST... yet...
+2012/10/03 16:43:25.957 -0700 INFO [ScheduleManager] [] FILE DOES NOT EXIST... yet...
+2012/10/03 16:43:35.958 -0700 INFO [ScheduleManager] [] FILE EXISTS!!!! - WORKS!!!!
+2012/10/03 16:43:35.959 -0700 INFO [ScheduleManager] [] Scheduler attempting to run test
+2012/10/03 16:43:35.962 -0700 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/10/03 16:43:35.964 -0700 INFO [ScheduleManager] [] Removing ScheduledJob{ignoreDependency=false, nextScheduledExecution=2012-10-03T16:43:00.000-07:00, period=P1D, jobName='test'} from the schedule.
+2012/10/03 16:43:35.964 -0700 INFO [JobExecutorManager] [] Starting run of test
+2012/10/03 16:43:35.992 -0700 INFO [Props] [] Return props for job[test]
+2012/10/03 16:43:36.061 -0700 WARN [Mailman] [] Error while sending email: No recipient addresses

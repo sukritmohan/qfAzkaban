@@ -1,0 +1,23 @@
+{"schedule": [
+    {
+        "id": "java_sleep",
+        "ignoreDependency": false,
+        "recurrence": "1d",
+        "time": "2011-01-14.12.00.00.000",
+        "timezone": "America/Los_Angeles"
+    },
+    {
+        "id": "java_wordcount",
+        "ignoreDependency": false,
+        "recurrence": "1d",
+        "time": "2011-01-15.12.00.00.000",
+        "timezone": "UTC"
+    },
+    {
+        "id": "command_ls",
+        "ignoreDependency": false,
+        "recurrence": "1d",
+        "time": "2011-01-15.12.00.00.000",
+        "timezone": "UTC"
+    }
+]}

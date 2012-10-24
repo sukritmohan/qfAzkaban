@@ -1,0 +1,43 @@
+{
+  "flow": {
+    "dependencies": {},
+    "id": "107",
+    "jobs": {"hadoop_wordcount": {
+      "endTime": "2011-01-08T09:44:50.913Z",
+      "id": "107",
+      "name": "hadoop_wordcount",
+      "overrideProps": {
+        "azkaban.flow.id": "107",
+        "azkaban.flow.start.day": "08",
+        "azkaban.flow.start.hour": "09",
+        "azkaban.flow.start.milliseconds": "163",
+        "azkaban.flow.start.minute": "44",
+        "azkaban.flow.start.month": "01",
+        "azkaban.flow.start.seconds": "50",
+        "azkaban.flow.start.timestamp": "2011-01-08T09:44:50.163Z",
+        "azkaban.flow.start.timezone": "UTC",
+        "azkaban.flow.start.year": "2011",
+        "azkaban.flow.uuid": "657edd5e-0249-42d9-8a28-17ced63a5fac"
+      },
+      "returnProps": {},
+      "startTime": "2011-01-08T09:44:50.179Z",
+      "status": "FAILED",
+      "type": "jobManagerLoaded"
+    }},
+    "root": ["hadoop_wordcount"]
+  },
+  "parentProps": {
+    "azkaban.flow.id": "107",
+    "azkaban.flow.start.day": "08",
+    "azkaban.flow.start.hour": "09",
+    "azkaban.flow.start.milliseconds": "163",
+    "azkaban.flow.start.minute": "44",
+    "azkaban.flow.start.month": "01",
+    "azkaban.flow.start.seconds": "50",
+    "azkaban.flow.start.timestamp": "2011-01-08T09:44:50.163Z",
+    "azkaban.flow.start.timezone": "UTC",
+    "azkaban.flow.start.year": "2011",
+    "azkaban.flow.uuid": "657edd5e-0249-42d9-8a28-17ced63a5fac"
+  },
+  "type": "FlowExecutionHolder"
+}
