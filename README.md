@@ -15,3 +15,6 @@ State of the project
 We have been using [Azkaban](http://sna-projects.com/azkaban "Azkaban") internally at [LinkedIn](http://www.linkedin.com "LinkedIn") for the last nine months or so, and have about a hundred jobs running in it, mostly hadoop jobs or ETL of some sort. [Azkaban](http://sna-projects.com/azkaban "Azkaban") is quite new as an open source project, though, and we are working now to generalize it enough to make it useful for everyone.
 
 Any patches, bug reports, or feature ideas are quite welcome. We have created a mailing list for this purpose.
+qfAzkaban
+
+This patch includes event-based scheduling on Azkaban
