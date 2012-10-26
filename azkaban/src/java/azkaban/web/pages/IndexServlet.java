@@ -248,7 +248,7 @@ public class IndexServlet extends AbstractAzkabanServlet {
 	                if(isPm && hour < 12)
 	                    hour += 12;
 	                hour %= 24;
-	
+	                	
 	                app.getScheduleManager().schedule(job,
                             day.withHourOfDay(hour)
                             .withMinuteOfHour(minutes)

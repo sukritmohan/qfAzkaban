@@ -110,16 +110,25 @@ public class ScheduledJob {
 		this.stopHour = stopHour;
 		
 		this.criteria = criteria;
-		this.criteriaCheck = new boolean[criteria.size()];
+		this.criteriaMap = new HashMap<String, Integer>();
+		if(criteria != null)
+		{
+			this.criteriaCheck = new boolean[criteria.size()];
+			int i = 0;
+			for(String key : criteria.keySet())
+			{
+				this.criteriaMap.put(key, i);
+				i+=1;
+			}
+		}
+		else
+		{
+			this.criteriaCheck = new boolean[1];
+		}
 		for(int i = 0; i<criteriaCheck.length; i++)
 			this.criteriaCheck[i] = false;
-		this.criteriaMap = new HashMap<String, Integer>();
-		int i = 0;
-		for(String key : criteria.keySet())
-		{
-			this.criteriaMap.put(key, i);
-			i+=1;
-		}
+		
+		
 		
 		if(eventTriggeredJob) this.ecm = new EventConsumerManager(jobId, topic, criteria, criteriaCheck, criteriaMap, group, startHour, stopHour);
 		else this.ecm = null;
@@ -331,13 +340,18 @@ public class ScheduledJob {
     @Override
     public String toString()
     {
+    	String criteriaString = "";
+    	if(criteria != null)
+    		criteriaString = criteria.toString();
+    	else
+    		criteriaString = "";
         return "ScheduledJob{" +
                "ignoreDependency=" + ignoreDependency +
                ", nextScheduledExecution=" + nextScheduledExecution +
                ", period=" + period +
                ", eventTriggered=" + eventTriggeredJob +
                ", kafka_topic=" + topic +
-               ", criteria" + criteria.toString() + 
+               ", criteria" + criteriaString + 
                ", kafka_group=" + group +
                ", criteria_startHour=" + startHour +
                ", criteria_stopHour=" + stopHour +
