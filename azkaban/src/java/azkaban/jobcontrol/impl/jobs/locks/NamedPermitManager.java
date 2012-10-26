@@ -19,8 +19,14 @@ package azkaban.jobcontrol.impl.jobs.locks;
 import java.util.Hashtable;
 import java.util.concurrent.Semaphore;
 
+import org.apache.log4j.Logger;
+
+import azkaban.app.AzkabanApplication;
+
 public class NamedPermitManager {
 	private final Hashtable<String, Permit> _namedPermitManager;
+    private static final Logger logger = Logger.getLogger(AzkabanApplication.class);
+
 	
 	public NamedPermitManager() {
 		_namedPermitManager = new Hashtable<String, Permit>();
@@ -36,6 +42,7 @@ public class NamedPermitManager {
 			return null;
 		}
 		
+		logger.info("TOTAL PERMITS HERE : " + permit._totalPermits);
 		return new PermitLock( name, permit._semaphore, numPermits, permit._totalPermits );
 	}
 	
