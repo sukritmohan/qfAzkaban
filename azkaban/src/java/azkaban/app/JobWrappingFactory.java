@@ -33,8 +33,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.log4j.Logger;
+
 public class JobWrappingFactory implements Function<JobDescriptor, Job>
 {
+    private static final Logger logger = Logger.getLogger(AzkabanApplication.class);
+
     private final ReadWriteLockManager _readWriteLockManager;
     private final String _logDir;
     //private final String _defaultType;
@@ -91,6 +95,7 @@ public class JobWrappingFactory implements Function<JobDescriptor, Job>
 
         // If this job requires work permits wrap it in a resource throttler
         if(jobDescriptor.getNumRequiredPermits() > 0) {
+        	logger.info("REQUIRES PERMITS : " + jobDescriptor.getNumRequiredPermits());
             PermitLock permits = _permitManager.getNamedPermit("default",
                                                                jobDescriptor.getNumRequiredPermits());
             if(permits == null) {

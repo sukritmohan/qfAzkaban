@@ -308,6 +308,7 @@ public class AzkabanApplication
         int workPermits = props.getInt("total.job.permits", Integer.MAX_VALUE);
         NamedPermitManager permitManager = new NamedPermitManager();
         permitManager.createNamedPermit("default", workPermits);
+        logger.info("TOTAL PERMITS : " + workPermits);
 
         return permitManager;
     }
