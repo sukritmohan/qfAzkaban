@@ -22,10 +22,15 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.log4j.Logger;
+
 import azkaban.common.utils.Props;
 import azkaban.common.utils.UndefinedPropertyException;
 
 public class PropsUtils {
+	
+    private static final Logger logger = Logger.getLogger(AzkabanApplication.class);
+
 
     /**
      * Load job schedules from the given directories ] * @param dir The
@@ -53,6 +58,8 @@ public class PropsUtils {
             if(files != null) {
                 for(File f: files) {
                     if(f.isFile() && endsWith(f, suffixes)) {
+                    	logger.info("IS OUTPUT PATH!!!!!!");
+                    	logger.info(f.getAbsolutePath());
                         props.putAll(new Props(null, f.getAbsolutePath()));
                     }
                 }
@@ -73,6 +80,7 @@ public class PropsUtils {
     public static Props loadPropsInDirs(List<File> dirs, String... suffixes) {
         Props props = new Props();
         for(File dir: dirs) {
+        	logger.info("IN PATH " + dir.getAbsolutePath());
             props.putLocal(loadPropsInDir(dir, suffixes));
         }
         return props;
