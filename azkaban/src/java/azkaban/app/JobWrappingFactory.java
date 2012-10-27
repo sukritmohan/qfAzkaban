@@ -95,7 +95,7 @@ public class JobWrappingFactory implements Function<JobDescriptor, Job>
 
         // If this job requires work permits wrap it in a resource throttler
         if(jobDescriptor.getNumRequiredPermits() > 0) {
-        	logger.info("REQUIRES PERMITS : " + jobDescriptor.getNumRequiredPermits());
+        	logger.info(jobDescriptor.getId() + "  REQUIRES PERMITS : " + jobDescriptor.getNumRequiredPermits());
             PermitLock permits = _permitManager.getNamedPermit("default",
                                                                jobDescriptor.getNumRequiredPermits());
             if(permits == null) {
