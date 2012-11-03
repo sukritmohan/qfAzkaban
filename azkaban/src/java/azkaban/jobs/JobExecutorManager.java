@@ -1,6 +1,10 @@
 package azkaban.jobs;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Arrays;
@@ -29,6 +33,7 @@ import com.google.common.collect.Multimap;
 import com.google.common.collect.Multimaps;
 
 import azkaban.app.AppCommon;
+import azkaban.app.AzkabanApplication;
 import azkaban.app.JobManager;
 import azkaban.app.Mailman;
 import azkaban.common.utils.Props;
@@ -243,86 +248,104 @@ public class JobExecutorManager {
                                 Map<String, Throwable> exceptions,
                                 String senderAddress,
                                 List<String> emailList) {
+    	
+    	StringBuffer body = new StringBuffer("The job '"
+                + job.getId()
+                + " has failed with the following errors: \r\n");
+    	
         if((emailList == null || emailList.isEmpty()) && jobFailureEmail != null)
             emailList = Arrays.asList(jobFailureEmail);
 
-        if(emailList != null && mailman != null) {
-            try {
+        try {
+        	body.append("The job was running on " + InetAddress.getLocalHost().getHostName() + "\r\n\r\n");
+            int errorNo = 1;
+            String logUrlPrefix = runtimeProps != null ? runtimeProps.getProperty(AppCommon.DEFAULT_LOG_URL_PREFIX)
+                                                       : null;
+            if(logUrlPrefix == null && runtimeProps != null) {
+                logUrlPrefix = runtimeProps.getProperty(AppCommon.LOG_URL_PREFIX);
+            }
 
-                StringBuffer body = new StringBuffer("The job '"
-                                                     + job.getId()
-                                                     + "' running on "
-                                                     + InetAddress.getLocalHost().getHostName()
-                                                     + " has failed with the following errors: \r\n\r\n");
-                int errorNo = 1;
-                String logUrlPrefix = runtimeProps != null ? runtimeProps.getProperty(AppCommon.DEFAULT_LOG_URL_PREFIX)
-                                                           : null;
-                if(logUrlPrefix == null && runtimeProps != null) {
-                    logUrlPrefix = runtimeProps.getProperty(AppCommon.LOG_URL_PREFIX);
+            final int lastLogLineNum = 60;
+            for(Map.Entry<String, Throwable> entry: exceptions.entrySet()) {
+                final String jobId = entry.getKey();
+                final Throwable exception = entry.getValue();
+
+                /* append job exception */
+                String error = (exception instanceof ProcessFailureException) ? ((ProcessFailureException) exception).getLogSnippet()
+                                                                             : Utils.stackTrace(exception);
+                body.append(" Job " + errorNo + ". " + jobId + ":\n" + error + "\n");
+
+                /* append log file link */
+                JobExecution jobExec = jobManager.loadMostRecentJobExecution(jobId);
+                if(jobExec == null) {
+                    body.append("Job execution object is null for jobId:" + jobId + "\n\n");
                 }
 
-                final int lastLogLineNum = 60;
-                for(Map.Entry<String, Throwable> entry: exceptions.entrySet()) {
-                    final String jobId = entry.getKey();
-                    final Throwable exception = entry.getValue();
+                String logPath = jobExec != null ? jobExec.getLog() : null;
+                if(logPath == null) {
+                    body.append("Log path is null. \n\n");
+                } else {
+                    body.append("See log in " + logUrlPrefix + logPath + "\n\n" + "The last "
+                                + lastLogLineNum + " lines in the log are:\n");
 
-                    /* append job exception */
-                    String error = (exception instanceof ProcessFailureException) ? ((ProcessFailureException) exception).getLogSnippet()
-                                                                                 : Utils.stackTrace(exception);
-                    body.append(" Job " + errorNo + ". " + jobId + ":\n" + error + "\n");
+                    /* append last N lines of the log file */
+                    String logFilePath = this.jobManager.getLogDir() + File.separator
+                                         + logPath;
+                    Vector<String> lastNLines = Utils.tail(logFilePath, 60);
 
-                    /* append log file link */
-                    JobExecution jobExec = jobManager.loadMostRecentJobExecution(jobId);
-                    if(jobExec == null) {
-                        body.append("Job execution object is null for jobId:" + jobId + "\n\n");
-                    }
-
-                    String logPath = jobExec != null ? jobExec.getLog() : null;
-                    if(logPath == null) {
-                        body.append("Log path is null. \n\n");
-                    } else {
-                        body.append("See log in " + logUrlPrefix + logPath + "\n\n" + "The last "
-                                    + lastLogLineNum + " lines in the log are:\n");
-
-                        /* append last N lines of the log file */
-                        String logFilePath = this.jobManager.getLogDir() + File.separator
-                                             + logPath;
-                        Vector<String> lastNLines = Utils.tail(logFilePath, 60);
-
-                        if(lastNLines != null) {
-                            for(String line: lastNLines) {
-                                body.append(line + "\n");
-                            }
+                    if(lastNLines != null) {
+                        for(String line: lastNLines) {
+                            body.append(line + "\n");
                         }
                     }
-
-                    errorNo++;
                 }
 
-                // logger.error("\n\n error email body: \n" + body.toString() +
-                // "\n");
-
-                mailman.sendEmailIfPossible(senderAddress,
-                                             emailList,
-                                             "Job '" + job.getId() + "' has failed!",
-                                             body.toString());
-
-            } catch(UnknownHostException uhe) {
-                logger.error(uhe);
+                errorNo++;
             }
+
+        } catch(UnknownHostException uhe) {
+            logger.error(uhe);
+        }
+        
+        if(emailList != null && mailman != null) {
+        	mailman.sendEmailIfPossible(senderAddress,
+                    emailList,
+                    "Job '" + job.getId() + "' has failed!",
+                    body.toString());
+        }
             
-            //publish error to Kafka.
-            if(job.isEventTriggered())
-            {
-            	String key = job.getId() + "_status";
-            	String value = "Failed";
-            	JSONObject obj = new JSONObject();
-            	obj.put(key, value);
-            	String message = obj.toString();
-            	logger.info("Publishing to Kafka : " + message);
-                EventManagerUtils.publish(job.getTopic(), message);
+        
+        //PUBLISH JOB DETAILS TO KAFKA
+        String topic = AzkabanApplication.kafkaTopic;
+        JSONObject jobDetails = new JSONObject();
+        jobDetails.put("JobID", job.getId());
+        jobDetails.put("message", body);
+        try {
+			BufferedReader in = new BufferedReader(new FileReader("$HOME/qfAzkaban/azkaban-jobs/dumps/tsDir.sh"));
+			String tsDir = in.readLine();
+			jobDetails.put("tsDir", tsDir);
+			
+		} catch (FileNotFoundException e) {
+			logger.info("SUKRIT : FILE NOT FOUND!!! PROBLEM....");
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        String kafkaMsg = jobDetails.toString();
+        EventManagerUtils.publish(topic, kafkaMsg);
+        
+        //publish error to Kafka.
+        if(job.isEventTriggered())
+        {
+        	String key = job.getId() + "_status";
+        	String value = "Failed";
+        	JSONObject obj = new JSONObject();
+        	obj.put(key, value);
+        	String message = obj.toString();
+        	logger.info("Publishing to Kafka : " + message);
+            EventManagerUtils.publish(job.getTopic(), message);
 
-            }
         }
     }
 
@@ -331,7 +354,27 @@ public class JobExecutorManager {
                                   String senderAddress,
                                   List<String> emailList) {
     	
-    	//publish success to kafka topic
+    	StringBuffer body = new StringBuffer("The job '"
+                + job.getId()
+                + " has completed successfully.");
+    	
+    	String logUrlPrefix = runtimeProps != null ? runtimeProps.getProperty(AppCommon.DEFAULT_LOG_URL_PREFIX)
+                : null;
+    	if(logUrlPrefix == null && runtimeProps != null) {
+    		logUrlPrefix = runtimeProps.getProperty(AppCommon.LOG_URL_PREFIX);
+    	}
+    	
+    	JobExecution jobExec = jobManager.loadMostRecentJobExecution(job.getId());
+        if(jobExec == null) {
+            body.append("Job execution object is null for jobId:" + job.getId() + "\n\n");
+        }
+
+        String logPath = jobExec != null ? jobExec.getLog() : null;
+        if(logPath == null) {
+            body.append("Log path is null. \n\n");
+        } else {
+            body.append("See log in " + logUrlPrefix + logPath + "\n\n");
+        }
     	
     	
         if((emailList == null || emailList.isEmpty()) && jobSuccessEmail != null) {
@@ -355,6 +398,27 @@ public class JobExecutorManager {
                 logger.error(uhe);
             }
         }
+        
+      //PUBLISH JOB DETAILS TO KAFKA
+        String topic = AzkabanApplication.kafkaTopic;
+        JSONObject jobDetails = new JSONObject();
+        jobDetails.put("JobID", job.getId());
+        jobDetails.put("message", body);
+        try {
+			BufferedReader in = new BufferedReader(new FileReader("$HOME/qfAzkaban/azkaban-jobs/dumps/tsDir.sh"));
+			String tsDir = in.readLine();
+			jobDetails.put("tsDir", tsDir);
+			
+		} catch (FileNotFoundException e) {
+			logger.info("SUKRIT : FILE NOT FOUND!!! PROBLEM....");
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        String kafkaMsg = jobDetails.toString();
+        EventManagerUtils.publish(topic, kafkaMsg);
+        
         
         //publish success to Kafka.
         if(job.isEventTriggered())

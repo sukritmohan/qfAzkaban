@@ -28,7 +28,7 @@ import kafka.message.Message;
 public final class EventManagerUtils
 {
 	private static Logger logger = Logger.getLogger(ScheduleManager.class);
-	private static String connPort = "127.0.0.1:2181";
+	private static String connPort = "ZOOKEEPER";
 	private static String serializer = "kafka.serializer.StringEncoder";
 	private static String timeout = "1000000";
 	

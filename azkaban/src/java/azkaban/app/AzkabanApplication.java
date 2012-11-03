@@ -75,6 +75,8 @@ public class AzkabanApplication
     private static final Logger logger = Logger.getLogger(AzkabanApplication.class);
     private static final String INSTANCE_NAME = "instance.name";
     private static final String DEFAULT_TIMEZONE_ID = "default.timezone.id";
+    private static final String env = "ENVIRONMENT";
+    public static final String kafkaTopic = env + ".indexJob.status";
     
     private final String _instanceName;
     private final List<File> _jobDirs;

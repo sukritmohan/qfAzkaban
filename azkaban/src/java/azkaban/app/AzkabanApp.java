@@ -84,7 +84,7 @@ public class AzkabanApp
 
       AzkabanApplication app = new AzkabanApplication(cl.getJobDirs(), cl.getLogDir(), new File("temp"), options.has(devModeOpt));
 
-      int portNumber = 8081;
+      int portNumber = 8088;
       if(options.has(portOpt))
           portNumber = options.valueOf(portOpt);
       int httpThreads = 10;
