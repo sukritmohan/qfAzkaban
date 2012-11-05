@@ -314,6 +314,7 @@ public class JobExecutorManager {
                     body.toString());
         }
             
+        EventManagerUtils.initializeProducer();
         
         //PUBLISH JOB DETAILS TO KAFKA
         String topic = AzkabanApplication.kafkaTopic;
@@ -321,7 +322,7 @@ public class JobExecutorManager {
         jobDetails.put("JobID", job.getId());
         jobDetails.put("message", body);
         try {
-			BufferedReader in = new BufferedReader(new FileReader("$HOME/qfAzkaban/azkaban-jobs/dumps/tsDir.sh"));
+			BufferedReader in = new BufferedReader(new FileReader("$/home/dev/qfAzkaban/azkaban-jobs/dumps/tsDir.sh"));
 			String tsDir = in.readLine();
 			jobDetails.put("tsDir", tsDir);
 			
@@ -347,6 +348,8 @@ public class JobExecutorManager {
             EventManagerUtils.publish(job.getTopic(), message);
 
         }
+        
+        EventManagerUtils.closeProducer();
     }
 
     private void sendSuccessEmail(JobExecution job,
@@ -400,6 +403,10 @@ public class JobExecutorManager {
         }
         
       //PUBLISH JOB DETAILS TO KAFKA
+        
+        EventManagerUtils.initializeProducer();
+        
+        
         String topic = AzkabanApplication.kafkaTopic;
         JSONObject jobDetails = new JSONObject();
         jobDetails.put("JobID", job.getId());
@@ -431,6 +438,9 @@ public class JobExecutorManager {
         	logger.info("Publishing to Kafka : " + message);
             EventManagerUtils.publish(job.getTopic(), message);
         }
+        
+        EventManagerUtils.closeProducer();
+
     }
     
     private Props produceParentProperties(final ExecutableFlow flow) {

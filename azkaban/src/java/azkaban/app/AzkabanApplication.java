@@ -123,7 +123,7 @@ public class AzkabanApplication
         	TimeZone.setDefault(TimeZone.getTimeZone(defaultTimezoneID));
         }
         
-        EventManagerUtils.initializeProducer();
+        //EventManagerUtils.initializeProducer();
         
         NamedPermitManager permitManager = getNamedPermitManager(defaultProps);
         JobWrappingFactory factory = new JobWrappingFactory(
