@@ -322,7 +322,7 @@ public class JobExecutorManager {
         jobDetails.put("JobID", job.getId());
         jobDetails.put("message", body);
         try {
-			BufferedReader in = new BufferedReader(new FileReader("$/home/dev/qfAzkaban/azkaban-jobs/dumps/tsDir.sh"));
+			BufferedReader in = new BufferedReader(new FileReader("/home/dev/qfAzkaban/azkaban-jobs/dumps/tsDir.sh"));
 			String tsDir = in.readLine();
 			jobDetails.put("tsDir", tsDir);
 			
