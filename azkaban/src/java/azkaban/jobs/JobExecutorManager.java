@@ -321,10 +321,14 @@ public class JobExecutorManager {
         JSONObject jobDetails = new JSONObject();
         jobDetails.put("JobID", job.getId());
         jobDetails.put("message", body);
+        jobDetails.put("timestamp", System.currentTimeMillis());
         try {
-			BufferedReader in = new BufferedReader(new FileReader("/home/dev/qfAzkaban/azkaban-jobs/dumps/tsDir.sh"));
-			String tsDir = in.readLine();
-			jobDetails.put("tsDir", tsDir);
+        	if(AzkabanApplication.env.equals("dev") || AzkabanApplication.env.equals("prod") || AzkabanApplication.env.equals("stage"))
+        	{
+				BufferedReader in = new BufferedReader(new FileReader("/home/dev/qfAzkaban/azkaban-jobs/dumps/tsDir.sh"));
+				String tsDir = in.readLine();
+				jobDetails.put("tsDir", tsDir);
+        	}
 			
 		} catch (FileNotFoundException e) {
 			logger.info("SUKRIT : FILE NOT FOUND!!! PROBLEM....");
@@ -411,10 +415,14 @@ public class JobExecutorManager {
         JSONObject jobDetails = new JSONObject();
         jobDetails.put("JobID", job.getId());
         jobDetails.put("message", body);
+        jobDetails.put("timestamp", System.currentTimeMillis());
         try {
-			BufferedReader in = new BufferedReader(new FileReader("$HOME/qfAzkaban/azkaban-jobs/dumps/tsDir.sh"));
-			String tsDir = in.readLine();
-			jobDetails.put("tsDir", tsDir);
+        	if(AzkabanApplication.env.equals("dev") || AzkabanApplication.env.equals("prod") || AzkabanApplication.env.equals("stage"))
+        	{
+				BufferedReader in = new BufferedReader(new FileReader("/home/dev/qfAzkaban/azkaban-jobs/dumps/tsDir.sh"));
+				String tsDir = in.readLine();
+				jobDetails.put("tsDir", tsDir);
+        	}
 			
 		} catch (FileNotFoundException e) {
 			logger.info("SUKRIT : FILE NOT FOUND!!! PROBLEM....");
