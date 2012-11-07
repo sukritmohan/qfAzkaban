@@ -162,7 +162,6 @@ public class ImmutableFlowManager implements FlowManager
     public FlowExecutionHolder loadExecutableFlow(long id)
     {
         File storageFile = new File(storageDirectory, String.format("%s.json", id));
-        logger.info("Storage File : " + storageFile.toString());
 
         if (! storageFile.exists()) {
             return null;
