@@ -325,7 +325,7 @@ public class JobExecutorManager {
         try {
         	if(AzkabanApplication.env.equals("dev") || AzkabanApplication.env.equals("prod") || AzkabanApplication.env.equals("stage"))
         	{
-				BufferedReader in = new BufferedReader(new FileReader("/home/dev/qfAzkaban/azkaban-jobs/dumps/tsDir.sh"));
+				BufferedReader in = new BufferedReader(new FileReader("~/qfAzkaban/azkaban-jobs/dumps/tsDir.sh"));
 				String tsDir = in.readLine();
 				jobDetails.put("tsDir", tsDir);
         	}
