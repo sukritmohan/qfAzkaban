@@ -2214,3 +2214,27 @@ Caused by: java.net.UnknownHostException: blahblahblahblahblah
 2012/11/08 11:31:01.248 -0800 INFO [AzkabanApplication] [] Using path[/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/executions] for storing executions.
 2012/11/08 11:31:01.248 -0800 INFO [AzkabanApplication] [] Last known execution id was [222]
 2012/11/08 11:31:01.386 -0800 INFO [AzkabanApp] [] Server running on port 9093.
+2012/11/08 12:45:57.504 -0800 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/11/08 12:45:57.505 -0800 INFO [JobExecutorManager] [] Starting run of test
+2012/11/08 12:45:57.557 -0800 INFO [Props] [] Return props for job[test]
+2012/11/08 12:45:57.648 -0800 WARN [Mailman] [] Error while sending email: Could not connect to SMTP host: localhost, port: 25
+2012/11/08 12:45:57.649 -0800 INFO [ScheduleManager] [] SUKRIT: Initializing producer with : 127.0.0.1:2181
+2012/11/08 12:45:57.887 -0800 INFO [JobExecutorManager] [] Publishing to kafka topic : sukrit.test
+2012/11/08 12:46:04.826 -0800 INFO [AzkabanApp] [] Shutting down http server...
+2012/11/08 12:46:04.871 -0800 INFO [AzkabanApp] [] Shutting down producer...
+2012/11/08 12:46:04.871 -0800 INFO [AzkabanApp] [] kk thx bye.
+2012/11/08 12:46:21.569 -0800 INFO [AzkabanApp] [] Job log directory set to /var/folders/5n/f984qm_d1jz9jtxz4p3cszg40000gn/T
+2012/11/08 12:46:21.571 -0800 INFO [AzkabanApp] [] Job directories set to [azkaban-jobs]
+2012/11/08 12:46:21.577 -0800 INFO [AzkabanApplication] [] HADOOP_HOME not set, using default hadoop config.
+2012/11/08 12:46:21.578 -0800 INFO [AzkabanApplication] [] TOTAL PERMITS : 2147483647
+2012/11/08 12:46:21.656 -0800 INFO [AzkabanApplication] [] Schedule file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule
+2012/11/08 12:46:21.656 -0800 INFO [AzkabanApplication] [] Schedule backup file param not set. Defaulting to /Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/jobs.schedule.backup
+2012/11/08 12:46:21.660 -0800 INFO [AzkabanApplication] [] Using path[/Users/sukrit/Documents/Code/azkaban-0.10/azkaban-jobs/executions] for storing executions.
+2012/11/08 12:46:21.660 -0800 INFO [AzkabanApplication] [] Last known execution id was [223]
+2012/11/08 12:46:21.798 -0800 INFO [AzkabanApp] [] Server running on port 9090.
+2012/11/08 12:46:25.041 -0800 INFO [JobExecutorManager] [] Executing job 'test' now
+2012/11/08 12:46:25.042 -0800 INFO [JobExecutorManager] [] Starting run of test
+2012/11/08 12:46:25.089 -0800 INFO [Props] [] Return props for job[test]
+2012/11/08 12:46:25.181 -0800 WARN [Mailman] [] Error while sending email: Could not connect to SMTP host: localhost, port: 25
+2012/11/08 12:46:25.182 -0800 INFO [ScheduleManager] [] SUKRIT: Initializing producer with : 127.0.0.1:2181
+2012/11/08 12:46:25.411 -0800 INFO [JobExecutorManager] [] Publishing to kafka topic : sukrit.test
