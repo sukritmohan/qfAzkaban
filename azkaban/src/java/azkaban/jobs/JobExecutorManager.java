@@ -325,12 +325,17 @@ public class JobExecutorManager {
         //jobDetails.put("message", body);
         jobDetails.put("timestamp", Long.toString(System.currentTimeMillis()));
         try {
-        	String env = topic.split(".")[0];
-        	if(env.equals("dev") || env.equals("prod") || env.equals("stage"))
+        	String[] splitByDot = topic.split("\\.");
+        	if(splitByDot != null)
         	{
-				BufferedReader in = new BufferedReader(new FileReader("~/qfAzkaban/azkaban-jobs-"+env+"/"+env + "/tsDir.sh"));
-				String tsDir = in.readLine();
-				jobDetails.put("tsDir", tsDir);
+	        	String env = splitByDot[0];
+	        	logger.info("ENV : " + env);
+	        	if(env.equals("dev") || env.equals("prod") || env.equals("stage"))
+	        	{
+					BufferedReader in = new BufferedReader(new FileReader("~/qfAzkaban/azkaban-jobs-"+env+"/"+env + "/tsDir.sh"));
+					String tsDir = in.readLine();
+					jobDetails.put("tsDir", tsDir);
+	        	}
         	}
 			
 		} catch (FileNotFoundException e) {
@@ -424,7 +429,8 @@ public class JobExecutorManager {
         	String[] splitByDot = topic.split("\\.");
         	if(splitByDot != null)
         	{
-	        	String env = splitByDot[1];
+	        	String env = splitByDot[0];
+	        	logger.info("ENV : " + env);
 	        	if(env.equals("dev") || env.equals("prod") || env.equals("stage"))
 	        	{
 					BufferedReader in = new BufferedReader(new FileReader("~/qfAzkaban/azkaban-jobs-"+env+"/"+env + "/tsDir.sh"));
