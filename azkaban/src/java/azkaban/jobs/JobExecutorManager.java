@@ -323,12 +323,12 @@ public class JobExecutorManager {
         JSONObject jobDetails = new JSONObject();
         jobDetails.put("JobID", job.getId());
         //jobDetails.put("message", body);
-        jobDetails.put("timestamp", System.currentTimeMillis());
+        jobDetails.put("timestamp", Long.toString(System.currentTimeMillis()));
         try {
         	String env = topic.split(".")[0];
         	if(env.equals("dev") || env.equals("prod") || env.equals("stage"))
         	{
-				BufferedReader in = new BufferedReader(new FileReader("~/qfAzkaban/azkaban-jobs/"+env+"/tsDir.sh"));
+				BufferedReader in = new BufferedReader(new FileReader("~/qfAzkaban/azkaban-jobs-"+env+"/"+env + "/tsDir.sh"));
 				String tsDir = in.readLine();
 				jobDetails.put("tsDir", tsDir);
         	}
@@ -419,7 +419,7 @@ public class JobExecutorManager {
         JSONObject jobDetails = new JSONObject();
         jobDetails.put("JobID", job.getId());
         //jobDetails.put("message", body);
-        jobDetails.put("timestamp", System.currentTimeMillis());
+        jobDetails.put("timestamp", Long.toString(System.currentTimeMillis()));
         try {
         	String[] splitByDot = topic.split("\\.");
         	if(splitByDot != null)
@@ -427,7 +427,7 @@ public class JobExecutorManager {
 	        	String env = splitByDot[1];
 	        	if(env.equals("dev") || env.equals("prod") || env.equals("stage"))
 	        	{
-					BufferedReader in = new BufferedReader(new FileReader("~/qfAzkaban/azkaban-jobs/"+env+"/tsDir.sh"));
+					BufferedReader in = new BufferedReader(new FileReader("~/qfAzkaban/azkaban-jobs-"+env+"/"+env + "/tsDir.sh"));
 					String tsDir = in.readLine();
 					jobDetails.put("tsDir", tsDir);
 	        	}
