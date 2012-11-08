@@ -78,11 +78,8 @@ public class PropsUtils {
      * @return The properties
      */
     public static Props loadPropsInDirs(List<File> dirs, String... suffixes) {
-    	logger.info("IN FUNCTION LOADPROPSINDIRS");
-    	logger.info("DIRS : " + dirs.toString());
         Props props = new Props();
         for(File dir: dirs) {
-        	logger.info("IN PATH " + dir.getAbsolutePath());
             props.putLocal(loadPropsInDir(dir, suffixes));
         }
         return props;

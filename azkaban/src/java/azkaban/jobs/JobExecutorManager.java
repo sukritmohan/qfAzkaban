@@ -226,10 +226,11 @@ public class JobExecutorManager {
     private void sendErrorEmail(JobExecution job,
                                 Throwable exception,
                                 String senderAddress,
-                                List<String> emailList) {
+                                List<String> emailList,
+                                String kafkaTopic) {
         Map<String, Throwable> map = new HashMap<String, Throwable>();
         map.put(job.getId(), exception);
-        sendErrorEmail(job, map, senderAddress, emailList);
+        sendErrorEmail(job, map, senderAddress, emailList, kafkaTopic);
     }
     
 
@@ -247,7 +248,8 @@ public class JobExecutorManager {
     private void sendErrorEmail(JobExecution job,
                                 Map<String, Throwable> exceptions,
                                 String senderAddress,
-                                List<String> emailList) {
+                                List<String> emailList,
+                                String kafkaTopic) {
     	
     	StringBuffer body = new StringBuffer("The job '"
                 + job.getId()
@@ -317,15 +319,16 @@ public class JobExecutorManager {
         EventManagerUtils.initializeProducer();
         
         //PUBLISH JOB DETAILS TO KAFKA
-        String topic = AzkabanApplication.kafkaTopic;
+        String topic = kafkaTopic;
         JSONObject jobDetails = new JSONObject();
         jobDetails.put("JobID", job.getId());
-        jobDetails.put("message", body);
+        //jobDetails.put("message", body);
         jobDetails.put("timestamp", System.currentTimeMillis());
         try {
-        	if(AzkabanApplication.env.equals("dev") || AzkabanApplication.env.equals("prod") || AzkabanApplication.env.equals("stage"))
+        	String env = topic.split(".")[0];
+        	if(env.equals("dev") || env.equals("prod") || env.equals("stage"))
         	{
-				BufferedReader in = new BufferedReader(new FileReader("~/qfAzkaban/azkaban-jobs/"+AzkabanApplication.env+"/tsDir.sh"));
+				BufferedReader in = new BufferedReader(new FileReader("~/qfAzkaban/azkaban-jobs/"+env+"/tsDir.sh"));
 				String tsDir = in.readLine();
 				jobDetails.put("tsDir", tsDir);
         	}
@@ -338,7 +341,9 @@ public class JobExecutorManager {
 			e.printStackTrace();
 		}
         String kafkaMsg = jobDetails.toString();
-        EventManagerUtils.publish(topic, kafkaMsg);
+        logger.info("Publishing to kafka topic : " + topic);
+        if(topic != null)
+        	EventManagerUtils.publish(topic, kafkaMsg);
         
         //publish error to Kafka.
         if(job.isEventTriggered())
@@ -359,7 +364,8 @@ public class JobExecutorManager {
     private void sendSuccessEmail(JobExecution job,
                                   Duration duration,
                                   String senderAddress,
-                                  List<String> emailList) {
+                                  List<String> emailList,
+                                  String kafkaTopic) {
     	
     	StringBuffer body = new StringBuffer("The job '"
                 + job.getId()
@@ -405,23 +411,26 @@ public class JobExecutorManager {
                 logger.error(uhe);
             }
         }
-        
-      //PUBLISH JOB DETAILS TO KAFKA
-        
+                        
         EventManagerUtils.initializeProducer();
-        
-        
-        String topic = AzkabanApplication.kafkaTopic;
+                
+        //PUBLISH JOB DETAILS TO KAFKA
+        String topic = kafkaTopic;
         JSONObject jobDetails = new JSONObject();
         jobDetails.put("JobID", job.getId());
-        jobDetails.put("message", body);
+        //jobDetails.put("message", body);
         jobDetails.put("timestamp", System.currentTimeMillis());
         try {
-        	if(AzkabanApplication.env.equals("dev") || AzkabanApplication.env.equals("prod") || AzkabanApplication.env.equals("stage"))
+        	String[] splitByDot = topic.split("\\.");
+        	if(splitByDot != null)
         	{
-				BufferedReader in = new BufferedReader(new FileReader("~/qfAzkaban/azkaban-jobs/"+AzkabanApplication.env+"/tsDir.sh"));
-				String tsDir = in.readLine();
-				jobDetails.put("tsDir", tsDir);
+	        	String env = splitByDot[1];
+	        	if(env.equals("dev") || env.equals("prod") || env.equals("stage"))
+	        	{
+					BufferedReader in = new BufferedReader(new FileReader("~/qfAzkaban/azkaban-jobs/"+env+"/tsDir.sh"));
+					String tsDir = in.readLine();
+					jobDetails.put("tsDir", tsDir);
+	        	}
         	}
 			
 		} catch (FileNotFoundException e) {
@@ -431,8 +440,10 @@ public class JobExecutorManager {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        String kafkaMsg = jobDetails.toString();
-        EventManagerUtils.publish(topic, kafkaMsg);
+        String kafkaMsg = jobDetails.toJSONString();
+        logger.info("Publishing to kafka topic : " + topic);
+        if(topic != null)
+        	EventManagerUtils.publish(topic, kafkaMsg);
         
         
         //publish success to Kafka.
@@ -523,10 +534,14 @@ public class JobExecutorManager {
             logger.info("Starting run of " + flow.getName());
 
             List<String> emailList = null;
+            String kafkaTopic = null;
             String senderAddress = null;
             try {
                 emailList = jobManager.getJobDescriptor(flow.getName()).getEmailNotificationList();
+                kafkaTopic = jobManager.getJobDescriptor(flow.getName()).getKafkaTopic();
+
                 final List<String> finalEmailList = emailList;
+                final String finalKafkaTopic = kafkaTopic;
 
                 senderAddress = jobManager.getJobDescriptor(flow.getName()).getSenderEmail();
                 final String senderEmail = senderAddress;
@@ -553,20 +568,23 @@ public class JobExecutorManager {
                                     sendSuccessEmail(runningJob,
                                     				 runningJob.getExecutionDuration(),
                                                      senderEmail,
-                                                     finalEmailList);
+                                                     finalEmailList,
+                                                     finalKafkaTopic);
                                     break;
                                 case FAILED:
                                     sendErrorEmail(runningJob,
                                                    flow.getExceptions(),
                                                    senderEmail,
-                                                   finalEmailList);
+                                                   finalEmailList,
+                                                   finalKafkaTopic);
                                     break;
                                 default:
                                     sendErrorEmail(runningJob,
                                                    new RuntimeException(String.format("Got an unknown status[%s]",
                                                                                       status)),
                                                    senderEmail,
-                                                   finalEmailList);
+                                                   finalEmailList,
+                                                   finalKafkaTopic);
                             }
                         } catch(RuntimeException e) {
                             logger.warn("Exception caught while saving flow/sending emails", e);
@@ -584,7 +602,7 @@ public class JobExecutorManager {
             } catch(Throwable t) {
             	executing.remove(runningJob.getId());
             	if(emailList != null) {
-                    sendErrorEmail(runningJob, t, senderAddress, emailList);
+                    sendErrorEmail(runningJob, t, senderAddress, emailList, kafkaTopic);
                 }
                 
                 logger.warn(String.format("An exception almost made it back to the ScheduledThreadPool from job[%s]",

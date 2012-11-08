@@ -22,8 +22,11 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.apache.log4j.Logger;
+
 import azkaban.common.jobs.Job;
 import azkaban.common.utils.Props;
+import azkaban.jobs.JobExecutorManager;
 
 /**
  * A job descriptor represents the configuration information for a job This
@@ -38,6 +41,8 @@ import azkaban.common.utils.Props;
  */
 public class JobDescriptor {
 
+    private static Logger logger = Logger.getLogger(JobExecutorManager.class);
+
     public static final String JOB_TYPE = "type";
     public static final String JOB_CLASS = "job.class";
     public static final String READ_LOCKS = "read.lock";
@@ -48,6 +53,7 @@ public class JobDescriptor {
     public static final String NOTIFY_EMAIL = "notify.emails";
     public static final String LOGGER_PATTERN = "logger.pattern";
     public static final String MAIL_SENDER = "mail.sender";
+    public static final String KAFKA_TOPIC = "kafka.topic";
 
     public static final Comparator<JobDescriptor> NAME_COMPARATOR = new Comparator<JobDescriptor>() {
 
@@ -71,6 +77,7 @@ public class JobDescriptor {
     private final List<String> _writeResourceLocks;
     private final String _sourceEmailList;
     private final List<String> _emailList;
+    private final String _kafkaTopic;
     private final String _jobType;
     private final String _loggerPattern;
 
@@ -79,7 +86,7 @@ public class JobDescriptor {
         this._path = conicalPath;
         this._fullpath = fullpath;
         this._props = props;
-        this._resolvedProps = PropsUtils.resolveProps(props);
+        this._resolvedProps = PropsUtils.resolveProps(props);        
         
         this._jobType = props.getString(JOB_TYPE, "");
 
@@ -108,6 +115,7 @@ public class JobDescriptor {
         Collections.sort(this._writeResourceLocks);
 
         this._emailList = props.getStringList(NOTIFY_EMAIL);
+        this._kafkaTopic = props.getString(KAFKA_TOPIC, "azkabanJobs.status");
     }
 
     /**
@@ -189,6 +197,10 @@ public class JobDescriptor {
 
     public List<String> getEmailNotificationList() {
         return _emailList;
+    }
+    
+    public String getKafkaTopic() {
+    	return _kafkaTopic;
     }
 
     public String getJobType() {
