@@ -28,7 +28,7 @@ import kafka.message.Message;
 public final class EventManagerUtils
 {
 	private static Logger logger = Logger.getLogger(ScheduleManager.class);
-	private static String connPort = "ZOOKEEPER";
+	private static String connPort = "127.0.0.1:2181";
 	private static String serializer = "kafka.serializer.StringEncoder";
 	private static String timeout = "1000000";
 	
@@ -50,6 +50,12 @@ public final class EventManagerUtils
 	public static void initializeProducer()
 	{
 		producerProps = new Properties();
+		// get connPort
+		String zookeeper_env = System.getenv("ENV_ZOOKEEPER");
+		if(zookeeper_env != null)
+		{
+			setConnPort(zookeeper_env);
+		}
 		producerProps.put("zk.connect", EventManagerUtils.connPort);
 		producerProps.put("serializer.class", EventManagerUtils.serializer);
 		
