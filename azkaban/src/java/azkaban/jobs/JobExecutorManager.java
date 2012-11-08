@@ -333,7 +333,8 @@ public class JobExecutorManager {
 	        	logger.info("ENV : " + env);
 	        	if(env.equals("dev") || env.equals("prod") || env.equals("stage"))
 	        	{
-					BufferedReader in = new BufferedReader(new FileReader("~/qfAzkaban/azkaban-jobs-"+env+"/"+env + "/tsDir.sh"));
+	        		String rootEnv = (!env.equals("stage")) ? env : "dev";
+					BufferedReader in = new BufferedReader(new FileReader("/home/"+rootEnv+"/qfAzkaban/azkaban-jobs-"+env+"/"+env + "/tsDir.sh"));
 					String tsDir = in.readLine();
 					jobDetails.put("tsDir", tsDir);
 	        	}
@@ -435,7 +436,8 @@ public class JobExecutorManager {
 	        	logger.info("ENV : " + env);
 	        	if(env.equals("dev") || env.equals("prod") || env.equals("stage"))
 	        	{
-					BufferedReader in = new BufferedReader(new FileReader("~/qfAzkaban/azkaban-jobs-"+env+"/"+env + "/tsDir.sh"));
+	        		String rootEnv = (!env.equals("stage")) ? env : "dev";
+					BufferedReader in = new BufferedReader(new FileReader("/home/"+rootEnv+"/qfAzkaban/azkaban-jobs-"+env+"/"+env + "/tsDir.sh"));
 					String tsDir = in.readLine();
 					jobDetails.put("tsDir", tsDir);
 	        	}
