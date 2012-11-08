@@ -2238,3 +2238,6 @@ Caused by: java.net.UnknownHostException: blahblahblahblahblah
 2012/11/08 12:46:25.181 -0800 WARN [Mailman] [] Error while sending email: Could not connect to SMTP host: localhost, port: 25
 2012/11/08 12:46:25.182 -0800 INFO [ScheduleManager] [] SUKRIT: Initializing producer with : 127.0.0.1:2181
 2012/11/08 12:46:25.411 -0800 INFO [JobExecutorManager] [] Publishing to kafka topic : sukrit.test
+2012/11/08 14:30:24.377 -0800 INFO [AzkabanApp] [] Shutting down http server...
+2012/11/08 14:30:24.417 -0800 INFO [AzkabanApp] [] Shutting down producer...
+2012/11/08 14:30:24.418 -0800 INFO [AzkabanApp] [] kk thx bye.

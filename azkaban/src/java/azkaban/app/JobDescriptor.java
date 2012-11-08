@@ -54,6 +54,7 @@ public class JobDescriptor {
     public static final String LOGGER_PATTERN = "logger.pattern";
     public static final String MAIL_SENDER = "mail.sender";
     public static final String KAFKA_TOPIC = "kafka.topic";
+    public static final String VERTICAL = "vertical";
 
     public static final Comparator<JobDescriptor> NAME_COMPARATOR = new Comparator<JobDescriptor>() {
 
@@ -80,6 +81,7 @@ public class JobDescriptor {
     private final String _kafkaTopic;
     private final String _jobType;
     private final String _loggerPattern;
+    private final String _verticalType;
 
     public JobDescriptor(String id, String conicalPath, String fullpath, Props props, ClassLoader classLoader) {
         this._id = id;
@@ -116,6 +118,7 @@ public class JobDescriptor {
 
         this._emailList = props.getStringList(NOTIFY_EMAIL);
         this._kafkaTopic = props.getString(KAFKA_TOPIC, "azkabanJobs.status");
+        this._verticalType = props.getString(VERTICAL, "unknown");
     }
 
     /**
@@ -201,6 +204,10 @@ public class JobDescriptor {
     
     public String getKafkaTopic() {
     	return _kafkaTopic;
+    }
+    
+    public String getVertical() {
+    	return _verticalType;
     }
 
     public String getJobType() {

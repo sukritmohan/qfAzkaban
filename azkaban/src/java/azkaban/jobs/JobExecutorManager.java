@@ -227,10 +227,11 @@ public class JobExecutorManager {
                                 Throwable exception,
                                 String senderAddress,
                                 List<String> emailList,
-                                String kafkaTopic) {
+                                String kafkaTopic,
+                                String vertical) {
         Map<String, Throwable> map = new HashMap<String, Throwable>();
         map.put(job.getId(), exception);
-        sendErrorEmail(job, map, senderAddress, emailList, kafkaTopic);
+        sendErrorEmail(job, map, senderAddress, emailList, kafkaTopic, vertical);
     }
     
 
@@ -249,7 +250,8 @@ public class JobExecutorManager {
                                 Map<String, Throwable> exceptions,
                                 String senderAddress,
                                 List<String> emailList,
-                                String kafkaTopic) {
+                                String kafkaTopic,
+                                String vertical) {
     	
     	StringBuffer body = new StringBuffer("The job '"
                 + job.getId()
@@ -324,9 +326,9 @@ public class JobExecutorManager {
         jobDetails.put("JobID", job.getId());
         //jobDetails.put("message", body);
         jobDetails.put("timestamp", Long.toString(System.currentTimeMillis()));
+        jobDetails.put("vertical", vertical);
         try {
         	String[] splitByDot = topic.split("\\.");
-        	logger.info("SPLIT BY DOT : " + splitByDot.toString());
         	if(splitByDot != null)
         	{
 	        	String env = splitByDot[0];
@@ -373,7 +375,8 @@ public class JobExecutorManager {
                                   Duration duration,
                                   String senderAddress,
                                   List<String> emailList,
-                                  String kafkaTopic) {
+                                  String kafkaTopic,
+                                  String vertical) {
     	
     	StringBuffer body = new StringBuffer("The job '"
                 + job.getId()
@@ -428,9 +431,9 @@ public class JobExecutorManager {
         jobDetails.put("JobID", job.getId());
         //jobDetails.put("message", body);
         jobDetails.put("timestamp", Long.toString(System.currentTimeMillis()));
+        jobDetails.put("vertical", vertical);
         try {
         	String[] splitByDot = topic.split("\\.");
-        	logger.info("SPLIT BY DOT : " + splitByDot.toString());
         	if(splitByDot != null)
         	{
 	        	String env = splitByDot[0];
@@ -548,12 +551,15 @@ public class JobExecutorManager {
             List<String> emailList = null;
             String kafkaTopic = null;
             String senderAddress = null;
+            String vertical = "unknown";
             try {
                 emailList = jobManager.getJobDescriptor(flow.getName()).getEmailNotificationList();
                 kafkaTopic = jobManager.getJobDescriptor(flow.getName()).getKafkaTopic();
+                vertical = jobManager.getJobDescriptor(flow.getName()).getVertical();
 
                 final List<String> finalEmailList = emailList;
                 final String finalKafkaTopic = kafkaTopic;
+                final String finalVertical = vertical;
 
                 senderAddress = jobManager.getJobDescriptor(flow.getName()).getSenderEmail();
                 final String senderEmail = senderAddress;
@@ -581,14 +587,16 @@ public class JobExecutorManager {
                                     				 runningJob.getExecutionDuration(),
                                                      senderEmail,
                                                      finalEmailList,
-                                                     finalKafkaTopic);
+                                                     finalKafkaTopic,
+                                                     finalVertical);
                                     break;
                                 case FAILED:
                                     sendErrorEmail(runningJob,
                                                    flow.getExceptions(),
                                                    senderEmail,
                                                    finalEmailList,
-                                                   finalKafkaTopic);
+                                                   finalKafkaTopic,
+                                                   finalVertical);
                                     break;
                                 default:
                                     sendErrorEmail(runningJob,
@@ -596,7 +604,8 @@ public class JobExecutorManager {
                                                                                       status)),
                                                    senderEmail,
                                                    finalEmailList,
-                                                   finalKafkaTopic);
+                                                   finalKafkaTopic,
+                                                   finalVertical);
                             }
                         } catch(RuntimeException e) {
                             logger.warn("Exception caught while saving flow/sending emails", e);
@@ -614,7 +623,7 @@ public class JobExecutorManager {
             } catch(Throwable t) {
             	executing.remove(runningJob.getId());
             	if(emailList != null) {
-                    sendErrorEmail(runningJob, t, senderAddress, emailList, kafkaTopic);
+                    sendErrorEmail(runningJob, t, senderAddress, emailList, kafkaTopic, vertical);
                 }
                 
                 logger.warn(String.format("An exception almost made it back to the ScheduledThreadPool from job[%s]",
