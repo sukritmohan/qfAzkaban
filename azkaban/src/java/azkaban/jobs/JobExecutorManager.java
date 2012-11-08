@@ -326,6 +326,7 @@ public class JobExecutorManager {
         jobDetails.put("timestamp", Long.toString(System.currentTimeMillis()));
         try {
         	String[] splitByDot = topic.split("\\.");
+        	logger.info("SPLIT BY DOT : " + splitByDot.toString());
         	if(splitByDot != null)
         	{
 	        	String env = splitByDot[0];
@@ -345,7 +346,7 @@ public class JobExecutorManager {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        String kafkaMsg = jobDetails.toString();
+        String kafkaMsg = jobDetails.toJSONString();
         logger.info("Publishing to kafka topic : " + topic);
         if(topic != null)
         	EventManagerUtils.publish(topic, kafkaMsg);
@@ -427,6 +428,7 @@ public class JobExecutorManager {
         jobDetails.put("timestamp", Long.toString(System.currentTimeMillis()));
         try {
         	String[] splitByDot = topic.split("\\.");
+        	logger.info("SPLIT BY DOT : " + splitByDot.toString());
         	if(splitByDot != null)
         	{
 	        	String env = splitByDot[0];
