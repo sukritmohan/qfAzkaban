@@ -349,6 +349,7 @@ public class JobExecutorManager {
 		}
         String kafkaMsg = jobDetails.toJSONString();
         logger.info("Publishing to kafka topic : " + topic);
+        logger.info("Message : " + kafkaMsg);
         if(topic != null)
         	EventManagerUtils.publish(topic, kafkaMsg);
         
@@ -452,6 +453,7 @@ public class JobExecutorManager {
 		}
         String kafkaMsg = jobDetails.toJSONString();
         logger.info("Publishing to kafka topic : " + topic);
+        logger.info("Message : " + kafkaMsg);
         if(topic != null)
         	EventManagerUtils.publish(topic, kafkaMsg);
         
