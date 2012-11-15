@@ -16,6 +16,10 @@
 
 package azkaban.flow;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -25,11 +29,15 @@ import java.util.concurrent.atomic.AtomicLong;
 
 import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
+import org.json.simple.JSONObject;
+
+import azkaban.app.JobDescriptor;
 import azkaban.app.JobManager;
 import azkaban.common.jobs.DelegatingJob;
 import azkaban.common.jobs.Job;
 import azkaban.common.utils.Props;
 import azkaban.jobs.Status;
+import azkaban.scheduler.EventManagerUtils;
 
 /**
  * An implemention of the ExecutableFlow interface that just
@@ -186,7 +194,52 @@ public class IndividualJobExecutableFlow implements ExecutableFlow
                             jobState = Status.SUCCEEDED;
                             returnProps = job.getJobGeneratedProperties();
                             callbackList = callbacksToCall; // Get the reference before leaving the synchronized
+                            
+                            //since the job succeeded, send kafka message if possible.
+                          
+                            //EventManagerUtils.initializeProducer();
+                            
+                            String topic = jobManager.loadJobDescriptors().get(job.getId()).getKafkaTopic();
+                            JSONObject jobDetails = new JSONObject();
+                            jobDetails.put("JobID", job.getId());
+                            //jobDetails.put("message", body);
+                            jobDetails.put("timestamp", Long.toString(System.currentTimeMillis()));
+                            jobDetails.put("vertical", jobManager.loadJobDescriptors().get(job.getId()).getVertical());
+                            try {
+                            	String[] splitByDot = topic.split("\\.");
+                            	if(splitByDot != null)
+                            	{
+                    	        	String env = splitByDot[0];
+                    	        	logger.info("ENV : " + env);
+                    	        	if(env.equals("dev") || env.equals("prod") || env.equals("stage"))
+                    	        	{
+                    	        		String rootEnv = (!env.equals("stage")) ? env : "dev";
+                    					BufferedReader in = new BufferedReader(new FileReader("/home/"+rootEnv+"/qfAzkaban/azkaban-jobs-"+env+"/"+env + "/tsDir.sh"));
+                    					String tsDir = in.readLine();
+                    					jobDetails.put("tsDir", tsDir);
+                    	        	}
+                            	}
+                    			
+                    		} catch (FileNotFoundException e) {
+                    			logger.info("SUKRIT : FILE NOT FOUND!!! PROBLEM....");
+                    			e.printStackTrace();
+                    		} catch (IOException e) {
+                    			// TODO Auto-generated catch block
+                    			e.printStackTrace();
+                    		}
+                            String kafkaMsg = jobDetails.toJSONString();
+                            logger.info("Publishing to kafka topic : " + topic);
+                            logger.info("Message : " + kafkaMsg);
+                            System.out.println("Publishing to kafka topic : " + topic);
+                            System.out.println("Message : " + kafkaMsg);
+                            if(topic != null)
+                            	EventManagerUtils.publish(topic, kafkaMsg);
+                            
+                            //EventManagerUtils.closeProducer();
                         }
+                        
+                        System.out.println("SUKRIT : kafka :  " + jobManager.loadJobDescriptors().get(job.getId()).getKafkaTopic());
+                        System.out.println("SUKRIT : vertical :  " + jobManager.loadJobDescriptors().get(job.getId()).getVertical());
 
                         returnProps.logProperties(String.format("Return props for job[%s]", getName()));
 

@@ -57,6 +57,7 @@ public final class EventManagerUtils
 			setConnPort(zookeeper_env);
 		}
 		logger.info("SUKRIT: Initializing producer with : " + connPort);
+		System.out.println("SUKRIT: Initializing producer with : " + connPort);
 		producerProps.put("zk.connect", EventManagerUtils.connPort);
 		producerProps.put("serializer.class", EventManagerUtils.serializer);
 		

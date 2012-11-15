@@ -145,5 +145,6 @@ public class AzkabanApp
           }
       });
       logger.info("Server running on port " + portNumber + ".");
+      EventManagerUtils.initializeProducer();
   }
 }

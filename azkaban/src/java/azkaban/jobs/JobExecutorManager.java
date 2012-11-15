@@ -317,6 +317,7 @@ public class JobExecutorManager {
                     "Job '" + job.getId() + "' has failed!",
                     body.toString());
         }
+        /*
             
         EventManagerUtils.initializeProducer();
         
@@ -352,9 +353,11 @@ public class JobExecutorManager {
         String kafkaMsg = jobDetails.toJSONString();
         logger.info("Publishing to kafka topic : " + topic);
         logger.info("Message : " + kafkaMsg);
+        System.out.println("Publishing to kafka topic : " + topic);
+        System.out.println("Message : " + kafkaMsg);
         if(topic != null)
         	EventManagerUtils.publish(topic, kafkaMsg);
-        
+        */
         //publish error to Kafka.
         if(job.isEventTriggered())
         {
@@ -368,7 +371,7 @@ public class JobExecutorManager {
 
         }
         
-        EventManagerUtils.closeProducer();
+        //EventManagerUtils.closeProducer();
     }
 
     private void sendSuccessEmail(JobExecution job,
@@ -422,7 +425,8 @@ public class JobExecutorManager {
                 logger.error(uhe);
             }
         }
-                        
+        
+        /*
         EventManagerUtils.initializeProducer();
                 
         //PUBLISH JOB DETAILS TO KAFKA
@@ -457,10 +461,12 @@ public class JobExecutorManager {
         String kafkaMsg = jobDetails.toJSONString();
         logger.info("Publishing to kafka topic : " + topic);
         logger.info("Message : " + kafkaMsg);
+        System.out.println("Publishing to kafka topic : " + topic);
+        System.out.println("Message : " + kafkaMsg);
         if(topic != null)
         	EventManagerUtils.publish(topic, kafkaMsg);
         
-        
+        */
         //publish success to Kafka.
         if(job.isEventTriggered())
         {
@@ -473,7 +479,7 @@ public class JobExecutorManager {
             EventManagerUtils.publish(job.getTopic(), message);
         }
         
-        EventManagerUtils.closeProducer();
+        //EventManagerUtils.closeProducer();
 
     }
     

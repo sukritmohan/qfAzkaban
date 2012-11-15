@@ -110,6 +110,8 @@ public class ProcessJob extends AbstractProcessJob implements Job {
             }
         }
         
+        System.out.println("SUKRIT : comes here for every command?");
+        
         // Get the output properties from this job.
        generateProperties(propFiles[1]);
                

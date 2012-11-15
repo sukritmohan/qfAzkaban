@@ -267,13 +267,14 @@ public class GroupedExecutableFlow implements ExecutableFlow
 
             if (allComplete) {
                 jobState = Status.SUCCEEDED;
+                System.out.println("SUKRIT : comes here for every successful dependency?");
 
                 returnProps = new Props();
 
                 for (ExecutableFlow flow : flows) {
                     returnProps = new Props(returnProps, flow.getReturnProps());
                 }
-
+                
                 returnProps.logProperties("Output properties for " + getName());
             }
         }

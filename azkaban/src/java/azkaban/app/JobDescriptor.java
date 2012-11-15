@@ -174,11 +174,13 @@ public class JobDescriptor {
     @Override
     public String toString() {
         return String.format(
-                "Job(id=%s, class=%s, path=%s, deps = %s)",
+                "Job(id=%s, class=%s, path=%s, deps = %s, vertical = %s, kafka = %s)",
                 _id,
                 (_class == null? "?" : _class.getName()),
                 _path,
-                getProps().getStringList("dependencies", null, "\\s*,\\s*")
+                getProps().getStringList("dependencies", null, "\\s*,\\s*"),
+                _verticalType,
+                _kafkaTopic
         );
     }
 
