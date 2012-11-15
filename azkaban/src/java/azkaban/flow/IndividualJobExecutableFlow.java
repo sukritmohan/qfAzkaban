@@ -218,6 +218,10 @@ public class IndividualJobExecutableFlow implements ExecutableFlow
                     					String tsDir = in.readLine();
                     					jobDetails.put("tsDir", tsDir);
                     	        	}
+                    	        	else if (env.equals("curation"))
+                    	        	{
+                    	        		jobDetails.put("tsDir", "/data/exports5/curation_dump/");
+                    	        	}
                             	}
                     			
                     		} catch (FileNotFoundException e) {
