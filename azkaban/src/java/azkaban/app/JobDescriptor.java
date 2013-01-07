@@ -121,8 +121,8 @@ public class JobDescriptor {
         Collections.sort(this._writeResourceLocks);
 
         this._emailList = props.getStringList(NOTIFY_EMAIL);
-        this._successEmail = props.getString(NOTIFY_EMAIL_SUCCESS);
-        this._failureEmail = props.getString(NOTIFY_EMAIL_FAILURE);
+        this._successEmail = props.getString(NOTIFY_EMAIL_SUCCESS, "");
+        this._failureEmail = props.getString(NOTIFY_EMAIL_FAILURE, "");
         this._kafkaTopic = props.getString(KAFKA_TOPIC, "azkabanJobs.status");
         this._verticalType = props.getString(VERTICAL, "unknown");
     }
