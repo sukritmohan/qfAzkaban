@@ -51,6 +51,8 @@ public class JobDescriptor {
     public static final String RETRY_BACKOFF = "retry.backoff";
     public static final String JOB_PERMITS = "job.permits";
     public static final String NOTIFY_EMAIL = "notify.emails";
+    public static final String NOTIFY_EMAIL_SUCCESS = "email.success";
+    public static final String NOTIFY_EMAIL_FAILURE = "email.failure";
     public static final String LOGGER_PATTERN = "logger.pattern";
     public static final String MAIL_SENDER = "mail.sender";
     public static final String KAFKA_TOPIC = "kafka.topic";
@@ -82,6 +84,8 @@ public class JobDescriptor {
     private final String _jobType;
     private final String _loggerPattern;
     private final String _verticalType;
+    private final String _successEmail;
+    private final String _failureEmail;
 
     public JobDescriptor(String id, String conicalPath, String fullpath, Props props, ClassLoader classLoader) {
         this._id = id;
@@ -117,6 +121,8 @@ public class JobDescriptor {
         Collections.sort(this._writeResourceLocks);
 
         this._emailList = props.getStringList(NOTIFY_EMAIL);
+        this._successEmail = props.getString(NOTIFY_EMAIL_SUCCESS);
+        this._failureEmail = props.getString(NOTIFY_EMAIL_FAILURE);
         this._kafkaTopic = props.getString(KAFKA_TOPIC, "azkabanJobs.status");
         this._verticalType = props.getString(VERTICAL, "unknown");
     }
@@ -206,6 +212,14 @@ public class JobDescriptor {
     
     public String getKafkaTopic() {
     	return _kafkaTopic;
+    }
+    
+    public String getSuccessEmail() {
+    	return _successEmail;
+    }
+    
+    public String getFailureEmail() {
+    	return _failureEmail;
     }
     
     public String getVertical() {

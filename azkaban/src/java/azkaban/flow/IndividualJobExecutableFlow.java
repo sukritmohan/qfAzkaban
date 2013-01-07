@@ -17,14 +17,17 @@
 package azkaban.flow;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Vector;
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.apache.log4j.Logger;
@@ -33,9 +36,12 @@ import org.json.simple.JSONObject;
 
 import azkaban.app.JobDescriptor;
 import azkaban.app.JobManager;
+import azkaban.app.Mailman;
 import azkaban.common.jobs.DelegatingJob;
 import azkaban.common.jobs.Job;
 import azkaban.common.utils.Props;
+import azkaban.common.utils.Utils;
+import azkaban.jobs.JobExecution;
 import azkaban.jobs.Status;
 import azkaban.scheduler.EventManagerUtils;
 
@@ -184,6 +190,49 @@ public class IndividualJobExecutableFlow implements ExecutableFlow
                                 returnProps = new Props();
                                 exceptions.put(getName(), e);
                                 callbackList = callbacksToCall; // Get the reference before leaving the synchronized
+                                
+                                //the job failed, send failure email here.
+                                
+                                String toAddress = jobManager.loadJobDescriptors().get(job.getId()).getFailureEmail();
+                                String jobId = jobManager.loadJobDescriptors().get(job.getId()).getId();
+                                int lastLogLineNum = 60;
+                                
+                                StringBuffer body = new StringBuffer("The job '"
+                                        + job.getId()
+                                        + " has failed. \r\n");
+                                
+                                /* append log file link */
+                                JobExecution jobExec = jobManager.loadMostRecentJobExecution(jobId);
+                                if(jobExec == null) {
+                                    body.append("Job execution object is null for jobId:" + jobId + "\n\n");
+                                }
+
+                                String logPath = jobExec != null ? jobExec.getLog() : null;
+                                if(logPath == null) {
+                                    body.append("Log path is null. \n\n");
+                                } else {
+                                    body.append("See log in " + logPath + "\n\n" + "The last "
+                                                + lastLogLineNum + " lines in the log are:\n");
+
+                                    /* append last N lines of the log file */
+                                    String logFilePath = jobManager.getLogDir() + File.separator
+                                                         + logPath;
+                                    Vector<String> lastNLines = Utils.tail(logFilePath, 60);
+
+                                    if(lastNLines != null) {
+                                        for(String line: lastNLines) {
+                                            body.append(line + "\n");
+                                        }
+                                    }
+                                }
+                                
+                                List<String> toEmail = new LinkedList<String>();
+                                toEmail.add(toAddress);
+                                
+                                Mailman mailer = new Mailman("localhost", "", "");
+                                String senderAddress = jobManager.loadJobDescriptors().get(job.getId()).getSenderEmail();
+                                mailer.sendEmailIfPossible(senderAddress, toEmail, jobId + " failed", body.toString());
+                                
                             }
                             callCallbacks(callbackList, jobState);
 
@@ -243,9 +292,6 @@ public class IndividualJobExecutableFlow implements ExecutableFlow
                             //EventManagerUtils.closeProducer();
                         }
                         
-                        System.out.println("SUKRIT : kafka :  " + jobManager.loadJobDescriptors().get(job.getId()).getKafkaTopic());
-                        System.out.println("SUKRIT : vertical :  " + jobManager.loadJobDescriptors().get(job.getId()).getVertical());
-
                         returnProps.logProperties(String.format("Return props for job[%s]", getName()));
 
                         callCallbacks(callbackList, jobState);
