@@ -290,6 +290,20 @@ public class IndividualJobExecutableFlow implements ExecutableFlow
                             	EventManagerUtils.publish(topic, kafkaMsg);
                             
                             //EventManagerUtils.closeProducer();
+                            
+                            String toAddress = jobManager.loadJobDescriptors().get(job.getId()).getSuccessEmail();
+                            String jobId = jobManager.loadJobDescriptors().get(job.getId()).getId();
+                            
+                            List<String> toEmail = new LinkedList<String>();
+                            toEmail.add(toAddress);
+                            
+                            StringBuffer body = new StringBuffer("The job '"
+                                    + job.getId()
+                                    + " has completed successfully.");
+                            
+                            Mailman mailer = new Mailman("localhost", "", "");
+                            String senderAddress = jobManager.loadJobDescriptors().get(job.getId()).getSenderEmail();
+                            mailer.sendEmailIfPossible(senderAddress, toEmail, jobId + " completed", body.toString());
                         }
                         
                         returnProps.logProperties(String.format("Return props for job[%s]", getName()));
