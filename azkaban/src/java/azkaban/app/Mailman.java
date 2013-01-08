@@ -60,7 +60,7 @@ public class Mailman {
 
         Session session = Session.getDefaultInstance(props);
         Message message = new MimeMessage(session);
-        InternetAddress from = new InternetAddress(fromAddress == null? "bugs@azkaban.com" : fromAddress, false);
+        InternetAddress from = new InternetAddress(fromAddress == null? "azkaban@azkaban.com" : fromAddress, false);
         message.setFrom(from);
         for(String toAddr: toAddress)
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(toAddr, false));
