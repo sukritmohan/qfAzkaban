@@ -270,7 +270,7 @@ public class IndividualJobExecutableFlow implements ExecutableFlow
                     	        	else if (env.equals("curation"))
                     	        	{
                     	        		System.out.println("IS IN CURATION!!");
-                    	        		jobDetails.put("tsDir", "/data/exports5/curation_dump/");
+                    	        		jobDetails.put("tsDir", "/data/exports3/curation_dump/");
                     	        	}
                             	}
                     			
